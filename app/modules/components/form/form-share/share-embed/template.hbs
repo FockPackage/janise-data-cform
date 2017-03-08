@@ -1,0 +1,23 @@
+{{!-- Form Settings - Share - Embed --}}
+
+<div class="content-row" local-class="share-settings">
+	<div class="publish-info">
+		<h2>{{t "form.code-for"}}</h2>
+		<p>{{t "form.info"}}</p>
+	</div>
+
+	<div class="share-column">
+		<div local-class="embed-row">
+			<h2>{{t "form.embed-code"}}</h2>
+			<span>{{t "form.embed-code-help"}}</span>
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+      {{ui-button (t "form.view-example") color="green" icon="eye"}}
+		</div>
+		<div local-class="embed-row">
+			<h2>{{t "form.full-page-code"}}</h2>
+			<span>{{t "form.full-code-help"}}</span>
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+      {{ui-button (t "form.view-example") color="green" icon="eye"}}
+		</div>
+	</div>
+</div>

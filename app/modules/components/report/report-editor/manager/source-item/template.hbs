@@ -1,0 +1,33 @@
+<div local-class="item" class={{visibleClassName}}>
+  <div local-class="control" class={{draggableClassName}}>
+    {{#if sortable}}
+      {{ui-icon-button icon="drag" local-class="drag"}}
+    {{else if visible}}
+      {{ui-icon-button icon="ui-eye" local-class="visibility" onClick=(action "toggleVisibility")}}
+    {{else}}
+      {{ui-icon-button icon="ui-eye-ban" local-class="ban" onClick=(action "toggleVisibility")}}
+    {{/if}}
+  </div>
+
+  {{#if showSerials}}
+    <div class={{serialClassName}}>
+      <span>Q{{presentation.bucket.serial}}</span>
+    </div>
+  {{/if}}
+
+  <div local-class="questions">
+    <i>
+      {{ui-icon icon="business-cheque" size="8px"}}
+    </i>
+    <p>{{presentation.bucket.name}}</p>
+  </div>
+</div>
+
+{{#if presentation.isCustom}}
+  {{ui/setup-menu
+    class="setup"
+    icon="wrench"
+    des=(t "setup-dropdown.setup")
+    button1=(t "setup-dropdown.rename")
+    button2=(t "setup-dropdown.delete")}}
+{{/if}}

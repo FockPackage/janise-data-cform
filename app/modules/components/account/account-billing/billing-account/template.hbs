@@ -1,0 +1,29 @@
+<div class="history-content">
+  {{ui/loading-circle
+    isLoding=isLoding
+    class="billing-history-loading"
+    color="silver"
+  }}
+  <table>
+    <tr>
+      <td><span>{{t "account-settings.number"}}</span></td>
+      <td><span>{{t "account-settings.date"}}</span></td>
+      <td><span>{{t "account-settings.event"}}</span></td>
+      <td><span>{{t "account-settings.total"}}</span></td>
+      <td><span>{{t "account-settings.state"}}</span></td>
+    </tr>
+
+    {{#each accountHistory.ListInfo as |account|}}
+      <tr>
+        <td><span>{{account.ANumber}}</span></td>
+        <td><span>{{account.CreateDate}}</span></td>
+        <td><span>{{account.Content}}</span></td>
+        <td><span>{{account.Quantity}}</span></td>
+        <td><span>{{account.QStatus}}</span></td>
+      </tr>
+    {{/each}}
+  </table>
+  <div class="detail-none"><span></span></div>
+</div>
+
+{{ui/load-more isShow=accountHistory.HasMore label=(t 'load-more') onClick=(action "loadMore")}}

@@ -1,0 +1,30 @@
+<div class="history-content">
+  {{ui/loading-circle
+    isLoding=isLoding
+    class="billing-history-loading"
+    color="silver"
+  }}
+  <table>
+    <tr>
+      <td><span>{{t "account-settings.number"}}</span></td>
+      <td><span>{{t "account-settings.date"}}</span></td>
+      <td><span>{{t "account-settings.event"}}</span></td>
+      <td><span>{{t "account-settings.total"}}</span></td>
+      <td><span>{{t "account-settings.state"}}</span></td>
+      <td><span>{{t "account-settings.invoice"}}</span></td>
+    </tr>
+      {{#each paymentHistory.ListInfo as |payment|}}
+        <tr>
+          <td><span>{{payment.OrderNumber}}</span></td>
+          <td><span>{{payment.OrderDate}}</span></td>
+          <td><span>{{payment.Content}}</span></td>
+          <td><span>{{payment.TotalAmount}}</span></td>
+          <td><span>{{payment.UI_Payed}}</span></td>
+          <td><span>{{payment.Msg_OrderClosed}}</span></td>
+        </tr>
+      {{/each}}
+  </table>
+  <div class="detail-none"><span></span></div>
+</div>
+
+{{ui/load-more isShow=paymentHistory.HasMore label=(t 'load-more') onClick=(action "loadMore")}}

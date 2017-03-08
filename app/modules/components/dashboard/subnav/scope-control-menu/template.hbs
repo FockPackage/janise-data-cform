@@ -1,0 +1,41 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger}}
+    {{#ui-button color="border" expand=true}}
+      <div local-class="profile" class="profile" style={{{currentCompany.avatarStyle}}}></div>
+      <span>{{currentCompany.CompanyName}}</span>
+    {{/ui-button}}
+  {{/dropdown.trigger}}
+
+  {{#dropdown.content}}
+    <ul class="option checkmark">
+      <div class="optgroup">{{t "switch-acount-dropdown.switch-acount"}}</div>
+			<ul class="option-contents">
+        {{#each companyList as |company|}}
+					<li class="active">
+						<a>
+              {{#if (eq company.CompanyID currentCompanyId)}}
+                {{ui-icon icon="ui-check" style="checkmark"}}
+              {{/if}}
+							<div local-class="profile-option" class="profile" style={{{company.avatarStyle}}}></div>
+							<span>{{company.CompanyName}}</span>
+						</a>
+					</li>
+        {{/each}}
+			</ul>
+			<ul class="option-control">
+				<li>
+					<a>
+						{{ui-icon icon="wrench"}}
+						<span>{{t "switch-acount-dropdown.team-settings"}}</span>
+					</a>
+				</li>
+				<li>
+					<a>
+            {{ui-icon icon="building-add"}}
+						<span>{{t "switch-acount-dropdown.create-tema"}}</span>
+					</a>
+				</li>
+			</ul>
+    </ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

@@ -1,0 +1,41 @@
+@import "var.css";
+
+.accounts-settings-trigger {
+  padding: 12px 0;
+  & button {
+    color: var(--color-white);
+  }
+  & span {
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+}
+
+.profile {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  display: inline-block;
+  vertical-align: middle;
+  @media (max-width: 991px) {
+    margin: 0;
+  }
+}
+
+.accounts-settings-content {
+  & ul {
+    &:after {
+      border: solid transparent;
+      content: " ";
+      position: absolute auto 24px 100% auto;
+      border-bottom-color: var(--color-white);
+      border-width: 10px;
+    }
+    @media (max-width: 991px) {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

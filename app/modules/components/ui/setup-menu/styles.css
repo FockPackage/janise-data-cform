@@ -1,0 +1,38 @@
+@import "var.css";
+
+.floating {
+  position: absolute;
+  white-space: nowrap;
+  line-height: 20px;
+  right: 0;
+  bottom: 0;
+  display: inline-block;
+  color: var(--color-white);
+  padding: 8px 20px;
+  border-radius: 20px;
+  background-color: var(--color-dark-slate);
+  box-shadow: color(black a(30%)) 0 3px 8px 0;
+  transition: opacity 200ms ease;
+
+  & > li {
+    display: inline-block;
+    padding: 0 8px;
+    cursor: pointer;
+    transition: opacity 200ms ease;
+
+    &:hover {
+      color: var(--color-blue);
+    }
+
+    &:first-child {
+      color: var(--color-dark-gray);
+      font-size: 12px;
+      padding: 0;
+      cursor: default;
+    }
+  }
+}
+
+:global(.setup) {
+  position: absolute 0 0 0 auto;
+}

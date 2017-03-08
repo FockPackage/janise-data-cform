@@ -1,0 +1,17 @@
+{{#link-to "reports" class="icon-button" tips=(t "page-header.back-to-reports")}}
+  {{ui-icon icon="ui-grid-square"}}
+{{/link-to}}
+
+<h1 local-class="title">{{model.report.name}}</h1>
+
+{{report/report-editor/view model.report.views}}
+
+{{ui-button (t "page-header.add-data-source") color="dark" icon="graph1"}}
+
+<ul local-class="data-source-cover">
+  {{#with (filter-by "type" 1 model.sources) as |originSources|}}
+    {{#each originSources as |source|}}
+      {{report/report-editor/thumbnail source}}
+    {{/each}}
+  {{/with}}
+</ul>

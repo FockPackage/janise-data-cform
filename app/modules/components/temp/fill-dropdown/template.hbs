@@ -1,0 +1,21 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger local-class="fill-trigger" }}
+    {{ui-button (t "fill-dropdown.color-fill") color="border" expand=true}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content local-class="fill-content" }}
+    <ul class="option checkmark">
+      <ul class="option-contents">
+        <li>
+          <span>{{t "fill-dropdown.no-fill"}}</span>
+        </li>
+        <li>
+          {{ui-icon icon="ui-check" style="checkmark"}}
+          <span>{{t "fill-dropdown.color-fill"}}</span>
+        </li>
+        <li>
+          <span>{{t "fill-dropdown.gradient-fill"}}</span>
+        </li>
+      </ul>
+    </ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

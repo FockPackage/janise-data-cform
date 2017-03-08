@@ -1,0 +1,78 @@
+@import "var.css";
+
+.header-view {
+  position: relative;
+  margin-bottom: 12px;
+  float: left;
+  padding: 8px;
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid var(--color-silver);
+  background-color: color(var(--color-silver) lightness(92%));
+
+  & i {
+    float: left;
+    margin-right: 8px;
+  }
+
+  & span {
+    float: left;
+  }
+
+  & > div {
+    position: absolute 0 0 auto auto;
+
+    & > span {
+      max-height: 36px;
+    }
+
+    & > ul {
+      float: left;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+
+    & li {
+      float: left;
+
+      & a {
+        float: left;
+      }
+    }
+  }
+}
+
+.default-placeholder {
+  font-size: 12px;
+  color: var(--color-silver);
+  line-height: 20px;
+  margin-left: 8px;
+}
+
+.maximize,
+.minimize {
+  position: relative;
+  margin-left: 2px;
+
+  &:before {
+    content: "";
+    position: absolute 8px auto 8px -1px;
+    width: 1px;
+    background-color: var(--color-silver);
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.header-dropdown {
+  float: left;
+  display: none;
+
+  @media (max-width: 767px) {
+    display: block;
+  }
+}

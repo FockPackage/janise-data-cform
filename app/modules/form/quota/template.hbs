@@ -1,0 +1,21 @@
+{{form/form-quota
+  quotaInfo=model.quotaInfo
+  isSaved=model.isSaved
+  generateTable=(route-action "generateTable")
+  deleteQuota=(route-action "deleteQuota")
+  updateTable=(route-action 'updateTable')
+  setIsSaved=(route-action 'setIsSaved')
+}}
+
+{{#ui/popup-panel
+  isShow=model.isShowConfirm
+  icon="ic dark ic-folder-1"
+  title=(t "popup.delete-quota-set")
+  color='red'
+  text='继续'
+  closeModal=(route-action "toggleModal")
+  clickBackground=(route-action "clickBackground")
+  onClick=(route-action "goToTarget")
+}}
+  <p>将丢弃所有修改，确定继续？</p>
+{{/ui/popup-panel}}

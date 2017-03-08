@@ -1,0 +1,43 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger local-class="accounts-settings-trigger"}}
+    {{#ui-button expand=true}}
+      <div local-class="profile" class="profile" style={{{avatarStyle}}}></div>
+      <span>{{t "account-settings-dropdown.account"}}</span>
+    {{/ui-button}}
+  {{/dropdown.trigger}}
+
+  {{#dropdown.content local-class="accounts-settings-content"}}
+    <ul class="option">
+      <li onclick={{pipe (action "goTo" 'account.general') dropdown.actions.close}}>
+        <a>
+          {{ui-icon icon="work"}}
+          <span>{{t "account-settings-dropdown.settings"}}</span>
+        </a>
+      </li>
+      <li onclick={{pipe (action "goTo" 'account.plans') dropdown.actions.close}}>
+        <a>
+          {{ui-icon icon="ui-star-empty"}}
+          <span>{{t "account-settings-dropdown.plans"}}</span>
+        </a>
+      </li>
+      <li onclick={{pipe (action "goTo" 'updates') dropdown.actions.close}}>
+        <a>
+          {{ui-icon icon="megaphone"}}
+          <span>{{t "account-settings-dropdown.updates"}}</span>
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href={{helpHost}}>
+          {{ui-icon icon="ui-round-e-help"}}
+          <span>{{t "account-settings-dropdown.help"}}</span>
+        </a>
+      </li>
+      <li onclick={{pipe (action "signOut") dropdown.actions.close}}>
+        <a>
+          {{ui-icon icon="media-button-power"}}
+          <span>{{t "account-settings-dropdown.sign-out"}}</span>
+        </a>
+      </li>
+    </ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

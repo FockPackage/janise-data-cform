@@ -1,0 +1,16 @@
+.main-grid {
+  margin-top: 24px;
+}
+
+.grid-item {
+  float: left;
+  width: 50%;
+
+  &:nth-child(odd) {
+    padding-right: 12px;
+  }
+
+  &:nth-child(even) {
+    padding-left: 12px;
+  }
+}

@@ -1,0 +1,28 @@
+{{#basic-dropdown renderInPlace=true as |dropdown|}}
+  {{#dropdown.trigger local-class="categories-trigger"}}
+    {{ui-button currentTag color="border" expand=true}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content local-class="categories-content"}}
+    <ul class="option checkmark">
+      <ul class="option-contents">
+        {{#each tagList as |tag|}}
+          <li>
+            <a onclick={{action (pipe changeTag dropdown.actions.close) tag}}>
+              {{#if (eq currentTag tag)}}
+                {{ui-icon icon="ui-check" style="checkmark"}}
+              {{/if}}
+              <span>{{tag}}</span>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+      {{#if isShowControl}}
+        <ul class="option-control">
+          <li>
+            <a>{{ui-icon icon="shopping-tag-content"}}<span>{{t "tag-dropdown.custom"}}</span></a>
+          </li>
+        </ul>
+      {{/if}}
+    </ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

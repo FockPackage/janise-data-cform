@@ -1,0 +1,74 @@
+@import 'var.css';
+
+:global(.notices) {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 12px;
+  transition: border 200ms, background-color 200ms;
+  border: 1px solid var(--color-fade-silver);
+  border-radius: 3px;
+  background-color: var(--color-white);
+  &:hover {
+    border: 1px solid var(--color-silver);
+  }
+}
+
+:global(.notices.active) {
+  border-color: var(--color-blue);
+  box-shadow: color(var(--color-blue) a(15%)) 0 0 0 2px;
+}
+
+:global(.notices.manage) {
+  padding-top: 36px;
+}
+
+.notices-item {
+  clear: fix;
+}
+
+:global(.notices-item-body) {
+  padding: 12px;
+  cursor: pointer;
+}
+
+:global(.notices-item-header) {
+  margin-bottom: 6px;
+  & > strong {
+    line-height: normal;
+    word-break: break-all;
+  }
+}
+
+:global(.notices-item-description) {
+  line-height: normal;
+  margin: 12px 0;
+  color: var(--color-dark-gray);
+}
+
+.type {
+  font-size: 12px;
+  font-weight: normal;
+  margin-left: 12px;
+  padding: 0 4px;
+  border-radius: 3px;
+}
+
+.type.Bugfix {
+  color: var(--color-tomato);
+  background-color: color(var(--color-tomato) a(24%));
+}
+
+.type.Feature {
+  color: var(--color-sea-green);
+  background-color: color(var(--color-sea-green) a(24%));
+}
+
+.type.Update {
+  color: var(--color-blue);
+  background-color: color(var(--color-blue) a(24%));
+}
+
+.timestamp {
+  font-size: 12px;
+  color: var(--color-silver);
+}

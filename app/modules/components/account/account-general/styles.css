@@ -1,0 +1,189 @@
+@import "var.css";
+
+:global(.profile button) {
+  margin-top: 12px;
+}
+
+.profile{
+  display: flex;
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+  & > div {
+    &:nth-of-type(2) {
+      margin-left: 48px;
+      align-self: center;
+      @media (max-width: 767px) {
+        margin: 0;
+        text-align: center;
+      }
+    }
+    & > p {
+      width: 50%;
+      float: left;
+      clear: left;
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 12px;
+      line-height: normal;
+      color: var(--color-silver);
+      @media (max-width: 767px) {
+        float: none;
+        clear: none;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.account-profile {
+  position: relative;
+  padding: 6px;
+  flex-shrink: 0;
+  width: 124px;
+  height: 124px;
+  @media (max-width: 767px) {
+    align-self: center;
+  }
+}
+
+.image-upload {
+  display: none;
+}
+
+.upload-button {
+  float: left;
+  flex-shrink: 0;
+
+  @media (max-width: 767px) {
+    float: none;
+    margin-top: 12px;
+  }
+}
+
+.linked-accounts {
+  display: flex;
+  flex-wrap: wrap;
+  & li {
+    width: 100%;
+    &:not(:last-of-type) {
+      margin-bottom: 12px;
+    }
+    & > span {
+      line-height: 36px;
+      float: right;
+      margin-right: 36px;
+    }
+    & button {
+      margin-top: 5px;
+      float: right;
+    }
+    & svg {
+      display: inline-block;
+      vertical-align: sub;
+      fill: currentColor;
+    }
+    & a {
+      float: right;
+      cursor: pointer;
+      padding: 3px 12px;
+      border-radius: 3px;
+      color: var(--color-slate);
+      box-shadow: inset var(--color-silver) 0 0 0 1px;
+      transition: box-shadow 200ms ease, color 200ms ease;
+      &:hover {
+        color: ui-dark-slate;
+        box-shadow: inset var(--color-slate) 0 0 0 1px;
+      }
+      &.link {
+        box-shadow: none;
+        color: var(--color-white);
+        background-color: var(--color-blue);
+        transition: background-color 200ms ease;
+        &:hover {
+          background-color: color(var(--color-blue) blackness(+12%));
+        }
+      }
+    }
+  }
+}
+
+.accounts {
+  display: inline-block;
+  vertical-align: bottom;
+  height: 36px;
+  padding: 8px 0;
+  border-radius: 3px;
+  margin-right: 24px;
+  color: var(--color-white);
+  & strong {
+    margin-left: 6px;
+    line-height: 20px;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.qq {
+  color: var(--color-blue);
+  & svg {
+    width: 18px;
+    height: 18px;
+    margin: -1px 0;
+  }
+}
+
+.wechat {
+  color: var(--color-sea-green);
+  & svg {
+    width: 22px;
+    height: 22px;
+    margin: -3px 0;
+  }
+}
+
+.weibo {
+  color: var(--color-tomato);
+  & svg {
+    width: 22px;
+    height: 22px;
+    margin: -3px 0;
+  }
+}
+
+.facebook {
+  color: #3b5998;
+}
+
+.language-menu {
+  @media (max-width: 769px) {
+    justify-content: center;
+  }
+}
+
+:global(.overview) {
+  & li {
+    display: block;
+    width: 100%;
+    list-style: none;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--color-fade-silver);
+    @media (max-width: 991px) {
+      width: 100%;
+    }
+    & span {
+      display: inline-block;
+      vertical-align: bottom;
+      &:first-child {
+        width: 30%;
+      }
+      @media (max-width: 767px) {
+        display: block;
+        &:first-child {
+          width: 100%;
+          color: var(--color-dark-gray);
+        }
+      }
+    }
+  }
+}

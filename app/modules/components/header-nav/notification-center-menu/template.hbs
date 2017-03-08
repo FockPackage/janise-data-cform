@@ -1,0 +1,31 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger local-class="notifications-trigger"}}
+    {{ui-icon-button icon="notifications" size="24" color="light"}}
+  {{/dropdown.trigger}}
+
+  {{#dropdown.content local-class="notifications-content"}}
+		<ul local-class="notification-center">
+			<ul>
+        {{header-nav/notification-center-menu/notifications-item
+          tagName=""
+          type="blue"
+          title="Expanded special character redirects support"
+          metadata="A Day Ago - September 30th 2016"
+        }}
+        {{header-nav/notification-center-menu/notifications-item
+          tagName=""
+          type="red"
+          title="Responsive images"
+          metadata="2 Days Ago - September 29th 2016"
+        }}
+        {{header-nav/notification-center-menu/notifications-item
+          tagName=""
+          type="green"
+          title="No more broken images on export"
+          metadata="16 Days Ago - September 14th 2016"
+        }}
+      </ul>
+      {{ui/load-more isShow=true label=(t "notifications-dropdown.view-all")}}
+    </ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

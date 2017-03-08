@@ -1,0 +1,48 @@
+<ul local-class="template-list">
+  <ul>
+    <li>
+      <strong>{{t "account-settings.template"}}</strong>
+    </li>
+    <li>
+      {{account/account-purchases/template-item cover=cover}}
+    </li>
+  </ul>
+  <ul>
+    <li local-class="template-info">
+      <ul>
+        <li>
+          <strong>{{t "account-settings.template-name"}}</strong>
+        </li>
+        <li>
+          <span>{{template}}</span>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <strong>{{t "account-settings.template-categories"}}</strong>
+        </li>
+        <li>
+          <span>{{categories}}</span>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <strong>{{t "account-settings.templates-cost"}}</strong>
+        </li>
+        <li>
+          <span>{{cost}}</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li>
+          <strong>{{t "account-settings.templates-invoice"}}</strong>
+        </li>
+        <li>
+          {{ui-button (t "account-settings.download-pdf") color="border" size="m" icon="arrows-system-update"}}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</ul>

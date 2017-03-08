@@ -1,0 +1,21 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger class="block"}}
+    {{ui-button currentQuota.QuotaTableName color="border" expand=true}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content}}
+    <ul class="option checkmark">
+      <ul class="option-contents">
+        {{#each quotaList as |quota|}}
+          <li>
+            <a onclick={{action (pipe selectQuota dropdown.actions.close) quota.QuotaTableID}}>
+              {{#if (eq quota.QuotaTableID currentQuota.QuotaTableID)}}
+                {{ui-icon icon="ui-check" style="checkmark"}}
+              {{/if}}
+              <span>{{quota.QuotaTableName}}</span>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

@@ -1,0 +1,16 @@
+{{yield (hash
+  navigator=(component "report/report-editor/navigator")
+  manager=(component "report/report-editor/manager"
+    searchTerm=searchTerm
+    currentTypeFilter=currentTypeFilter
+    presentationTypes=presentationTypes
+    draggable=draggable
+    visibleOnly=visibleOnly
+    showSerials=showSerials)
+  header=(component "report/report-editor/header")
+  section=(component "report/report-editor/section")
+  setting=(component "report/report-editor/setting")
+  ) (hash
+  customGroup=customGroup
+  originGroups=originGroups
+  )}}

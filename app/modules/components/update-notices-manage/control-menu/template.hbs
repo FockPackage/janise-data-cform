@@ -1,0 +1,29 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger}}
+    {{ui-icon-button icon="menu"}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content}}
+    <ul class="option">
+      {{#unless isPublished}}
+        <li onclick={{action (pipe toggleModal dropdown.actions.close) 'deleteConfirm' announcementId}}>
+          <a>
+            {{ui-icon icon="trash-solid"}}
+            <span>{{t "control-dropdown.delete"}}</span>
+          </a>
+        </li>
+      {{/unless}}
+      <li>
+        <a>
+          {{ui-icon icon="files-duplicate"}}
+          <span>{{t "control-dropdown.duplicate"}}</span>
+        </a>
+      </li>
+      <li onclick={{pipe (action "goToEditor" announcementId) dropdown.actions.close}}>
+        <a>
+          {{ui-icon icon="ui-pencil"}}
+          <span>{{t "control-dropdown.editor"}}</span>
+        </a>
+      </li>
+    </ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

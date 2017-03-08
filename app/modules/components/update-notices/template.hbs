@@ -1,0 +1,15 @@
+<div class="ui-fieldset" local-class="updates">
+  <div class="field-control l custom">
+    <ul>
+      {{#each announcementList as |announcement|}}
+        {{update-notices/notices-item
+          announcement=announcement
+        }}
+      {{/each}}
+      {{ui/load-more isShow=meta.has_more label=(t "load-more") onClick=loadMore}}
+    </ul>
+  </div>
+  <div class="field-help">
+    <span>{{t "updates.updates-help"}}</span>
+  </div>
+</div>

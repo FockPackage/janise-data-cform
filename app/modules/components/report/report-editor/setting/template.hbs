@@ -1,0 +1,19 @@
+<h2>
+  <span>{{t "chart-editor.chart-editor"}}</span>
+</h2>
+
+<div local-class="popup-container">
+  <div class="tabs tabs-style-sub" local-class="tabs">
+    <nav>
+      <ul>
+        {{#each tabs as |tab|}}
+          <li class={{if (eq currentTabName tab.name) "current"}}>
+            <a onclick={{action "setCurrentTab" tab.name}}>{{tab.text}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </nav>
+  </div>
+</div>
+
+{{component correspondingComponent}}

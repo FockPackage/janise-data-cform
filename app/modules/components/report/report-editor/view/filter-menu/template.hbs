@@ -1,0 +1,40 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger}}
+    {{ui-button selectedFilter.name color="border" icon="ui-filter" expand=true}}
+  {{/dropdown.trigger}}
+
+  {{#dropdown.content}}
+    <ul class="option">
+      <div class="optgroup">{{t "view-filter-dropdown.switch-filter"}}</div>
+
+      <ul class="option-contents">
+        {{#if hasRealFilterSelected}}
+          <li>
+            <a onclick={{action (pipe changeFilter dropdown.actions.close) null}}>
+              {{ui-icon icon="ui-filter"}}
+              <span>{{emptyFilter.name}}</span>
+            </a>
+          </li>
+        {{/if}}
+
+        {{#each (reject-by "selected" true filters) as |filter|}}
+          <li>
+            <a onclick={{action (pipe changeFilter dropdown.actions.close) filter.id}}>
+              {{ui-icon icon="ui-filter"}}
+              <span>{{filter.name}}</span>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+
+      <ul class="option-control">
+        <li>
+          <a>
+            {{ui-icon icon="ui-simple-add"}}
+            <span>{{t "view-filter-dropdown.create-filter"}}</span>
+          </a>
+        </li>
+      </ul>
+    </ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

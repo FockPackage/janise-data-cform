@@ -1,0 +1,235 @@
+{{!-- Form Settings - Quota --}}
+
+<div class="content-wrap" local-class="form-quota">
+  <div class="tabs tabs-style-sub">
+    <nav>
+      <ul>
+        <li class="current">
+          <a>
+            <i class="dot blue"></i>
+            <span>Quota 1</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <span>Quota 2</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <span>Quota 3</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+	<div class="content-row">
+		<div class="row-title">
+			<h2>{{t "form.quota-settings"}}</h2>
+      {{ui-button
+        (t "row-title.save")
+        color="blue"
+        icon="more"
+        disabled=disabled.save
+        onClick=(action 'updateTable')}}
+  <!-- {{ui-button
+        (t "row-title.del-quota")
+        color="red"
+        icon="trash-solid"
+        onClick=(action "toggleModal" 'deleteQuotaSet')}}-->
+		</div>
+	</div>
+
+	<div local-class="quota">
+    {{#unless isFullScreen}}
+      <div class="sidebar" local-class="quota-sidebar">
+        <div class="setting-row">
+          <div class="stting-row-title">
+            <h2>{{t "form.create-quota-row"}}</h2>
+            {{ui-icon-button icon="ui-round-e-help"}}
+          </div>
+          <div class="add-set">
+            <span>{{t "form.add-quota-set"}}</span>
+            {{ui-icon-button icon="ui-small-add" color="dark" onClick=(action 'addQuotaGroup' true)}}
+          </div>
+          {{#if isShow.quotaRow1}}
+            <div class="sidebar-row">
+              <div class="sidebar-row-setup">
+                <span>{{formValue.quotaRow1Name}}</span>
+                {{ui/setup-menu
+                  class="setup"
+                  icon="wrench"
+                  des=(t "setup-dropdown.setup")
+                  button1=(t "setup-dropdown.rename")
+                  button2=(t "setup-dropdown.delete")
+                  onClick1=(action "toggleModal" "renameQuotaSet" "quotaRow1Name")
+                  onClick2=(action "deleteQuotaGroup" "quotaRow1")}}
+              </div>
+
+              <div class="add-set">
+                <span>{{t "form.add-condition"}}</span>
+                {{ui-icon-button icon="ui-small-add" color="dark" onClick=(action 'addQuotaRow' 'quotaRow1List')}}
+              </div>
+
+              {{#each formValue.quotaRow1List as |id index|}}
+                {{form/form-quota/quota-set-dropdown
+                  local-class="set"
+                  currentNodeId=id
+                  nodes=quotaInfo.NodeList.Nodes
+                  onTrashClick=(action "deleteQuotaRow" 'quotaRow1List' index)
+                  selectQuota=(action "selectQuota" 'quotaRow1List' index)}}
+              {{/each}}
+            </div>
+          {{else}}
+            <div class="sidebar-row">
+              <div class="sidebar-row-empty">
+                <p>{{t "form.no-quota-set"}}</p>
+                <div>
+                  <span>{{t "form.no-quota-set-help"}}</span>
+                  <a>{{t "form.learn-more"}}</a>
+                </div>
+              </div>
+            </div>
+          {{/if}}
+
+          {{#if isShow.quotaRow2}}
+            <div class="sidebar-row">
+              <div class="sidebar-row-setup">
+                <span>{{formValue.quotaRow2Name}}</span>
+                {{ui/setup-menu
+                  class="setup"
+                  icon="wrench"
+                  des=(t "setup-dropdown.setup")
+                  button1=(t "setup-dropdown.rename")
+                  button2=(t "setup-dropdown.delete")
+                  onClick1=(action "toggleModal" "renameQuotaSet" "quotaRow2Name")
+                  onClick2=(action "deleteQuotaGroup" "quotaRow2")}}
+              </div>
+
+              <div class="add-set">
+                <span>{{t "form.add-condition"}}</span>
+                {{ui-icon-button icon="ui-small-add" color="dark" onClick=(action 'addQuotaRow' 'quotaRow2List')}}
+              </div>
+
+              {{#each formValue.quotaRow2List as |id index|}}
+                {{form/form-quota/quota-set-dropdown
+                  local-class="set"
+                  currentNodeId=id
+                  nodes=quotaInfo.NodeList.Nodes
+                  onTrashClick=(action "deleteQuotaRow" 'quotaRow2List' index)
+                  selectQuota=(action "selectQuota" 'quotaRow2List' index)}}
+              {{/each}}
+            </div>
+          {{/if}}
+        </div>
+        <div class="setting-row">
+          <div class="stting-row-title">
+            <h2>{{t "form.create-quota-column"}}</h2>
+            {{ui-icon-button icon="ui-round-e-help"}}
+          </div>
+
+          <div class="add-set">
+            <span>{{t "form.add-quota-set"}}</span>
+            {{ui-icon-button icon="ui-small-add" color="dark" onClick=(action 'addQuotaGroup' false)}}
+          </div>
+
+          {{#if isShow.quotaColumn}}
+            <div class="sidebar-row">
+              <div class="sidebar-row-setup">
+                <span>{{formValue.quotaColumnName}}</span>
+                {{ui/setup-menu
+                  class="setup"
+                  icon="wrench"
+                  des=(t "setup-dropdown.setup")
+                  button1=(t "setup-dropdown.rename")
+                  button2=(t "setup-dropdown.delete")
+                  onClick1=(action "toggleModal" "renameQuotaSet" "quotaColumnName")
+                  onClick2=(action "deleteQuotaGroup" "quotaColumn")}}
+              </div>
+
+              <div class="add-set">
+                <span>{{t "form.add-condition"}}</span>
+                {{ui-icon-button icon="ui-small-add" color="dark" onClick=(action 'addQuotaRow' 'quotaColumnList')}}
+              </div>
+
+              {{#each formValue.quotaColumnList as |id index|}}
+                {{form/form-quota/quota-set-dropdown
+                  local-class="set"
+                  currentNodeId=id
+                  nodes=quotaInfo.NodeList.Nodes
+                  onTrashClick=(action "deleteQuotaRow" 'quotaColumnList' index)
+                  selectQuota=(action "selectQuota" 'quotaColumnList' index)}}
+              {{/each}}
+            </div>
+          {{else}}
+            <div class="sidebar-row">
+              <div class="sidebar-row-empty">
+                <p>{{t "form.no-quota-set"}}</p>
+                <div>
+                  <span>{{t "form.no-quota-set-help"}}</span>
+                  <a>{{t "form.learn-more"}}</a>
+                </div>
+              </div>
+            </div>
+          {{/if}}
+        </div>
+
+        {{ui-button
+          (t "form.generate-quota-form")
+          local-class="generate"
+          color="dark"
+          disabled=disabled.generate
+          onClick=(action 'generateTable')
+        }}
+      </div>
+    {{/unless}}
+
+    {{#form/form-quota/quota-table
+      local-class=(if isFullScreen "quota-table full-screen" "quota-table")
+      table=quotaInfo.table.TableJson
+      currentEditId=currentEdit.id
+      currentEditValue=currentEdit.value
+      focusInput=(action "focusInput")
+      updateCount=(action "updateCount")
+      toggleModal=(action "toggleModal")
+      toggleFullScreen=(action "toggleFullScreen")
+    }}
+      <div local-class="results">
+        <span>{{countContent}}</span>
+      </div>
+    {{/form/form-quota/quota-table}}
+	</div>
+</div>
+
+{{#ui/popup-panel
+  isShow=isShow.renameQuotaSet
+  icon="files-folder"
+  title=(t "popup.rename-quota-set")
+  color='blue'
+  text=(t "popup.rename")
+  closeModal=(action "toggleModal" 'renameQuotaSet')
+  clickBackground=(action "clickBackground" 'renameQuotaSet')
+  onClick=(action "renameQuotaSet")
+}}
+  {{#ui-fieldset size="xl" help="" as |f|}}
+    {{f.input
+      name="quota-group-name"
+      label=(t "quota-group-name")
+      value=formValue.newName
+    }}
+  {{/ui-fieldset}}
+{{/ui/popup-panel}}
+
+{{#ui/popup-panel
+  isShow=isShow.deleteQuotaSet
+  size="m"
+  icon="ic dark ic-folder-1"
+  title=(t "popup.delete-quota-set")
+  color='red'
+  text='删除'
+  closeModal=(action "toggleModal" 'deleteQuotaSet')
+  clickBackground=(action "clickBackground" 'deleteQuotaSet')
+  onClick=(action deleteQuota)
+}}
+  <p>确认删除当前配额？</p>
+{{/ui/popup-panel}}

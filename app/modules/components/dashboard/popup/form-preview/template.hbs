@@ -1,0 +1,60 @@
+{{#if isShow}}
+  <div class="static-background" onclick={{clickBackground}}>
+    <div class="popup l" local-class="form-preview">
+      {{ui/popup-panel/header
+        icon="eye"
+        title=(t "popup.form-preview")
+        closeModal=closeModal
+      }}
+      <div local-class="qr-code-container">
+        <div local-class="qr-code">
+          <img src={{qrCode.StrPath}} alt="preview-qr-code">
+        </div>
+        <div local-class="url-column">
+          <p>{{t "popup.help"}}</p>
+          <span>{{t "popup.url"}}</span>
+          {{#ui-fieldset size="xl" as |f|}}
+            {{f.input
+              local-class="url"
+              name="url"
+              value=qrCode.QRlink
+              readOnly=true
+            }}
+          {{/ui-fieldset}}
+          {{ui-button
+            (t "popup.preview")
+            color="blue"
+            icon="eye"
+            style="visible"
+            onClick=(action "openNewWindow" qrCode.QRlink)
+          }}
+          {{#basic-dropdown as |dropdown|}}
+            {{#dropdown.trigger local-class="share-trigger"}}
+              {{ui-button
+                (t "popup.share")
+                color="border"
+                icon="ui-share"
+              }}
+            {{/dropdown.trigger}}
+            {{#dropdown.content local-class="share-option"}}
+              <ul class="option" >
+                <li>
+                  <a href="">
+                    {{ui-icon icon="ui-email"}}
+                    <span>{{t "setup-dropdown.send-by-email"}}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    {{ui-icon icon="social-wechat"}}
+                    <span>{{t "setup-dropdown.share-by-wechat"}}</span>
+                  </a>
+                </li>
+              </ul>
+            {{/dropdown.content}}
+          {{/basic-dropdown}}
+        </div>
+      </div>
+    </div>
+  </div>
+{{/if}}

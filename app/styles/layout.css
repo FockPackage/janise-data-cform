@@ -1,0 +1,12 @@
+@import "var.css";
+
+:global(.ellipsis) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+:global(.noscroll) {
+  overflow: hidden;
+}
+

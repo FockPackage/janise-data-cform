@@ -1,0 +1,22 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger class="block"}}
+    {{ui-button currentQuota.Title color="border" expand=true}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content}}
+    <ul class="option checkmark">
+      <ul class="option-contents">
+        {{#each nodes as |node|}}
+          <li>
+            <a onclick={{action (pipe selectQuota dropdown.actions.close) node.NodeID}}>
+              {{#if (eq node.NodeID currentQuota.NodeID)}}
+                {{ui-icon icon="ui-check" style="checkmark"}}
+              {{/if}}
+              <span>{{node.Title}}</span>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}
+{{ui-icon-button icon="trash-solid" onClick=onTrashClick}}

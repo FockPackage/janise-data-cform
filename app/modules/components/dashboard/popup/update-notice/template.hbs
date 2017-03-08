@@ -1,0 +1,26 @@
+{{#if isShow}}
+  <div class="static-background" onclick={{clickBackground}}>
+    <div class="popup l">
+      {{ui/popup-panel/header
+        icon="megaphone"
+        title=(t "popup.been-gone")
+        closeModal=closeModal
+      }}
+      <div class="popup-container">
+        <p>{{t "popup.missed"}}</p>
+        <ul local-class="notices">
+          {{update-notices/notices-item
+            tagName="li"
+            announcement=announcement
+          }}
+        </ul>
+
+      </div>
+      <div class="popup-footer">
+        {{#link-to 'updates' tagName='button' class="button gray" local-class="view-all-updates"}}
+          {{t "popup.view-all-updates"}}
+        {{/link-to}}
+      </div>
+    </div>
+  </div>
+{{/if}}

@@ -1,0 +1,23 @@
+<div class="content-wrap">
+  <div class="content-row">
+    <div class="row-title">
+      <h2>{{t "account-settings.purchased-templates"}}</h2>
+    </div>
+    <div local-class="templates-wrapper">
+      {{account/account-purchases/template-list
+        tagName=""
+        cover="/assets/images/template-3.jpg"
+        template="Sample Template Name"
+        categories="Categories"
+        cost="$24"}}
+
+      {{account/account-purchases/template-list
+        tagName=""
+        cover="/assets/images/template-2.jpg"
+        template="Sample Template Name"
+        categories="Categories"
+        cost="$56"}}
+    </div>
+    {{ui/load-more isShow=true local-class="load-more" label=(t "load-more")}}
+  </div>
+</div>

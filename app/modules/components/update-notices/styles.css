@@ -1,0 +1,9 @@
+@import "var.css";
+
+.updates {
+  margin-top: 24px;
+
+  & ul {
+    flex-basis: 100%;
+  }
+}

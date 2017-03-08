@@ -1,0 +1,16 @@
+:root {
+  --default-cover: url(/assets/images/default-cover.svg);
+  --default-profile: url(/assets/images/default-profile.png);
+
+  --shadow-bottom: url(/assets/images/shadow-bottom.png);
+  --unlimited-response: url(/assets/images/icon/horse_hobby.svg);
+
+  --expand-more-dark: url(/assets/images/icon/down-dark.svg);
+  --expand-more-light: url(/assets/images/icon/down-light.svg);
+
+  --checkmark-dark: url(/assets/images/icon/checkmark-dark.svg);
+  --checkmark-light: url(/assets/images/icon/checkmark-light.svg);
+
+  --kiro-regular-font-woff: url(/fonts/kiro-regular-webfont.woff);
+  --kiro-regular-font-woff2: url(/fonts/kiro-regular-webfont.woff2);
+}

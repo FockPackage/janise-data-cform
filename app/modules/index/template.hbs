@@ -1,0 +1,130 @@
+{{!-- Dashboard --}}
+
+<div class="content-wrapper">
+  <div local-class="folder-setup">
+    {{#if (not-eq model.currentFolder.FolderID '0')}}
+      {{ui-icon icon="files-folder"}}
+      <span>{{model.currentFolder.FolderName}}</span>
+      {{ui/setup-menu
+        class="setup"
+        icon="wrench"
+        des=(t "setup-dropdown.setup")
+        button1=(t "setup-dropdown.rename")
+        button2=(t "setup-dropdown.remove")
+        onClick1=(action "toggleModal" "renameFolder")
+        onClick2=(action "toggleModal" "deleteFolder")}}
+    {{/if}}
+  </div>
+</div>
+<div class="main-grid">
+  <div class="main-grid-wrapper">
+
+    {{#each model.searchedQuestionnireList as |questionnaire|}}
+    {{else}}
+      {{#if model.searched}}
+        <div local-class="blank">
+          {{dashboard/svg-icon/no-matching}}
+          <h2>{{t "dashboard.no-matching"}} <span>{{model.formValue.searchText}}</span></h2>
+          <span>{{t "dashboard.no-matching-help"}}</span>
+        </div>
+      {{else}}
+        {{#each model.questionnaireList.QuesList as |questionnaire|}}
+          {{dashboard/form-item
+            cover=questionnaire.ImgUrl
+            status-color=questionnaire.QStatusClass
+            status-icon=questionnaire.QStatusIconClass
+            statistics-number=questionnaire.QuesSubmitNum
+            progress=questionnaire.ProgressWidth.width
+            form-name=questionnaire.QTitle
+            form-time=questionnaire.SortDate
+            questionnaireID=questionnaire.QuestionnaireID
+            status=questionnaire.QStatus
+            isPreviewDisable=questionnaire.PreViewFlag
+            folderList=model.folderList
+            onDuplicateClick=(route-action "copyQuestionnaire" questionnaire.QuestionnaireID questionnaire.FolderMark)
+            getQRCode=(action "getQRCode" questionnaire.QuestionnaireID)
+            toggleModal=(action "toggleModal")}}
+        {{else}}
+          <div local-class="blank">
+            {{dashboard/svg-icon/folder-empty}}
+            <h2>{{t "dashboard.folder-empty"}}</h2>
+            <span>{{t "dashboard.folder-empty-help"}}</span>
+          </div>
+        {{/each}}
+      {{/if}}
+    {{/each}}
+    {{#if model.isLoading}}
+      {{dashboard/item-loading}}
+    {{/if}}
+  </div>
+</div>
+
+{{#unless model.isLoading}}
+  {{#if model.searched}}
+
+  {{else}}
+    {{ui/load-more
+      isShow=(not model.questionnaireList.IsEnd)
+      label=(t "load-more")
+      onClick=(route-action "loadMore")
+    }}
+  {{/if}}
+{{/unless}}
+
+{{dashboard/popup/delete-confirmation
+  isShow=isShow.deleteQuestionnaire
+  value=formValue.password
+  disabled=disabled.delete
+  questionnaireName=currentQuestionnaireName
+  closeModal=(action "toggleModal" 'deleteQuestionnaire')
+  deleteQuestionnaire=(action "deleteQuestionnaire")
+  clickBackground=(action "clickBackground" 'deleteQuestionnaire')
+}}
+
+{{dashboard/popup/move-to-folder
+  isShow=isShow.changeFolder
+  folderList=model.folderList
+  destinationFolderId=model.destinationFolderId
+  closeModal=(action "toggleModal" 'changeFolder')
+  setDestinationFolderId=(action "setDestinationFolderId")
+  moveQuestionnaire=(action "moveQuestionnaire")
+  clickBackground=(action "clickBackground" 'changeFolder')
+}}
+
+{{dashboard/popup/form-preview
+  isShow=isShow.formPreview
+  qrCode=model.qrCode
+  closeModal=(action "toggleModal" 'formPreview')
+  clickBackground=(action "clickBackground" 'formPreview')
+}}
+
+{{dashboard/popup/new-folder
+  isShow=isShow.newFolder
+  value=formValue.folderName
+  closeModal=(action "toggleModal" 'newFolder')
+  createFolder=(action "createFolder")
+  clickBackground=(action "clickBackground" 'newFolder')
+}}
+
+{{dashboard/popup/delete-folder
+  isShow=isShow.deleteFolder
+  folderName=model.currentFolder.FolderName
+  closeModal=(action "toggleModal" 'deleteFolder')
+  deleteFolder=(action "deleteFolder")
+  clickBackground=(action "clickBackground" 'deleteFolder')
+}}
+
+{{dashboard/popup/rename-folder
+  isShow=isShow.renameFolder
+  newFolderName=formValue.newFolderName
+  closeModal=(action "toggleModal" 'renameFolder')
+  renameFolder=(action "renameFolder")
+  clickBackground=(action "clickBackground" 'renameFolder')
+}}
+
+{{dashboard/popup/update-notice
+  isShow=isShowUpdateNotice
+  announcement=model.updateNotice
+  closeModal=(action "toggleModal" "updateNotice")
+  clickBackground=(action "clickBackground" 'updateNotice')
+}}

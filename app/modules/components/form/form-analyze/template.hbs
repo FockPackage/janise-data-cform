@@ -1,0 +1,32 @@
+{{!-- Form Settings - Analyze --}}
+
+<div class="content-wrap" local-class="form-analyze">
+	<div class="tabs tabs-style-sub">
+		<nav>
+			<ul>
+        {{#link-to "form.analyze.metrics" tagName="li" activeClass="current"}}
+          {{#link-to "form.analyze.metrics"}}
+						<span>{{t "form.metrics"}}</span>
+          {{/link-to}}
+        {{/link-to}}
+        {{#link-to "form.analyze.summaries" tagName="li" activeClass="current"}}
+          {{#link-to "form.analyze.summaries"}}
+						<span>{{t "form.summaries"}}</span>
+          {{/link-to}}
+        {{/link-to}}
+        {{#link-to "form.analyze.results" tagName="li" activeClass="current"}}
+          {{#link-to "form.analyze.results"}}
+						<span>{{t "form.results"}}</span>
+          {{/link-to}}
+        {{/link-to}}
+        {{#link-to "form.analyze.responses" tagName="li" activeClass="current"}}
+          {{#link-to "form.analyze.responses"}}
+						<span>{{t "form.responses"}}</span>
+          {{/link-to}}
+        {{/link-to}}
+			</ul>
+		</nav>
+	</div>
+
+  {{outlet}}
+</div>

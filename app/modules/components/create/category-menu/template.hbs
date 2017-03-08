@@ -1,0 +1,22 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger local-class="categories-trigger"}}
+    {{ui-button (t "create-dropdown.all-categories") expand=true}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content local-class="categories-content"}}
+    <ul class="option checkmark">
+      <ul class="option-contents">
+        <li>
+          <a>
+            {{ui-icon icon="ui-check" style="checkmark"}}
+            <span>Categories Name</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <span>Categories Name</span>
+          </a>
+        </li>
+      </ul>
+    </ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

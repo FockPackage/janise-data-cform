@@ -1,0 +1,58 @@
+@import "var.css";
+
+.header {
+  padding: 24px;
+  height: 256px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--color-fade-silver);
+}
+
+.cost {
+  font-size: 48px;
+  line-height: normal;
+  margin: 12px 0;
+  vertical-align: baseline;
+  font-family: 'Kiro-Regular';
+  & span {
+    font-size: 18px;
+    color: var(--color-silver);
+  }
+}
+
+.features {
+  & li {
+    position: relative;
+    padding: 8px 60px 8px 12px;
+    border-bottom: 1px solid var(--color-fade-silver);
+    & > a {
+      position: absolute 0 4px auto auto;
+      cursor: help;
+    }
+  }
+}
+
+.plan-button {
+  padding: 12px;
+  text-align: center;
+  & button {
+    width: 100%;
+  }
+}
+
+:global(.downgrade) {
+  &:hover {
+    color: var(--color-tomato) !important;
+    box-shadow: inset var(--color-tomato) 0 0 0 1px !important;
+  }
+}
+
+:global(.your-plan) {
+  pointer-events: none;
+}
+
+:global(.upgrade) {
+
+}

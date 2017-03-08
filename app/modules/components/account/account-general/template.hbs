@@ -1,0 +1,144 @@
+{{!-- Account Settings - General --}}
+
+<div class="content-wrap">
+  <div class="content-row" local-class="profile">
+    {{account/account-general/profile-photo
+      local-class="account-profile"
+      offset=progress
+      avatar=userInfo.Portrait
+      isUploading=isUploading
+      onUploadClick=(action "clickUploadButton")
+      onTrashClick=(action "deleteAvatar")
+      onCancelClick=(action "cancelUpload")
+    }}
+    <div>
+      {{ui-button
+        (t "account-settings.upload")
+        color="blue"
+        icon="arrows-cloud-upload"
+        local-class="upload-button"
+        disabled=isUploading
+        onClick=(action "clickUploadButton")
+      }}
+    <p>{{t "account-settings.upload-help"}}</p>
+    </div>
+    <div id="image-upload" local-class="image-upload"></div>
+  </div>
+  <div class="content-row">
+    <div class="row-title">
+      <h2>{{t "account-settings.account-info"}}</h2>
+      {{ui-button
+        (t "row-title.save")
+        color="blue"
+        icon="more"
+        onClick=(action "updateUserInfo")
+        disabled=disabled.info}}
+    </div>
+
+    {{#ui-fieldset size="l" direction="row" help=(t "account-settings.name-help") as |f|}}
+      {{f.input
+        name="first-name"
+        label=(t "account-settings.first-name")
+        error=(if alert.firstName (t "account-settings.username-alert"))
+        value=formValue.firstName
+      }}
+      {{f.input
+        name="last-name"
+        label=(t "account-settings.last-name")
+        error=(if alert.lastName (t "account-settings.username-alert"))
+        value=formValue.lastName
+      }}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="m" direction="column" help=(t "account-settings.username-help") as |f|}}
+      {{f.input
+        name="username"
+        label=(t "account-settings.username")
+        error=(if alert.userName (t "account-settings.username-alert"))
+        value=formValue.userName
+      }}
+      {{f.input
+        type="email"
+        name="email"
+        label=(t "account-settings.email-address")
+        error=(if alert.email (t "account-settings.email-address-alert") "")
+        value=formValue.email
+      }}
+    {{/ui-fieldset}}
+  </div>
+
+  <div class="content-row">
+    <div class="row-title">
+      <h2>{{t "account-settings.linked-accounts"}}</h2>
+    </div>
+    <div class="content-column ui-fieldset">
+      <ul class="field-control l custom" local-class="linked-accounts">
+        {{#each authList as |auth|}}
+          <li>
+            <div local-class={{concat "accounts " auth.name}}>
+              {{ui-icon icon=(concat "social-" auth.name)}}
+              <strong>{{t (concat "account-settings.accounts." auth.name)}}</strong>
+            </div>
+            {{#if auth.isBind}}
+              <a onClick={{action toggleModal 'unbindAuth' auth}}>
+              {{t (concat "account-settings.link-account")}}
+              </a>
+            {{else}}
+              <a local-class="link" href={{auth.url}}>
+                {{t (concat "account-settings." (if auth.isBind "link-account" "not-linked"))}}
+              </a>
+            {{/if}}
+          </li>
+        {{/each}}
+      </ul>
+      <div class="field-help">
+        <span>{{t "account-settings.linked-accounts-help"}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="row-title">
+      <h2>{{t "account-settings.language"}}</h2>
+      {{ui-button
+        (t "row-title.save")
+        color="blue"
+        icon="more"
+        onClick=(action "changeLanguage")
+        disabled=disabled.multiLanguage}}
+    </div>
+    <div class="content-column ui-fieldset">
+      <div class="field-control l custom" local-class="language-menu">
+        {{account/account-general/language-menu
+          languageList=languageList
+          destinationLanguage=formValue.destinationLanguage
+          onClick=(action "selectDestinationLanguage")}}
+      </div>
+      <div class="field-help">
+        <span>{{t "language-menu.language-help"}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="row-title">
+      <h2>{{t "account-settings.account-details"}}</h2>
+    </div>
+    <ul class="overview">
+      <li>
+        <span>{{t "account-settings.account-created"}}</span>
+        <span>{{userInfo.CreateDate}}</span>
+      </li>
+      <li>
+        <span>{{t "account-settings.total-number"}}</span>
+        <span>{{userInfo.CreateSum}}</span>
+      </li>
+      <li>
+        <span>{{t "account-settings.public-form"}}</span>
+        <span>{{userInfo.PublishSum}}</span>
+      </li>
+      <li>
+        <span>{{t "account-settings.storage-used"}}</span>
+        <span>877.9 mb</span>
+      </li>
+    </ul>
+  </div>
+</div>

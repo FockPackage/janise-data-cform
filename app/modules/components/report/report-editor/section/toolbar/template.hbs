@@ -1,0 +1,13 @@
+<div class="tools">
+  <div local-class="settings">
+    {{ui-switch (t "reporting-tools.sort")}}
+  </div>
+  <div local-class="editor">
+    {{ui-switch (t "reporting-tools.chart-editor") "large" toggle=(readonly api.isOnSetting) onToggle=api.toggleSetting}}
+  </div>
+  <ul local-class="addon">
+    <li>
+      {{ui-icon-button icon="ui-settings-gear" tips=(t "reporting-tools.display-options")}}
+    </li>
+  </ul>
+</div>

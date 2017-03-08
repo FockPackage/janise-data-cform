@@ -1,0 +1,26 @@
+{{#basic-dropdown renderInPlace=true as |dropdown|}}
+  {{#dropdown.trigger local-class="data-source-cover-trigger"}}
+    <a style={{coverStyle}}></a>
+  {{/dropdown.trigger}}
+
+  {{#dropdown.content local-class="data-source-cover-content"}}
+    <ul class="option dark">
+      <div class="optgroup">{{t "data-source-cover-dropdown.data-summary"}}</div>
+      <div local-class="data-summary">
+        <p>{{t "data-source-cover-dropdown.title"}}<span>{{source.name}}</span></p>
+        <p>{{t "data-source-cover-dropdown.created"}}<span>{{format-date source.createdAt format="yyyymmdd"}}</span></p>
+        <p>{{t "data-source-cover-dropdown.modified"}}<span>{{format-date source.updatedAt format="yyyymmdd"}}</span></p>
+        <p>{{t "data-source-cover-dropdown.status"}}<span>Online</span></p>
+        <p>{{t "data-source-cover-dropdown.questions"}}<span>23</span></p>
+        <p local-class="responses">{{t "data-source-cover-dropdown.responses"}}<span>1000</span>/<span>864</span></p>
+        <p>{{t "data-source-cover-dropdown.form-language"}}<span>English</span></p>
+      </div>
+      <li>
+        <a>
+          {{ui-icon icon="trash-solid"}}
+          <span>{{t "data-source-dropdown.delete-data"}}</span>
+        </a>
+      </li>
+    </ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

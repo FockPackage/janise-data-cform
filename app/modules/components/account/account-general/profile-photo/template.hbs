@@ -1,0 +1,15 @@
+<div local-class="loading">
+  <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 124 124">
+    <circle id="circle" local-class="circle-bg" cx="62" cy="62" r="59" />
+    <circle id="circle" local-class="circle-color" cx="62" cy="62" r="59" transform="rotate(-90 62 62)" style={{offsetStyle}} />
+  </svg>
+</div>
+<div local-class="profile" class="profile" style={{avatarStyle}}>
+  {{#if isUploading}}
+    {{ui-icon-button icon="ui-simple-remove" color="light" tips='cacel' onClick=onCancelClick}}
+  {{else if avatarStyle}}
+    {{ui-icon-button icon="trash-solid" color="light" tips='remove' onClick=onTrashClick}}
+  {{else}}
+    {{ui-icon-button icon="arrows-cloud-upload" color="light" tips='upload'  onClick=onUploadClick}}
+  {{/if}}
+</div>

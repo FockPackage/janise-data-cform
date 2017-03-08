@@ -1,0 +1,17 @@
+@import "var.css";
+
+:global(.current-plan-badge) {
+  float: right;
+  padding: 8px 0;
+  color: var(--color-dark-gray);
+
+  & strong {
+    margin-left: 8px;
+  }
+
+  @media (max-width: 991px) {
+    float: none;
+    display: block;
+    margin: 12px 0 0 0;
+  }
+}

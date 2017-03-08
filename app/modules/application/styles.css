@@ -1,0 +1,14 @@
+.setting {
+  @media (max-width: 767px) {
+    position: absolute 0 0 auto 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 728px;
+    padding: 0 24px;
+  }
+  @media (max-width: 479px) {
+    max-width: none;
+    padding: 0 12px;
+  }
+}

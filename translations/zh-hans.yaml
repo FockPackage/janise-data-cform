@@ -1,0 +1,521 @@
+# Login
+login:
+  email: "电子邮件"
+  password: "密码"
+  signup-password: "密码 (最少6位)"
+  login: "登录"
+  signup: "注册"
+  create-account: "创建账户"
+  remember-me: "记住我"
+  forgot-password: "忘记密码？"
+  no-account: "还没有账户？"
+  already-account: "已注册账户？"
+  # Authorization
+  or: "或者使用"
+
+# Header Nav
+header-nav:
+  dashboard: "问卷中心"
+  reports: "报表"
+  help: "帮助与支持"
+  plans: "方案计划"
+
+# Page header
+page-header:
+  # Title
+  dashboard: "问卷中心"
+  account: "用户中心"
+  reporting-tools: "报表工具"
+  # Button
+  create: "创建问卷"
+  cancel: "取消"
+  editor: "编辑问卷"
+  reports: "报表中心"
+  create-report: "创建报表"
+  # Tips
+  back-to-dashboard: "返回问卷中心"
+  back-to-reports: "返回报表中心"
+  add-data-source: "导入数据源"
+
+# Separator Bar
+separator-bar:
+  switch-folder: "切换文件夹："
+
+row-title:
+  save: "Save Changes"
+  update-password: "Update Password"
+  close-collector: "Close Collector"
+  published-collector: "Published Collector"
+  del-quota: "Delete Quota"
+
+load-more: "Load More..."
+load-more-templates: "Load More Templates"
+
+# Form Item
+form-item:
+  # Operations Tips
+  delete: "删除问卷"
+  duplicate: "复制问卷"
+  folder: "移动问卷"
+  publish: "发布问卷"
+  preview: "预览问卷"
+  open-in-editor: "设计问卷"
+  # Results
+  settings: "问卷设置"
+  analysis: "分析结果"
+  statistics: "回复数量："
+  # Form Footer
+  creation-date: "创建时间："
+
+# Create Form
+create:
+  create-new-form: "创建新问卷"
+  form-name: "问卷名称："
+  name-help: "Form name must be between 3 and 50 characters long containing only letters and numbe"
+  choose-template: "选择范本"
+
+# Template Item
+template-item:
+  selected: "已选择"
+  select-template: "Select Template"
+  preview: "预览"
+  blank: "空白"
+
+
+# Account Settings
+account-settings:
+  # Tabs
+  profile: "账户设置"
+  plans: "方案计划"
+  billing: "账单明细"
+  email-settings: "邮件设置"
+  password: "密码设置"
+# Profile -------
+  # Upload
+  upload: "上传照片"
+  upload-help: "You can upload images up to 256x256. Your avatar shows up in your public profile and your team notifications."
+  # Account Info
+  account-info: "账户信息"
+  first-name: "姓："
+  last-name: "名："
+  username: "用户名："
+  username-alert: "用户名必须在3 - 20个字符之间长只包含字母和数字, 不支持空格。"
+  email-address: "电子邮箱："
+  email-address-alert: "不正确的电子邮箱地址。"
+  name-help: "Displayed on your public profile, notifications and other places."
+  username-help: "Username must be between 3 and 20 characters long containing only letters and numbers with no spaces. Used in public pages like your public profile."
+  # Linked Accounts
+  linked-accounts: "应用授权"
+  link-account: "授权"
+  not-linked: "未授权"
+  linked-accounts-help: "可以通过绑定你的QQ、微信或新浪微博账户登录到 choice form。"
+  # Account Details
+  account-details: "使用详情"
+  account-created: "账户创建时间"
+  total-number: "创建问卷数量"
+  public-form: "发布问卷数量"
+  storage-used: "资源使用数量"
+# Billing -------
+  # Billing Info
+  billing-info: "账单明细"
+  account-history: "支出明细"
+  payment-history: "付款历史"
+  number: "订单号"
+  date: "时间"
+  event: "内容"
+  total: "支付金额"
+  state: "支付状态"
+  invoice: "发票"
+  # Invoicing Info
+  invoicing-info: "发票信息"
+  company-name: "公司名字："
+  invoice-content: "发票内容："
+  software-service: "软件服务费"
+  technical-services: "技术服务费"
+  consultancy: "咨询费"
+  taxpayer-number: "纳税人识别号："
+  registered-address: "注册地址："
+  register-phone: "注册电话："
+  bank-name: "开户银行："
+  bank-account: "开户银行账号："
+  addressee: "收件人："
+  address: "收件地址："
+  contact-phone: "联系电话："
+  invoicing-help: "发票上要显示更多关于公司的信息; 例如地址，订单号码等。"
+# Email Settings -------
+  #Notifications
+  notifications: "邮件订阅"
+  feature: "功能公告"
+  news: "新手学习"
+  account-messages: "重要的帐户信息"
+  news-help: "在你注册后的第一个星期"
+  account-help: "大约一年一次"
+# Password -------
+  # Change Password
+  change-password: "密码设置"
+  current-password: "当前密码："
+  new-password: "新密码："
+  password-help: "新密码必须至少6个字符长。小贴士:让它真的很难猜(不是password123)。"
+
+# Form Settings
+form:
+  # Tabs
+  quota: "Quota"
+  collect-responses: "Collect"
+  share: "Share"
+  analyze: "Analyze Results"
+# Quota -------
+  quota-settings: "Quota Settings"
+  create-quota-row: "Create Quota Row"
+  create-quota-column: "Create Quota Column"
+  add-quota-set: "Add Quota Set"
+  no-quota-set: "No Quota Set"
+  no-quota-set-help: "Click + to add quota set"
+  learn-more: "Learn more »"
+  quota-group: "Quota Group 1"
+  add-condition: "Add Condition"
+  generate-quota-form: "Generate Quota Form"
+# Collect -------
+  # Collect Settings
+  collect-settings: "Collect Settings"
+  collector-tab: "Collector 1"
+  response-limits: "Maximum Response Count:"
+  response-limits-help: "Set the release quantity. Or in the drop-down list, select use quotas set as a release number.Free users every questionnaire at number: 500"
+  unlimited-response: "Unlimited Response"
+  publish: "Publish"
+  plans: "Cutoff Date and Time:"
+  unlimited-time: "Unlimited time"
+  link-parameters: "link Parameters"
+  link-parameters-help: "Set up the link parameters, the parameter value will result in the data.To specify different parameter values can be collect membership information such as a specific user information,For example: http://q.cform.io/?6 nveye & key = Tom"
+  social-settings: "Social Settings"
+  collect-wechat-user: "Collect WeChat user basic information"
+  binding-wechat: "Binding WeChat service number:"
+  # Social Settings
+  wechat: "WeChat"
+  username: "Username:"
+  wechat-number: "WeChat Number:"
+  app-id: "APP ID:"
+  app-secret: "APP Secret:"
+  verify-save: "Verify & Save"
+  configuration-oauth: "Configuration OAuth"
+  verify: "Verify"
+# Share -------
+  # Share Settings
+  share-settings: "Share Settings"
+  # Tabs
+  url: "URL"
+  popup: "Popup"
+  embed: "Embed code"
+  # URL
+  url-title: "Share your choice form"
+  web-link: "Your choiceform lives in this URL:"
+  rq-code: "RQ Code:"
+  share-social: "Share on social media or send by email:"
+  upload-logo: "Upload Logo"
+  download-qrcode: "Download QR Code"
+  # Popup
+  popup-title: "Launch in a popup"
+  popup-sarved: "How would you like your pop-up served?"
+  classic: "Classic"
+  drawer: "Drawer"
+  button: "Button"
+  link: "Link"
+  button-text: "Button or Link text:"
+  code: "Copy and paste this piece of code and place in your website"
+  help: "Simply paste this code into your HTML document where you want the launcher to appear, that’s it! "
+  code-for: "What’s this code for?"
+  info: "Use this code to generate a popup window on your blog/website where your typeform will load. You can choose to launch the popup overlay from either a button or a link."
+  example: "here is an example:"
+  # Embed
+  embed-title: "Embed in a web page"
+  view-example: "View Example"
+  embed-code: "Embed code"
+  embed-code-help: "Place this code in your page's HTML where you want your typeform to appear."
+  full-page-code: "Full page code"
+  full-code-help: "Use this code to create an HTML page on your site with a fullscreen typeform."
+# Analyze -------
+  # Tabs
+  metrics: "Metrics"
+  summaries: "Summaries"
+  results: "Results"
+  responses: "Responses"
+
+# Reports
+reports:
+  view-report: "View Report"
+
+# Reporting Tools
+reporting-tools:
+# Report -------
+  # Tabs
+  report: "报表"
+  # Header View
+  default-view: "默认视图"
+  full-charts: "(全部图表)"
+  favorites: "收藏视图"
+  full-screen: "放大视图"
+  revert: "复原数据"
+  duplicate: "复制视图"
+  share: "分析视图"
+  download: "下载视图"
+  view-settings: "视图设置"
+  # Sidebar
+  search: "搜索"
+  data: "数据"
+  minimize: "收起"
+  maximize: "展开"
+  sort: "排序："
+  drag: "排序："
+  visibility: "仅显示可见："
+  serial: "序号："
+  custom-data: "自定义数据"
+  create-custom-data: "创建自定义数据"
+  collapse: "ollapse"
+  # Chart Tools
+  create-chart: "创建图表"
+  display-options: "显示选项"
+  chart-editor: "编辑图表："
+
+# Chart Editor
+chart-editor:
+  chart-editor: "编辑图表"
+  # Tabs
+  chart: "图表"
+  axis: "Axis"
+  series: "Series"
+  style: "Style"
+  # Chart
+  chart-options: "图表选项："
+  chart-type: "图表类型："
+  title: "标题："
+  legend: "Legend:"
+  chart-font: "图表字体："
+  gaps: "Gaps:"
+  between-columns: "Between Columns:"
+  between-sets: "Between Sets:"
+  # Axis
+  axis-options: "Axis Options:"
+  value-y: "Value Y"
+  category-x: "Category X"
+  axis-name: "Axis Name"
+  axis-line: "Axis Line"
+  series-number: "Series Number"
+  axis-scale: "Axis Scale:"
+  major: "Major:"
+  value-labels: "Value Labels:"
+  decimals: "Decimals:"
+  thousands-separator: "Thousands Separator"
+  prefix: "Prefix:"
+  suffix: "Suffix:"
+  show-minimum-value: "Show Minimum Value"
+  label-angle: "Label Angle:"
+  category-labels: "Category Labels:"
+  location: "Location:"
+  trendlines: "Trendlines:"
+  error-bars: "Error Bars:"
+  # Style
+  fill: "Fill:"
+  stroke: "Stroke:"
+
+# Account Settings Dropdown
+account-settings-dropdown:
+  account: "账户中心"
+  settings: "账户设置"
+  plans: "方案计划"
+  teams: "组织设置"
+  updates: "更新通知"
+  help: "帮助中心"
+  sign-out: "退出账户"
+
+# Switch Account Dropdown
+switch-acount-dropdown:
+  switch-acount: "切换账户："
+  team-settings: "组织设置"
+  create-tema: "创建组织"
+
+# Filters Dropdown
+sortord-menu:
+  created-date: "问卷创建时间"
+  updated-date: "问卷修改时间"
+  questionnaire-status: "问卷状态"
+
+# Folder Dropdown
+folder-dropdown:
+  new-folder: "新建文件夹"
+  folder: "文件夹"
+
+# Create Dropdown
+create-dropdown:
+  all-categories: "All Categories"
+  all: "All"
+  free: "Free"
+  premium: "Premium"
+  sort: "Sort by:"
+  featured: "Featured"
+  created-date: "Created Date"
+  popularity: "Popularity"
+
+# View Dropdown
+view-dropdown:
+  switch-view: "切换视图"
+  create-view: "创建视图"
+  default-view: "默认视图"
+  full-charts: "(全部图表)"
+  custom-view-1: "自定义视图 1"
+  current-view-settings: "当前视图设置"
+
+# View Filter Dropdown
+view-filter-dropdown:
+  switch-filter: "切换筛选条件："
+  none-filter: "无筛选条件"
+  default-filter: "默认筛选条件"
+  create-filter: "创建筛选条件"
+  filter-settings: "筛选条件设置"
+
+# Filter Dropdown
+filter-dropdown:
+  filter-for: "过滤器："
+  kind: "类型"
+  single-choice: "单选题"
+
+# Data Source Dropdown
+data-source-dropdown:
+  rename: "重命名"
+  visibility-all: "全部可见"
+  delete-data: "删除数据"
+
+# Data Source Cover Dropdown
+data-source-cover-dropdown:
+  data-summary: "数据描述："
+  title: "标题："
+  created: "创建时间："
+  modified: "修改时间："
+  status: "状态："
+  questions: "题目数："
+  responses: "回复数："
+  form-language: "问卷语言："
+
+# Chart Type Dropdown
+chart-type-dropdown:
+  column: "柱状图"
+  bar: "Bar"
+  line: "曲线图"
+  area: "面积图"
+  pie: "饼图"
+  scatter: "Scatter"
+  bubble: "Bubble"
+  mixed: "Mixed"
+
+# Axis Scale Dropdown
+axis-scale-dropdown:
+  linear: "Linear"
+  logarithmic: "Logarithmic"
+
+# Value Labels Dropdown
+value-labels-dropdown:
+  none: "None"
+  number: "Number"
+  currency: "Currency"
+  percentage: "Percentage"
+  fraction: "Fraction"
+
+# Label Angle Dropdown
+label-angle-dropdown:
+  label-angle: "Label Angle:"
+  horizontal: "Horizontal"
+  left-vertical: "Left Vertical"
+  left-diagonal: "Left Diagonal"
+  right-vertical: "Right Vertical"
+  right-diagonal: "Right Diagonal"
+
+# Category Labels Dropdown
+category-labels-dropdown:
+  none: "None"
+  auto-fit: "Auot Fit"
+  show-all: "Show All"
+
+# Location Dropdown
+location-dropdown:
+  top: "Top"
+  middle: "Middle"
+  bottom: "Bottom"
+
+# Fill Dropdown
+fill-dropdown:
+  no-fill: "No Fill"
+  color-fill: "Color Fill"
+  gradient-fill: "Gradient Fill"
+
+# View Filter Data Source Dropdown
+view-filter-data-source-dropdown:
+  switch-data-source: "Switch Data Source:"
+
+# Chart Addon Dropdown
+chart-addon-dropdown:
+  option: "Option"
+  settings: "Settings"
+
+# Setup Dropdown
+setup-dropdown:
+  setup: "Setup:"
+  share: "Share:"
+  rename: "Rename"
+  delete: "Delete"
+  remove: "Remove"
+  copy: "Copy"
+  open-in-browser: "Open in Browser"
+  send-by-email: "Send by Email"
+  share-by-wechat: "Share by WeChat"
+
+# Popup
+popup:
+  # Popup Button
+  cancel: "取消"
+  delete-forever: "彻底删除"
+  delete-filter: "删除筛选条件"
+  open-in-browser: "在浏览器中打开"
+  copy-url: "拷贝链接地址"
+  preview: "预览"
+  create: "创建"
+  move: "移动"
+  save: "保存"
+  remove: "移除"
+  rename: "重命名"
+  # Delete Confirmation
+  delete-confirmation: "删除确认"
+  confirm: "Confirm by typing"
+  password: "password"
+  below: "below."
+  confirmation1: "The form"
+  confirmation2: "and its questions, reporting-tools-report, and images will be deleted permanently. existing submissions will be deleted and all future submissions will not be captured, even if this form was exported."
+  # New Folder
+  new-folder: "新建文件夹"
+  rename-folder: "重命名文件夹"
+  folder-name: "文件夹名字："
+  # Move to Folder
+  move-to-folder: "移动至文件夹"
+  select-folder: "选择文件夹："
+  # Remove Folder
+  remove-folder: "移除文件夹"
+  remove-folder-help: "文件夹一经删除将无法恢复。删除文件夹后，其中的问卷仍会保留在你的问卷中心。"
+  current-folder: "当前文件夹:"
+  # Form Preview:
+  form-preview: "预览问卷"
+  url: "Your form preview in this URL:"
+  help: "To preview your form, click the Preview button in the Preview module. From there, you can then click through the test yourself, or copy and paste the URL to send to your testers."
+  # User Authentication
+  user-authentication: "User Authentication"
+  session-timeout: "The default session timeout"
+  # Display Options
+  display-options: "Display Options"
+  # View Filter
+  view-filter: "View Filter"
+  save-filter: "Save Filter"
+  values: "Values:"
+  to: "to"
+  include: "Include"
+  exclude: "Exclude"
+  question: "Question:"
+  options: "Options:"
+  options-addon: "Options Addon:"
+  scope: "Scope:"

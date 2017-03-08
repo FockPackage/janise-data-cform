@@ -1,0 +1,15 @@
+{{report/report-editor/view/view-menu
+  views
+  selectedView
+  changeView=(action "changeSelectedView")}}
+
+{{report/report-editor/view/filter-menu
+  filters
+  emptyFilter=emptyFilter
+  selectedFilter=selectedFilter
+  hasRealFilterSelected=hasRealFilterSelected
+  changeFilter=(action "changeSelectedFilter")}}
+
+{{ui-icon-button
+  icon="ui-settings-gear"
+  tips=(t "view-filter-dropdown.filter-settings")}}

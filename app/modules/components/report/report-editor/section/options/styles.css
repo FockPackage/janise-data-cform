@@ -1,0 +1,42 @@
+@import "var.css";
+
+.chart-addon-trigger {
+  cursor: pointer;
+  font-size: 10px;
+  color: var(--color-dark-gray);
+
+  & :global(.expand-more) {
+    max-width: 96px;
+    color: var(--color-dark-gray);
+    padding: 8px 18px 8px 4px;
+
+    & i {
+      top: 13px;
+    }
+  }
+}
+
+.chart-addon-content {
+  font-size: 13px;
+  position: absolute;
+  width: 120px;
+  margin-left: -60px;
+
+  & ul {
+    &:after {
+      border: solid transparent;
+      content: " ";
+      position: absolute auto 23px 100% auto;
+      border-bottom-color: var(--color-white);
+      border-width: 9px;
+    }
+
+    &:before {
+      border: solid transparent;
+      content: " ";
+      position: absolute auto 22px 100% auto;
+      border-bottom-color: var(--color-silver);
+      border-width: 10px;
+    }
+  }
+}

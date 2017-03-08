@@ -1,0 +1,36 @@
+{{!-- Account Settings - Integrations --}}
+
+<div class="content-wrap">
+  <div class="content-row">
+    <div class="row-title">
+      <h2>{{t "account-settings.integrations"}}</h2>
+      {{ui-button
+        (t "row-title.save")
+        disabled=disabled.save
+        color="blue"
+        icon="more"
+        onClick=(action updateCallbackList formValue)
+      }}
+    </div>
+    {{#ui-fieldset direction="column" size="l" help="This is something can helps you out." as |f|}}
+      {{f.input
+        name="complete"
+        label=(t "account-settings.integrations-complete")
+        value=formValue.collectComplete
+        error=(if error.collectComplete "网址格式错误")
+      }}
+      {{f.input
+        name="screen-out"
+        label=(t "account-settings.integrations-screen-out")
+        value=formValue.screenOut
+        error=(if error.screenOut "网址格式错误")
+      }}
+      {{f.input
+        name="quota-full"
+        label=(t "account-settings.integrations-quota-full")
+        value=formValue.quotaFull
+        error=(if error.quotaFull "网址格式错误")
+      }}
+    {{/ui-fieldset}}
+  </div>
+</div>

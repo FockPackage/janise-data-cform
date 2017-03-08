@@ -1,0 +1,139 @@
+<h2>{{t "chart-editor.value-y"}}</h2>
+
+<div class="editor-row" local-class="axis-options">
+  <p>
+    {{t "chart-editor.axis-options"}}
+  </p>
+  {{ui-checkbox
+    class="content-column app-checkbox"
+    checkbox="checkbox"
+    size=""
+    name="axis-name"
+    label=(t "chart-editor.axis-name")
+    help=""
+  }}
+  {{ui-checkbox
+    class="content-column app-checkbox"
+    checkbox="checkbox"
+    size=""
+    name="axis-line"
+    label=(t "chart-editor.axis-line")
+    help=""
+  }}
+</div>
+
+<div class="editor-row" local-class="axis-scale">
+  <p>{{t "chart-editor.axis-scale"}}</p>
+  <p>{{t "chart-editor.major"}}</p>
+  <div local-class="axis-scale-dropdown">
+    {{#basic-dropdown as |dropdown|}}
+      {{#dropdown.trigger local-class="axis-scale-trigger" }}
+        {{ui-button (t "axis-scale-dropdown.linear") color="border" expand=true}}
+      {{/dropdown.trigger}}
+      {{#dropdown.content local-class="axis-scale-content" }}
+        <ul class="option checkmark">
+          <ul class="option-contents">
+            <li>
+              <a>
+                {{ui-icon icon="ui-check" style="checkmark"}}
+                <span>{{t "axis-scale-dropdown.linear"}}</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <span>{{t "axis-scale-dropdown.logarithmic"}}</span>
+              </a>
+            </li>
+          </ul>
+        </ul>
+      {{/dropdown.content}}
+    {{/basic-dropdown}}
+  </div>
+  {{!--{{ui-input-number local-class="major" value="0" min="0" max="100" unit="" label=(t "chart-editor.decimals") alert=""}}--}}
+</div>
+
+<div class="editor-row" local-class="value-labels">
+  <p>{{t "chart-editor.value-labels"}}</p>
+  <p>{{t "chart-editor.decimals"}}</p>
+  <div local-class="value-labels-dropdown">
+    {{#basic-dropdown as |dropdown|}}
+      {{#dropdown.trigger local-class="value-labels-trigger" }}
+        {{ui-button (t "value-labels-dropdown.none") color="border" expand=true}}
+      {{/dropdown.trigger}}
+      {{#dropdown.content local-class="value-labels-content" }}
+        <ul class="option checkmark">
+          <ul class="option-contents">
+            <li>
+              <a>
+                {{ui-icon icon="ui-check" style="checkmark"}}
+                <span>{{t "value-labels-dropdown.none"}}</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <span>{{t "value-labels-dropdown.number"}}</span>
+              </a>
+            </li>
+            <li>
+              <span>{{t "value-labels-dropdown.currency"}}</span>
+            </li>
+            <li>
+              <a>
+                <span>{{t "value-labels-dropdown.percentage"}}</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <span>{{t "value-labels-dropdown.fraction"}}</span>
+              </a>
+            </li>
+          </ul>
+        </ul>
+      {{/dropdown.content}}
+    {{/basic-dropdown}}
+  </div>
+  {{!--{{ui-input-number local-class="decimals" value="2" min="0" max="100" unit="" label=(t "chart-editor.decimals") alert=""}}--}}
+  {{ui-checkbox
+    local-class="thousands-separator"
+    class="content-column app-checkbox"
+    checkbox="checkbox"
+    size=""
+    name="thousands-separator"
+    label=(t "chart-editor.thousands-separator")
+    help=""
+  }}
+</div>
+
+<div class="editor-row" local-class="prefix">
+  {{ui-input
+        type="text"
+        class="content-column app-input"
+        double="double"
+        name-l="prefix"
+        name-r="suffix"
+        placeholder-l=""
+        placeholder-r=""
+        label-l=(t "chart-editor.prefix")
+        label-r=(t "chart-editor.suffix")
+        alert-l=""
+        alert-r=""
+        help=""
+      }}
+</div>
+
+<div class="editor-row" local-class="show-minimum-value">
+  {{ui-checkbox
+    class="content-column app-checkbox"
+    checkbox="checkbox"
+    size=""
+    name="show-minimum-value"
+    label=(t "chart-editor.show-minimum-value")
+    help=""
+  }}
+</div>
+
+<div class="editor-row" local-class="label-angle">
+  <p>{{t "chart-editor.label-angle"}}</p>
+  {{reporting-tools/reports-sidebar/chart-editor/label-angle-dropdown
+  }}
+</div>

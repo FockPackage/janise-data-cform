@@ -1,0 +1,48 @@
+@import 'var.css';
+
+.notices-list {
+  & > ul {
+    margin-top: 12px;
+    & > li {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.list-control {
+  display: flex;
+  & > div {
+    &:nth-of-type(2) {
+      margin-left: auto;
+    }
+  }
+}
+
+.minmize {
+  transform: rotate(-90deg);
+}
+
+.control {
+  position: absolute 0 0 auto 0;
+  clear: fix;
+  &:before {
+    position: absolute auto 12px 0 12px;
+    height: 1px;
+    content: '';
+    background-color: var(--color-fade-silver);
+  }
+  & > a {
+    &:nth-of-type(1) {
+      float: left;
+    }
+  }
+}
+
+.control-menu {
+  float: right;
+}
+
+.pubilsh-control {
+  float: right;
+  margin-right: 12px;
+}

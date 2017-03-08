@@ -1,0 +1,12 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger}}
+    {{ui-icon-button icon=icon}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content}}
+    <ul local-class="floating">
+      <li>{{des}}</li>
+      <li onclick={{pipe onClick1 dropdown.actions.close}}>{{button1}}</li>
+      <li onclick={{pipe onClick2 dropdown.actions.close}}>{{button2}}</li>
+    </ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

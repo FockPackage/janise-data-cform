@@ -1,0 +1,13 @@
+<div class="tabs tabs-style">
+  <nav>
+    <ul>
+      {{#each tabList as |tab|}}
+        <li class={{if tab.isCurrentRoute 'current'}} onclick={{action selectTab tab.routeName}}>
+            {{#link-to tab.routeName currentFormId}}
+              <span>{{t tab.text}}</span>
+            {{/link-to}}
+        </li>
+      {{/each}}
+    </ul>
+  </nav>
+</div>

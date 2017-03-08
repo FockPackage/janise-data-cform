@@ -1,0 +1,33 @@
+{{ui-icon icon="eye" style="visible"}}
+
+<span>{{t "reporting-tools.default-view"}}</span>
+
+<span local-class="default-placeholder">{{t "reporting-tools.full-charts"}}</span>
+
+<div>
+  <ul>
+    <li>
+      {{ui-icon-button icon="ui-settings-gear" tips=(t "reporting-tools.view-settings")}}
+    </li>
+    <li>
+      {{ui-icon-button icon="ui-star-empty" tips=(t "reporting-tools.favorites")}}
+    </li>
+    <li>
+      {{ui-icon-button icon="history" tips=(t "reporting-tools.revert")}}
+    </li>
+    <li>
+      {{ui-icon-button icon="files-duplicate" tips=(t "reporting-tools.duplicate")}}
+    </li>
+    <li>
+      {{ui-icon-button icon="arrows-system-update" tips=(t "reporting-tools.download")}}
+    </li>
+    <li>
+      {{ui-icon-button icon="ui-share" tips=(t "reporting-tools.share")}}
+    </li>
+  </ul>
+
+  <span>
+    <a class="icon-button" tips={{t "reporting-tools.full-screen"}}
+       onclick={{api.toggleMaximize}}>{{maximizeIcon}}</a>
+  </span>
+</div>

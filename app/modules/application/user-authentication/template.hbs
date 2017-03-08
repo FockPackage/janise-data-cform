@@ -1,0 +1,49 @@
+{{#if loginModal.isShow}}
+  <div class="static-background">
+    <div class="popup s" local-class="user-authentication">
+      {{ui/popup-panel/header
+        icon="users-single"
+        title=(t "popup.user-authentication")
+      }}
+      <div local-class="login-container">
+        <p class="field-error">{{t "popup.session-timeout"}}</p>
+        {{#ui-fieldset direction="column" size="xl" help="" as |f|}}
+          {{f.input
+            type="email"
+            name="email"
+            placeholder=(t "login.email")
+            value=formValue.email
+          }}
+          {{f.input
+            type="password"
+            name="password"
+            placeholder=(t "login.password")
+            value=formValue.password
+            onEnter=(action "login")
+          }}
+        {{/ui-fieldset}}
+        {{#ui-fieldset direction="row" size="xl" help="" as |f|}}
+          {{f.checkbox
+            checkbox="checkbox"
+            name="remember-me"
+            label=(t "login.remember-me")
+            checked=formValue.checked
+          }}
+          <a class="forgot-password">
+            <span>{{t "login.forgot-password"}}</span>
+          </a>
+        {{/ui-fieldset}}
+        {{ui-button
+          (t "login.login")
+          color="purple"
+          class="login-button"
+          onClick=(action 'login')
+        }}
+        <div class="hr-label">
+          <span>{{t "login.or"}}</span>
+        </div>
+        {{ui/social-authorization}}
+      </div>
+    </div>
+  </div>
+{{/if}}

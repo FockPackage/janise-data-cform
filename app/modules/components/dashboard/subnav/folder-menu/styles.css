@@ -1,0 +1,26 @@
+@import "var.css";
+
+.folder-trigger {
+  & button {
+    max-width: 360px;
+    padding: 0 12px 0 0;
+  }
+  & h1 {
+    color: var(--color-slate);
+    display: inline-block;
+    vertical-align: bottom;
+    transition: color 200ms;
+    &:hover {
+      color: var(--color-dark-slate);
+    }
+  }
+  & :global(.expand) {
+    height: 30px;
+  }
+}
+
+.folder-content {
+  & ul {
+
+  }
+}

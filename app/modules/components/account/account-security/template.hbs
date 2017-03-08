@@ -1,0 +1,29 @@
+{{!-- Account Settings - Security --}}
+
+<div class="content-wrap">
+	<div class="content-row">
+		<div class="row-title">
+			<h2>{{t "account-settings.change-password"}}</h2>
+      {{ui-button (t "row-title.update-password") color="blue" icon="more" disabled=disabled onClick=(action "updatePassword")}}
+		</div>
+
+    {{#ui-fieldset direction="column" size="l" help=(t "account-settings.password-help") as |f|}}
+      {{f.input
+        subject=""
+        type="password"
+        name="current-password"
+        label=(t "account-settings.current-password")
+        value=formValue.currentPassword
+        error=(if alert.currentPassword '旧密码位数不够')
+      }}
+      {{f.input
+        subject=""
+        type="password"
+        name="new-password"
+        label=(t "account-settings.new-password")
+        value=formValue.newPassword
+        error=(if alert.newPassword 'New passwords must be at least 6 characters long')
+      }}
+    {{/ui-fieldset}}
+	</div>
+</div>

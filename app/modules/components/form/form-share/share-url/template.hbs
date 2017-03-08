@@ -1,0 +1,50 @@
+{{!-- Form Settings - Share - URL --}}
+
+<div class="content-row" local-class="share-settings">
+	<div class="publish-info">
+		<h2>{{t "form.rq-code"}}</h2>
+    {{ui-button (t "form.download-qrcode") color="purple" icon="arrows-system-update"}}
+		<p local-class="rq-code-info">{{t "form.info"}}</p>
+		<div local-class="rq-code">
+			<img src="/assets/images/qr-code.png" alt="qr-code">
+		</div>
+	</div>
+
+  <div class="share-column">
+		<div class="row-title">
+			<h2>{{t "form.url-title"}}</h2>
+		</div>
+		<form action="">
+			<fieldset>
+        {{ui-input
+          type="text"
+          class="content-column app-input"
+          size="large"
+          name="web-link"
+          placeholder=""
+          label=(t "form.web-link")
+          alert=""
+          help=""
+        }}
+			</fieldset>
+		</form>
+		<div local-class="share-social">
+			<span>{{t "form.share-social"}}</span>
+			<ul>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+			</ul>
+		</div>
+		<div local-class="rq-code-settings">
+			<span>{{t "form.rq-code"}}</span>
+			<img src="/assets/images/qr-code.png" alt="qr-code">
+			<div local-class="qr-logo"></div>
+      <div local-class="upload">
+        {{ui-button (t "form.upload-logo") color="blue" icon="arrows-cloud-upload"}}
+				<p>{{t "form.info"}}</p>
+      </div>
+		</div>
+  </div>
+</div>

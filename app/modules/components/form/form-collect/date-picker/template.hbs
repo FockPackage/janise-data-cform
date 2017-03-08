@@ -1,0 +1,14 @@
+<div class="field-control column ui-input {{size}}">
+  {{#if label}}
+    <span>{{label}}</span>
+  {{/if}}
+  <input type="text" id={{bindID}} name={{name}} value={{value}} onclick={{action "init" bindID}} disabled={{disabled}}>
+  {{#if alert}}
+    <div class="alert">{{alert}}</div>
+  {{/if}}
+</div>
+{{#if help}}
+  <div class="field-help">
+    <span>{{help}}</span>
+  </div>
+{{/if}}

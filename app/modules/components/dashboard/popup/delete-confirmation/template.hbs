@@ -1,0 +1,35 @@
+{{#if isShow}}
+  <div class="static-background" onclick={{clickBackground}}>
+    <div class="popup m" local-class="delete-confirmation">
+      {{ui/popup-panel/header
+        icon="trash"
+        title=(t "popup.delete-confirmation")
+        closeModal=closeModal
+      }}
+      <div class="popup-container">
+        <p>
+          {{t "popup.confirmation1"}}
+          <span>({{questionnaireName}})</span>
+          {{t "popup.confirmation2"}}
+        </p>
+        <h2>
+          {{t "popup.delete-confirm"}}
+          <span>{{t "popup.password"}}</span>
+          {{t "popup.below"}}
+        </h2>
+        {{#ui-fieldset size="xl" help="" as |f|}}
+          {{f.input
+            type="password"
+            name="password"
+            placeholder=(t "popup.password")
+            value=value
+          }}
+        {{/ui-fieldset}}
+      </div>
+      <div class="popup-footer">
+        {{ui-button (t "popup.cancel") color="border" onClick=closeModal}}
+        {{ui-button (t "popup.delete-forever") color="red" onClick=deleteQuestionnaire disabled=disabled}}
+      </div>
+    </div>
+  </div>
+{{/if}}

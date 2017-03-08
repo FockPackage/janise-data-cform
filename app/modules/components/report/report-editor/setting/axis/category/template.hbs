@@ -1,0 +1,103 @@
+<h2>{{t "chart-editor.category-x"}}</h2>
+
+<div class="editor-row" local-class="axis-options">
+  <p>
+    {{t "chart-editor.axis-options"}}
+  </p>
+  {{ui-checkbox
+    class="content-column app-checkbox"
+    checkbox="checkbox"
+    size=""
+    name="axis-name"
+    label=(t "chart-editor.axis-name")
+    help=""
+  }}
+  {{ui-checkbox
+    class="content-column app-checkbox"
+    checkbox="checkbox"
+    size=""
+    name="axis-line"
+    label=(t "chart-editor.axis-line")
+    help=""
+  }}
+  {{ui-checkbox
+    class="content-column app-checkbox"
+    checkbox="checkbox"
+    size=""
+    name="series-number"
+    label=(t "chart-editor.series-number")
+    help=""
+  }}
+</div>
+
+<div class="editor-row" local-class="category-labels">
+  <p>{{t "chart-editor.category-labels"}}</p>
+  {{#basic-dropdown as |dropdown|}}
+    {{#dropdown.trigger}}
+      {{ui-button (t "category-labels-dropdown.auto-fit") color="border" expand=true}}
+    {{/dropdown.trigger}}
+    {{#dropdown.content}}
+      <ul class="option checkmark">
+        <ul class="option-contents">
+          <li>
+            <a>
+              {{ui-icon icon="ui-check" style="checkmark"}}
+              <span>{{t "category-labels-dropdown.none"}}</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span>{{t "category-labels-dropdown.auto-fit"}}</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span>{{t "category-labels-dropdown.show-all"}}</span>
+            </a>
+          </li>
+        </ul>
+      </ul>
+    {{/dropdown.content}}
+  {{/basic-dropdown}}
+</div>
+
+<div class="editor-row" local-class="label-angle">
+  <p>{{t "chart-editor.label-angle"}}</p>
+  {{#basic-dropdown as |dropdown|}}
+    {{#dropdown.trigger}}
+      {{ui-button (t "label-angle-dropdown.horizontal") color="border" expand=true}}
+    {{/dropdown.trigger}}
+    {{#dropdown.content}}
+      <ul class="option checkmark">
+        <ul class="option-contents">
+          <li>
+            <a>
+              {{ui-icon icon="ui-check" style="checkmark"}}
+              <span>{{t "label-angle-dropdown.left-vertical"}}</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span>{{t "label-angle-dropdown.left-diagonal"}}</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span>{{t "label-angle-dropdown.horizontal"}}</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span>{{t "label-angle-dropdown.right-vertical"}}</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span>{{t "label-angle-dropdown.right-diagonal"}}</span>
+            </a>
+          </li>
+        </ul>
+      </ul>
+    {{/dropdown.content}}
+  {{/basic-dropdown}}
+</div>

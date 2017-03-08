@@ -1,0 +1,46 @@
+@import "var.css";
+
+:global(.editor-container) {
+  & h2 {
+    float: left;
+    width: 100%;
+  }
+
+  & :global(.input-number) {
+    & input {
+      min-width: 157px;
+    }
+  }
+}
+
+:global(.editor-row) {
+  padding: 12px 0;
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid var(--color-fade-silver);
+
+  &:last-child {
+    border: none;
+  }
+
+  & > p {
+    display: block;
+    margin-bottom: 12px;
+  }
+}
+
+.tabs{
+  margin-top: 12px;
+
+  & nav {
+    padding: 0 !important;
+
+    & ul {
+      justify-content: space-between !important;
+
+      & li {
+        padding: 8px 12px !important;
+      }
+    }
+  }
+}

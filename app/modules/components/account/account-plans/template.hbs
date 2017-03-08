@@ -1,0 +1,89 @@
+{{!-- Account Settings - Plans --}}
+
+<div class="content-wrap">
+	<div class="content-row">
+		<div class="row-title">
+			<h2>{{t "account-settings.choose-plan"}}</h2>
+      <div local-class="plan-toggle">
+        <span>{{t "account-settings.choose-type"}}</span>
+				<a href="" local-class="active">{{t "account-settings.yearly-billing"}}</a>
+				<a href="">{{t "account-settings.monthly-billing"}}</a>
+      </div>
+		</div>
+		<ul local-class="plan-grid">
+      {{#each planList as |plan|}}
+        {{account/account-plans/plan plan=plan tagName="li" toggleModal=(action "toggleModal" 'upgradePlan')}}
+      {{/each}}
+		</ul>
+	</div>
+
+	<div class="content-row">
+		<ul local-class="col">
+			<li>
+				<h4>Enterprise Plan</h4>
+				<p>Email <a href="">enterprise@cform.io</a> to learn more about how to use choice form inside your design,
+					engineering, or
+					marketing team.</p>
+			</li>
+		</ul>
+		<ul local-class="col">
+			<li>
+				<h4>Education Program</h4>
+				<p>Whether you’re an educator developing a modern digital curriculum, an administrator working to improve
+					collaboration, or a student creating school projects, portfolios, and resumes, Webflow offers an education
+					program to help you excel. <a href="">Contact us</a> to learn more.</p>
+			</li>
+		</ul>
+	</div>
+
+	<div class="content-row">
+		<div class="row-title">
+			<h2>{{t "account-settings.frequently-asked-questions"}}</h2>
+		</div>
+		<ul local-class="col">
+			<li>
+				<h4>What is the difference between the Starter and the Professional plan?</h4>
+				<p>The Professional plan is for people that are creating multiple websites that needed more customizability. On
+					the Professional plan you are given access to more features, such as unbranded code, unbranded form
+					notification
+					emails, and the ability to transfer sites to other Webflow users. Our Starter plan allows anyone to create
+					unlimited, unlocked hosted sites, even if you aren't on a Professional subscription.</p>
+			</li>
+			<li>
+				<h4>What is the difference between a hosted and an unhosted site?</h4>
+				<p>A hosted site mean it has a hosting subscription attached to it, which will unlock site features, and give
+					you
+					the ability to attach a custom domain. It comes with a lot of amazing benefits like CDN and security as
+					well.</p>
+			</li>
+		</ul>
+
+		<ul local-class="col">
+			<li local-class="sales-wrapper">
+				<h4>Need help choosing a plan?</h4>
+				<p>We can help you with any questions about our features, pricing plans, or anything else.</p>
+				<span>JUST EMAIL US:</span>
+				<a href="">info@cform.io</a>
+			</li>
+			<li>
+				<h4>What happens when I cancel my plan?</h4>
+				<p>If you cancel your subscription, your plan will automatically be changed to the free plan. All custom domains
+					will be removed, and all of your sites will be unpublished.</p>
+			</li>
+		</ul>
+	</div>
+
+	<div class="content-row">
+		<div class="row-title">
+			<h2>{{t "account-settings.manage-current-plan"}}</h2>
+		</div>
+    <div local-class="manage">
+      {{ui-button (t "account-settings.manage-current-subscription") color="dark"}}
+    </div>
+	</div>
+</div>
+
+{{account/account-plans/upgrade-plan
+  isShow=isShow.upgradePlan
+  closeModal=(action "toggleModal" "upgradePlan")
+}}

@@ -1,0 +1,34 @@
+<div local-class="grid-item">
+  <div local-class="template-item" class="{{if selected 'template-selected'}}">
+    {{#if selected}}
+      <span local-class="selected">{{t "template-item.selected"}}</span>
+    {{/if}}
+    {{#if blank}}
+      <h1>{{t "template-item.blank"}}</h1>
+    {{/if}}
+    <div local-class="open-template">
+      <div local-class="item-mask">
+        <div local-class="main-link">
+          {{ui-icon-button icon="eye" color="silver" style="visible" local-class="preview"}}
+        </div>
+        <a href="javascript:void(0);"
+           local-class="select-template"
+           onclick={{selectTemplate}}>
+          {{t "template-item.select-template"}}
+        </a>
+      </div>
+      <div local-class="template-cover" style={{coverStyle}}></div>
+    </div>
+  </div>
+  <div local-class="template-footer">
+    <div local-class="footer-wrapper">
+      <div>
+        <span>{{template-name}}</span>
+        <span>{{price}}</span>
+      </div>
+      {{#if categories}}
+        <span>{{categories}}</span>
+      {{/if}}
+    </div>
+  </div>
+</div>

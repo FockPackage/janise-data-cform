@@ -1,0 +1,19 @@
+{{account/account-general
+  userInfo=model.userInfo
+  authList=model.authList
+  toggleModal=(route-action 'toggleModal')
+  setIsSaved=(route-action 'setIsSaved')
+}}
+
+{{#ui/popup-panel
+  isShow=model.confirm.isShow
+  icon="ui-round-e-info"
+  title=(t "popup.rename-folder")
+  color='red'
+  text='确定'
+  closeModal=(route-action "toggleModal")
+  clickBackground=(route-action "clickBackground")
+  onClick=(route-action model.confirm.action)
+}}
+  {{model.confirm.content}}
+{{/ui/popup-panel}}

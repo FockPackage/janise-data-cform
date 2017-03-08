@@ -1,0 +1,52 @@
+@import "var.css";
+
+.item {
+  position: relative;
+  padding: 12px 12px 12px 48px;
+  border-bottom: 1px solid var(--color-silver);
+
+  &:last-of-type {
+    border: none;
+  }
+
+  &:before {
+    position: absolute 0 auto 0 16px;
+    margin: auto 0;
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+  }
+}
+
+.item.blue {
+  &:before {
+    border: 1px solid var(--color-blue);
+    background-color: color(var(--color-blue) a(25%));
+  }
+}
+
+.item.red {
+  &:before {
+    border: 1px solid var(--color-tomato);
+    background-color: color(var(--color-tomato) a(25%));
+  }
+}
+
+.item.green {
+  &:before {
+    border: 1px solid var(--color-sea-green);
+    background-color: color(var(--color-sea-green) a(25%));
+  }
+}
+
+.title {
+  line-height: normal;
+}
+
+.metadata {
+  margin-top: 4px;
+  display: block;
+  font-size: 11px;
+  color: var(--color-silver);
+}

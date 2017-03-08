@@ -1,0 +1,118 @@
+<div class="static-background">
+  <div class="popup xl" local-class="view-filter">
+    {{ui/popup-panel/header
+      icon="ui-filter"
+      title=(t "popup.view-filter")
+    }}
+		<div class="popup-container">
+			<div local-class="header">
+        <h2>View Filter Sample Name</h2>
+
+        {{ui/setup-menu
+          local-class="setup"
+          icon="wrench"
+          des=(t "setup-dropdown.setup")
+          button1=(t "setup-dropdown.rename")
+          button2=(t "setup-dropdown.delete")
+        }}
+        {{popup/view-filter/data-source-menu
+          icon="article"
+          local-class="view-filter-data-source-dropdown"
+        }}
+			</div>
+      <div local-class="filter-container">
+        <div local-class="question">
+					<p>{{t "popup.question"}}</p>
+					<ul>
+            {{temp/data-source-simplify-item
+              current="current"
+              tagName="li"
+              serial="Q01"
+              icon="icon-location-s"
+              questions="Please select the city in which you live now?"
+            }}
+
+            {{temp/data-source-simplify-item
+              tagName="li"
+              serial="Q02"
+              icon="icon-checkmark-s"
+              questions="Please select the range below that best describes your total monthly household income?"
+            }}
+
+            {{temp/data-source-simplify-item
+              tagName="li"
+              serial="Q02"
+              icon="icon-checkmark-s"
+              questions="Please select the range below that best describes your total monthly household income?"
+            }}
+
+            {{temp/data-source-simplify-item
+              tagName="li"
+              serial="Q02"
+              icon="icon-checkmark-s"
+              questions="Please select the range below that best describes your total monthly household income?"
+            }}
+
+            {{temp/data-source-simplify-item
+              tagName="li"
+              serial="Q02"
+              icon="icon-checkmark-s"
+              questions="Please select the range below that best describes your total monthly household income?"
+            }}
+					</ul>
+        </div>
+        <div local-class="option">
+					<p>{{t "popup.options"}}</p>
+					<ul>
+						<li>
+							<span>Q1: Sample Text</span>
+						</li>
+						<li>
+							<span>Q1: Sample Text</span>
+						</li>
+						<li>
+							<span>Q1: Sample Text</span>
+						</li>
+					</ul>
+        </div>
+        <div local-class="settings">
+					<p>{{t "popup.options-addon"}}</p>
+					<div>
+						<span local-class="setting-title">{{t "popup.values"}}</span>
+            {{temp/fill-dropdown
+              local-class="dropdown"
+            }}
+            {{!--{{ui-input-number local-class="input-number" value="2" min="0" max="100" unit="" label="" alert=""}}--}}
+						<span local-class="to">{{t "popup.to"}}</span>
+            {{!--{{ui-input-number local-class="input-number" value="2" min="0" max="100" unit="" label="" alert=""}}--}}
+					</div>
+        </div>
+
+				<div local-class="control">
+          {{ui-icon-button icon="arrows-small-left" color="border" tips=(t "popup.include")}}
+          {{ui-icon-button icon="arrows-small-right" color="border" tips=(t "popup.exclude")}}
+				</div>
+
+        <div local-class="option">
+					<p>{{t "popup.scope"}}</p>
+					<ul>
+						<li>
+							<span>Q1: Sample Text</span>
+						</li>
+						<li>
+							<span>Q1: Sample Text</span>
+						</li>
+						<li>
+							<span>Q1: Sample Text</span>
+						</li>
+					</ul>
+        </div>
+
+      </div>
+		</div>
+		<div class="popup-footer">
+      {{ui-button (t "popup.cancel") color="border"}}
+      {{ui-button (t "popup.save") color="blue"}}
+		</div>
+	</div>
+</div>

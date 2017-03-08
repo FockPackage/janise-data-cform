@@ -1,0 +1,24 @@
+{{#if isShow}}
+  <div class="static-background" onclick={{clickBackground}}>
+    <div class="popup m" local-class="new-folder">
+      {{ui/popup-panel/header
+        icon="files-add"
+        title=(t "popup.new-folder")
+        closeModal=closeModal}}
+      <div class="popup-container">
+        {{#ui-fieldset size="xl" help="" as |f|}}
+          {{f.input
+            subject=""
+            type="text"
+            name="folder-name"
+            label=(t "popup.folder-name")
+            value=value}}
+        {{/ui-fieldset}}
+      </div>
+      <div class="popup-footer">
+        {{ui-button (t "popup.cancel") color="border" onClick=closeModal}}
+        {{ui-button (t "popup.create") color="blue" onClick=createFolder}}
+      </div>
+    </div>
+  </div>
+{{/if}}

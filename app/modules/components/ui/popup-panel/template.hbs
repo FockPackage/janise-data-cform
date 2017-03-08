@@ -1,0 +1,20 @@
+{{#if isShow}}
+  <div class="static-background" onclick={{clickBackground}}>
+    <div class="popup m">
+      {{ui/popup-panel/header
+        icon=icon
+        title=title
+        closeModal=closeModal
+      }}
+      <div class="popup-container">
+        {{yield}}
+      </div>
+      {{#if onClick}}
+        <div class="popup-footer">
+          {{ui-button (t "popup.cancel") color="border" onClick=closeModal}}
+          {{ui-button text color=color onClick=onClick}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+{{/if}}

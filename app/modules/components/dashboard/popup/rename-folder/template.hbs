@@ -1,0 +1,20 @@
+{{#if isShow}}
+  {{#ui/popup-panel
+    isShow=true
+    closeModal=closeModal
+    icon="files-folder"
+    title=(t "popup.rename-folder")
+    color='blue'
+    text=(t "popup.rename")
+    onClick=renameFolder
+    clickBackground=clickBackground
+  }}
+    {{#ui-fieldset size="xl" help="" as |f|}}
+      {{f.input
+        name="folder-name"
+        label=(t "popup.folder-name")
+        value=newFolderName
+      }}
+    {{/ui-fieldset}}
+  {{/ui/popup-panel}}
+{{/if}}

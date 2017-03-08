@@ -1,0 +1,194 @@
+<div class="sidebar" local-class="analyze-sidebar">
+  <div local-class="setting-row">
+    <h2>
+      <span>定义视图</span>
+      {{ui-icon-button icon="ui-round-e-help"}}
+    </h2>
+    <div class="sidebar-row analyze">
+      <span>选择需要显示的题</span>
+      {{ui-icon-button icon="ui-simple-add" color="purple"}}
+      <form action="" local-class="sub-rules">
+        <fieldset>
+          {{ui-checkbox
+            class="content-column app-checkbox"
+            checkbox="checkbox"
+            size="large"
+            label="全选"
+          }}
+          {{ui-checkbox
+            class="content-column app-checkbox"
+            checkbox="checkbox"
+            size="large"
+            label="反选"
+          }}
+          {{ui-checkbox
+            class="content-column app-checkbox"
+            checkbox="checkbox"
+            size="large"
+            label="Sample Text"
+          }}
+          {{ui-checkbox
+            class="content-column app-checkbox"
+            checkbox="checkbox"
+            size="large"
+            label="Sample Text"
+          }}
+          {{ui-checkbox
+            class="content-column app-checkbox"
+            checkbox="checkbox"
+            size="large"
+            label="Sample Text"
+          }}
+          {{ui-checkbox
+            class="content-column app-checkbox"
+            checkbox="checkbox"
+            size="large"
+            label="Sample Text"
+          }}
+        </fieldset>
+      </form>
+      <div class="customize-control">
+        {{ui-button "取消" color="gray" size="medium"}}
+      </div>
+    </div>
+
+    <div class="sidebar-row analyze">
+      <span>显示设置</span>
+      {{ui-icon-button icon="ui-simple-add" color="purple"}}
+      <form action="" local-class="rules">
+        <fieldset>
+          {{form/form-analyze/analyze-sidebar/rules-item class="rules-item"}}
+          {{form/form-analyze/analyze-sidebar/rules-item class="rules-item"}}
+          {{form/form-analyze/analyze-sidebar/rules-item class="rules-item"}}
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="sidebar-row analyze">
+      <span>筛选条件</span>
+      {{ui-icon-button icon="ui-simple-add" color="purple"}}
+      <form action="" local-class="sub-filter">
+        <ul>
+          <li>
+            <a href="">
+              <span>按问题与答案筛选</span>
+              {{ui-icon icon="arrows-small-right"}}
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>按时间筛选</span>
+              {{ui-icon icon="arrows-small-right"}}
+            </a>
+          </li>
+        </ul>
+        <div class="customize-control">
+          {{ui-button "取消" color="gray" size="medium"}}
+        </div>
+      </form>
+    </div>
+
+    <div class="sidebar-row analyze">
+      <span>筛选条件</span>
+      {{ui-icon-button icon="ui-simple-add" color="purple"}}
+      <form action="" local-class="questions-filter">
+        <span>按问题与答案筛选</span>
+        <div local-class="filter-content">
+          {{#basic-dropdown local-class="filter-dropdown" renderInPlace=true as |dropdown|}}
+            {{#dropdown.trigger}}
+              {{ui-button "Sample Text" expand=true}}
+            {{/dropdown.trigger}}
+            {{#dropdown.content}}
+              <ul class="option">
+                <li><span>Sample Text</span></li>
+                <li><span>Sample Text</span></li>
+                <li><span>Sample Text</span></li>
+              </ul>
+            {{/dropdown.content}}
+          {{/basic-dropdown}}
+        </div>
+        <div class="customize-control">
+          {{ui-button "取消" color="gray" size="medium"}}
+          {{ui-button "下一步" color="gray" size="medium"}}
+        </div>
+      </form>
+    </div>
+
+    <div class="sidebar-row analyze">
+      <span>筛选条件</span>
+      {{ui-icon-button icon="ui-simple-add" color="purple"}}
+      <form action="" local-class="questions-filter">
+        <span>按问题与答案筛选</span>
+        <div local-class="filter-content">
+          {{ui-input
+            type="text"
+            class="content-column app-input"
+            size="large"
+            name="maximum-response"
+            placeholder="Sample Text"
+            label=""
+            alert=""
+            help=""
+          }}
+          {{ui-input
+            type="text"
+            class="content-column app-input"
+            size="large"
+            name="maximum-response"
+            placeholder="Sample Text"
+            label=""
+            alert=""
+            help=""
+          }}
+        </div>
+        <div class="customize-control">
+          {{ui-button "取消" color="gray" size="medium"}}
+          {{ui-button "下一步" color="gray" size="medium"}}
+        </div>
+      </form>
+    </div>
+
+    <h2>
+      <span>输出</span>
+      {{ui-icon-button icon="ui-round-e-help"}}
+    </h2>
+
+    <div class="sidebar-row analyze">
+      <span>输出结果</span>
+      {{ui-icon-button icon="ui-simple-add" color="blue"}}
+      <div local-class="output">
+        <div local-class="output_box">
+          {{ui-icon icon="arrows-system-update"}}
+          <span>XLSX: 16060W0s汇总数据201682932143.xlsx</span>
+          {{#basic-dropdown as |dropdown|}}
+            {{#dropdown.trigger local-class="output-dropdown"}}
+              {{ui-icon-button icon="wrench"}}
+            {{/dropdown.trigger}}
+            {{#dropdown.content local-class="output-option"}}
+              <ul class="option">
+                <li><span>Sample Text</span></li>
+                <li><span>Sample Text</span></li>
+                <li><span>Sample Text</span></li>
+              </ul>
+            {{/dropdown.content}}
+          {{/basic-dropdown}}
+          <ul local-class="output-detailed">
+            <li>
+              <span>文件格式: </span>
+              <span>XLSX</span>
+            </li>
+            <li>
+              <span>创建时间: </span>
+              <span>2016-08-29</span>
+            </li>
+            <li>
+              <span>有效时间: </span>
+              <span>2016-11-29</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

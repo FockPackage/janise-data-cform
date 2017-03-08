@@ -1,0 +1,30 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+dist/
+tmp/
+
+# dependencies
+node_modules/
+bower_components/
+
+# misc
+.DS_Store
+.env
+.env.production
+.idea/
+.sass-cache/
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+
+# vs code
+.vscodeignore
+jsconfig.json
+typings/
+
+# sublime text
+*.sublime-project
+*.sublime-workspace

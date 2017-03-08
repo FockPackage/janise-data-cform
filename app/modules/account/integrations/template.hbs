@@ -1,0 +1,19 @@
+{{account/account-integrations
+  callbackList=model.callbackList
+  setIsSaved=(route-action 'setIsSaved')
+  updateCallbackList=(route-action 'updateCallbackList')
+}}
+
+{{#ui/popup-panel
+  isShow=model.isShowConfirm
+  size="m"
+  icon="ui-round-e-info"
+  title=(t "popup.rename-folder")
+  color='red'
+  text='确定'
+  closeModal=(route-action "toggleModal")
+  clickBackground=(route-action "clickBackground")
+  onClick=(route-action 'goToTarget')
+}}
+  丢弃所有修改，确定继续？
+{{/ui/popup-panel}}

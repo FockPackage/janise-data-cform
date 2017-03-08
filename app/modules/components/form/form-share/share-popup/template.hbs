@@ -1,0 +1,39 @@
+{{!-- Form Settings - Share - Popup --}}
+
+<div class="content-row" local-class="share-settings">
+	<div class="publish-info">
+		<h2>{{t "form.code-for"}}</h2>
+		<p>{{t "form.info"}}</p>
+		<h2>{{t "form.example"}}</h2>
+    {{ui-button "example" color="purple"}}
+	</div>
+
+	<div class="share-column">
+		<div class="row-title">
+			<h2>{{t "form.popup-title"}}</h2>
+		</div>
+		<div local-class="popup-server">
+			<span>{{t "form.popup-sarved"}}</span>
+      {{#ui-fieldset direction="" size="m" help="" as |f|}}
+        <i local-class="icon"></i>
+        {{f.radio name="classic" label=(t "form.classic")}}
+        <i local-class="icon"></i>
+        {{f.radio name="drawer" label=(t "form.drawer")}}
+      {{/ui-fieldset}}
+      {{#ui-fieldset direction="" size="m" help="" as |f|}}
+        <i local-class="icon"></i>
+        {{f.radio name="button" label=(t "form.button")}}
+        <i local-class="icon"></i>
+        {{f.radio name="link" label=(t "form.link")}}
+      {{/ui-fieldset}}
+      {{#ui-fieldset direction="" size="xl" help="" as |f|}}
+        {{f.input label=(t "form.button-text") placeholder="example"}}
+      {{/ui-fieldset}}
+		</div>
+		<div local-class="code">
+			<span>{{t "form.code"}}</span>
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+			<p>{{t "form.help"}}</p>
+		</div>
+	</div>
+</div>

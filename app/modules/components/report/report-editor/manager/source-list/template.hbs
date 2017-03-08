@@ -1,0 +1,49 @@
+<header class={{titleClassNames}}>
+  {{ui-icon-button
+    local-class="collapse"
+    icon="arrows-small-triangle-down"
+    tips=(t "reporting-tools.minimize") onClick=(toggle "collapsed" this)}}
+
+  {{ui-icon icon=titleIconName}}
+
+  {{content-editable
+    value=group.source.name
+    tagName="span"
+    class="ellipsis"
+    disabled=(not titleEditable)
+    allowNewLines=false
+    enter="saveTitle"
+    focus-out="saveTitle"}}
+
+  {{#if isCustomGroup}}
+    {{ui-icon-button icon="ui-simple-add" local-class="create-custom" tips=(t "reporting-tools.create-custom-data")}}
+  {{/if}}
+
+  {{component "report/report-editor/manager/action" (hash
+    toggleVisibility=(action "changeGroupVisibility")
+    toggleTitleEditable=(toggle-action "titleEditable" this))
+    local-class="data-source-dropdown"}}
+</header>
+
+{{#unless collapsed}}
+  <ul>
+    {{#each group.presentations as |presentation|}}
+      {{component "report/report-editor/manager/source-item"
+        presentation
+        sortable=draggable
+        content=presentation
+        showSerials=showSerials
+        sortingScope=sortingScope}}
+    {{else}}
+      <div class="sidebar-row-empty">
+        <p>No data has been found</p>
+      {{#if isCustomGroup}}
+        <div>
+          <span>{{t "form.no-quota-set-help"}}</span>
+            <a>{{t "form.learn-more"}}</a>
+        </div>
+      {{/if}}
+      </div>
+    {{/each}}
+  </ul>
+{{/unless}}

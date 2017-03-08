@@ -1,0 +1,22 @@
+<div local-class="report-item">
+  <i local-class="report-icon"></i>
+  <div>
+    <span class="ellipsis">{{report.name}}</span>
+    <span>{{t "form-item.creation-date"}} {{format-date report.createdAt format="yyyymmdd"}}</span>
+  </div>
+
+  {{ui-button (t "reports.view-report") class="border" onClick=(action "showReport" report)}}
+
+  <div local-class="data">
+    <span>data:</span>
+    <ul>
+      {{#with (filter-by "type" 1 report.sources) as |originSources|}}
+        {{#each originSources as |source|}}
+          <li style={{safe background-image=source.thumbnail}} tips={{source.name}}></li>
+        {{else}}
+          <li>Loading...</li>
+        {{/each}}
+      {{/with}}
+    </ul>
+  </div>
+</div>

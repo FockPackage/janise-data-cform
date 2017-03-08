@@ -1,0 +1,118 @@
+@import "var.css";
+
+:global(.sidebar) {
+  position: relative;
+  flex-basis: 30%;
+  padding: 0 12px 64px 12px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--color-silver);
+  }
+  @media screen and (min-width: 1200px) {
+    flex-basis: 25%;
+  }
+  @media (max-width: 991px) {
+    border-bottom: 1px solid var(--color-silver);
+    flex-direction: row;
+    flex-basis: auto;
+    padding: 0 24px 24px 24px;
+    &:before{
+      display: none;
+    }
+  }
+}
+
+:global(.setting-row) {
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 991px) {
+    &:first-child {
+      margin-right: 24px;
+    }
+    flex-basis: calc(50% - 12px);
+  }
+  @media (max-width: 767px) {
+    &:first-child {
+      margin-right: 0;
+    }
+    flex-basis: 100%;
+  }
+}
+
+:global(.stting-row-title) {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-silver);
+  & h2 {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  & > a {
+    float: right;
+    cursor: help;
+    margin-right: -8px;
+  }
+}
+
+:global(.sidebar-row) {
+  position: relative;
+  border: 1px solid var(--color-silver);
+  border-radius: 2px;
+  margin-bottom: 12px;
+  &:last-child {
+    margin: 0;
+  }
+  & :global(.add-set) {
+    padding: 8px 8px 8px 12px;
+  }
+}
+
+:global(.sidebar-row-setup) {
+  position: relative;
+  line-height: 24px;
+  padding: 6px 12px;
+  background-color: var(--color-light);
+  border-bottom: 1px solid var(--color-silver);
+}
+
+:global(.add-set) {
+  padding: 8px 0;
+  & span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  & a {
+    float: right;
+  }
+}
+
+:global(.sidebar-row-empty) {
+  padding: 36px 0;
+  & > p {
+    font-size: 18px;
+    color: var(--color-silver);
+    text-align: center;
+  }
+  & > div {
+    display: block;
+    font-size: 12px;
+    color: var(--color-silver);
+    text-align: center;
+    background: none;
+    padding: 0 24px;
+    margin-top: 12px;
+    & a {
+      margin-left: 4px;
+      color: var(--color-purple);
+      &:hover {
+        color: var(--color-blue);
+      }
+    }
+  }
+}

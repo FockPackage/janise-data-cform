@@ -1,0 +1,20 @@
+@import "var.css";
+
+.delete-confirmation {
+  & p {
+    font-size: 13px;
+    line-height: normal;
+
+    & > span {
+      color: var(--color-blue);
+    }
+  }
+
+  & h2 {
+    margin: 12px 0;
+
+    & > span {
+      color: var(--color-tomato);
+    }
+  }
+}

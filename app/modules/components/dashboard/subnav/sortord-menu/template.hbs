@@ -1,0 +1,25 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger local-class="filters-trigger"}}
+    {{#ui-button color="blank" expand=true}}
+      {{ui-icon icon=currentSortord.iconClass}}
+      <span>{{currentSortord.name}}</span>
+    {{/ui-button}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content}}
+    <div class="option checkmark">
+      <ul class="option-contents">
+        {{#each sortordList as |sortord|}}
+          <li>
+            <a onclick={{action (pipe changeSortord dropdown.actions.close) sortord.id}}>
+              {{#if (eq sortord.id currentSortord.id)}}
+                {{ui-icon icon="ui-check" style="checkmark"}}
+              {{/if}}
+              {{ui-icon icon=sortord.iconClass}}
+              <span>{{sortord.name}}</span>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

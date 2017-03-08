@@ -1,0 +1,20 @@
+@import "var.css";
+
+.header {
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  padding: 0 0 0 12px;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-silver);
+  & a {
+    float: right;
+  }
+  & > svg {
+    vertical-align: sub;
+    margin-right: 6px;
+    fill: var(--color-fade-slate);
+  }
+  & > span {
+    line-height: 36px;
+  }
+}

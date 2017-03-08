@@ -1,0 +1,79 @@
+@import "var.css";
+
+:global(.history-content) {
+  min-height: 256px;
+  position: relative;
+  border: 1px solid var(--color-silver);
+  border-top: none;
+  @media (max-width: 768px) {
+    overflow: auto;
+  }
+  .detail-none {
+    height: 128px;
+    margin: 0 12px 12px 12px;
+    border-radius: 3px;
+    border: 1px dashed var(--color-silver);
+    text-align: center;
+    & > span {
+      line-height: 128px;
+      font-size: 18px;
+      color: var(--color-silver);
+    }
+  }
+  & table {
+    width: 100%;
+    border-collapse: collapse;
+    @media (max-width: 768px) {
+      width: 768px;
+    }
+    & tr {
+      overflow: hidden;
+      border-bottom: 1px solid var(--color-fade-silver);
+      &:last-of-type {
+        border: none;
+      }
+      &:only-of-type {
+        border-bottom: 1px solid var(--color-fade-silver);
+      }
+      & td {
+        padding: 12px;
+        & > span {
+          display: block;
+        }
+        & > a {
+          position: relative;
+          color: var(--color-sea-green);
+          &.color_red{
+            color:var(--color-tomato);
+          }
+          &.color_blue{
+            color:var(--color-blue);
+          }
+          &.nbilled {
+            cursor: pointer;
+            color: var(--color-tomato);
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          &.cbilled{
+            color: var(--color-silver);
+          }
+        }
+      }
+    }
+  }
+}
+
+.billing {
+  position: relative;
+  & :global(.load-more) {
+    margin-top: 12px;
+  }
+}
+
+:global(.billing-history-loading) {
+  position: absolute 50% auto auto 50%;
+  margin-top: 22px;
+  transform: translate3d(-50%, -50%, 0);
+}

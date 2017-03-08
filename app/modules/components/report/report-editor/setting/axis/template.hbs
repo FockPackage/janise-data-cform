@@ -1,0 +1,20 @@
+<div class="editor-container">
+  <div class="tabs tabs-style editor" local-class="tabs">
+    <nav>
+      <ul>
+        <li class={{if (eq currentTabName "value") "current"}}>
+          <a onclick={{action "setCurrentTab" "value"}}>
+            <span>{{t "chart-editor.value-y"}}</span>
+          </a>
+        </li>
+        <li class={{if (eq currentTabName "category") "current"}}>
+          <a onclick={{action "setCurrentTab" "category"}}>
+            <span>{{t "chart-editor.category-x"}}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  {{component correspondingComponent}}
+</div>

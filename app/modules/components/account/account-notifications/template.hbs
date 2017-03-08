@@ -1,0 +1,15 @@
+{{!-- Account Settings - Notifications --}}
+
+<div class="content-wrap">
+  <div class="content-row">
+    <div class="row-title">
+      <h2>{{t "account-settings.notifications"}}</h2>
+      {{ui-button (t "row-title.save") color="blue" icon="more"}}
+    </div>
+    {{#ui-fieldset direction="column" size="l" help=(t "account-settings.account-help") local-class="notifications" as |f|}}
+      {{f.checkbox subject="" checked="" name="notifications-feature" label=(t "account-settings.feature")}}
+      {{f.checkbox subject="" checked="" name="notifications-news" label=(t "account-settings.news")}}
+      {{f.checkbox subject="" checked="checked" name="notifications-account-messages" label=(t "account-settings.account-messages") disabled=true}}
+    {{/ui-fieldset}}
+  </div>
+</div>

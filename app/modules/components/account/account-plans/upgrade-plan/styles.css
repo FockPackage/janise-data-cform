@@ -1,0 +1,110 @@
+@import "var.css";
+
+.upgrade-plan {
+  background-color: var(--color-white);
+}
+
+.container {
+  padding: 24px 24px 12px 24px;
+  & p {
+    margin-bottom: 12px;
+  }
+}
+
+.title {
+  text-align: center;
+  padding: 24px 0;
+  & svg {
+    fill: var(--color-white);
+  }
+  & > h1 {
+    color: var(--color-white);
+    text-shadow: 0 0 3px var(--color-purple);
+  }
+}
+
+.header {
+  position: relative;
+  padding: 0 24px;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-silver);
+  & > a {
+    position: absolute 0 0 auto auto;
+  }
+}
+
+.top-menu {
+  justify-content: center !important;
+  & li {
+    margin: 0 12px !important;
+  }
+}
+
+.currency {
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--color-fade-silver);
+  & > h1 {
+    font-size: 48px;
+    vertical-align: text-bottom;
+    font-family: 'Kiro-Regular';
+    & > span {
+      font-size: 12px;
+      color: var(--color-dark-gray);
+    }
+  }
+}
+
+.coupon-code {
+  & :global(.help) {
+    margin-top: 0 !important;
+  }
+}
+
+.payment-method {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.paymet {
+  position: relative;
+  text-align: center;
+  & div {
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 2px 8px;
+    border: 1px solid var(--color-silver);
+    transition: box-shadow 200ms;
+    &:hover {
+      box-shadow: color(var(--color-dark-gray) a(20%)) 0 0 0 2px;
+    }
+    @media (max-width: 479px) {
+      padding: 0;
+    }
+  }
+  & span {
+    display: block;
+    font-size: 12px;
+    margin-top: 4px;
+    color: var(--color-dark-gray);
+  }
+}
+
+.paymet.active {
+  & div {
+    border: 1px solid var(--color-purple);
+    box-shadow: color(var(--color-purple) a(20%)) 0 0 0 2px;
+  }
+}
+
+.footer {
+  position: relative;
+  padding-top: 24px;
+  &:before {
+    content: "";
+    position: absolute 0 24px auto 24px;
+    height: 1px;
+    background-color: var(--color-fade-silver);
+  }
+}

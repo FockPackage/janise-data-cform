@@ -1,0 +1,41 @@
+<div class="center-wrapper">
+	<div class="main-container">
+    {{ui-icon-button icon="ui-simple-remove"}}
+    {{login/side-panel
+      tagName=""
+      color="gray"
+      welcome=(t "login.recover-account")
+    }}
+		<div class="modal">
+			<div class="modal-container" local-class="send-recovery-email">
+				<h2>{{t "login.reset-password"}}</h2>
+				<form action="">
+					<fieldset>
+            {{ui-input
+              type="email"
+              class="content-column app-input"
+              size="large"
+              name="email"
+              placeholder=(t "login.email")
+              label=(t "login.send-password")
+              alert=""
+              help=""
+            }}
+
+            {{ui-button (t "login.send-recovery-email") color="purple"}}
+					</fieldset>
+				</form>
+
+        <div local-class="recovery-email-sent">
+					<p>{{t "login.email-containing"}}<strong>wester@cform.io</strong></p>
+					<span>{{t "login.did-not-receive-email"}}</span>
+					<a href="">{{t "login.contact-us"}}</a>
+					<span>{{t "login.recover-your-account"}}</span>
+        </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{{outlet}}

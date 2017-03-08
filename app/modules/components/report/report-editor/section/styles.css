@@ -1,0 +1,137 @@
+@import "var.css";
+
+.chart-view {
+  float: left;
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid var(--color-silver);
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.chart-view.setting {
+  & :global(.tools) {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+    border-bottom: 1px solid var(--color-sea-green);
+
+    &:before {
+      opacity: 0;
+    }
+  }
+}
+
+.chart-header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 0 0 12px;
+
+  & h2 {
+    margin-right: auto;
+  }
+}
+
+.addon {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  height: 36px;
+}
+
+.collapse {
+  height: 36px;
+  position: relative;
+  margin-left: 2px;
+
+  &:before {
+    content: "";
+    position: absolute 8px auto 8px -1px;
+    width: 1px;
+    background-color: var(--color-silver);
+  }
+}
+
+.chart-header:global(.minimize) {
+  & a {
+    & > :global(.ic-down-1) {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.chart-container {
+
+}
+
+.chart {
+  overflow: hidden;
+  position: relative;
+  padding-top: 36px;
+  border-top: 1px solid var(--color-silver);
+
+  &:hover {
+    & :global(.tools) {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition-delay: 0.2s;
+      visibility: visible;
+    }
+  }
+}
+
+.chart-loading {
+  position: absolute 50% auto auto 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.chart.setting {
+  &:before {
+    content: "";
+    position: absolute 35px -1px -1px -1px;
+    box-shadow: var(--color-sea-green) 0 0 0 2px inset;
+  }
+}
+
+.data-table-container {
+  & table {
+    font-size: 12px;
+    text-align: left;
+    line-height: 36px;
+    border-spacing: 0;
+  }
+
+  & thead tr:first-child {
+    background-color: color(var(--color-silver) lightness(92%));
+    border-top: 1px solid var(--color-silver);
+    border-bottom: 1px solid var(--color-fade-silver);
+  }
+
+  & th {
+    font-weight: bold;
+    padding: 0 8px;
+  }
+
+  & tbody td {
+    padding: 0 8px;
+    border: 1px solid var(--color-light);
+    border-bottom: 1px solid var(--color-fade-silver);
+  }
+
+  & tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  & tbody tr td:last-child {
+    border-right: none;
+  }
+
+  & tbody tr td:first-child {
+    border-left: none;
+  }
+}

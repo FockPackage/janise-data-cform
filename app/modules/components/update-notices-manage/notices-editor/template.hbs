@@ -1,0 +1,33 @@
+<div class="notices-column-control">
+  {{update-notices-manage/language-menu
+    currentLang=formValue.lang
+    languageList=languageList
+    selectLanguage=(action "selectLanguage")
+  }}
+  {{ui-button
+    (t "row-title.save")
+    color="blue"
+    icon="more"
+    onClick=(action "onSaveClick")
+  }}
+  {{#link-to 'updates-manage' tagName='button' class="button border"}}
+    {{t "page-header.cancel"}}
+  {{/link-to}}
+</div>
+
+<div class="notices-column">
+	<h2>{{t "updates.subject"}}</h2>
+	<div class="intro">
+    {{#ui-fieldset direction="row" size="xl" help="" local-class="title" as |f|}}
+      {{f.input placeholder=(t "updates.title") value=formValue.title}}
+      {{update-notices-manage/tag-menu
+        currentTag=formValue.tag
+        tagList=tagList
+        changeTag=(action "changeTag")}}
+    {{/ui-fieldset}}
+    {{textarea value=formValue.describe cols="30" rows="10" placeholder=(t "updates.description")}}
+    <input type="file" id='quill-upload' onchange={{action "uploadImage"}} style={{html-safe 'display:none'}} />
+  </div>
+  <h2>{{t "updates.body"}}</h2>
+  <div id='editor'></div>
+</div>

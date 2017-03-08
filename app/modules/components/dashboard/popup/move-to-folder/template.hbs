@@ -1,0 +1,41 @@
+{{#if isShow}}
+  <div class="static-background" onclick={{clickBackground}}>
+    <div class="popup m">
+      {{ui/popup-panel/header
+        icon="files-documents"
+        title=(t "popup.move-to-folder")
+        closeModal=closeModal}}
+      <div class="popup-container">
+        <span>{{t "popup.select-folder"}}</span>
+        {{#basic-dropdown as |dropdown|}}
+          {{#dropdown.trigger class="block" local-class="move-to-folder-trigger"}}
+            {{#ui-button color="white border" icon="files-folder" expand=true}}
+              <span>{{destinationFolder.FolderName}}</span>
+            {{/ui-button}}
+          {{/dropdown.trigger}}
+          {{#dropdown.content}}
+            <ul class="option checkmark">
+              <ul class="option-contents">
+                {{#each folderList as |folder|}}
+                  <li>
+                    <a onclick={{action (pipe setDestinationFolderId dropdown.actions.close) folder.FolderID}}>
+                      {{#if (eq folder.FolderID destinationFolder.FolderID)}}
+                        {{ui-icon icon="ui-check" style="checkmark"}}
+                      {{/if}}
+                      {{ui-icon icon=(if (eq folder.FolderID '0') 'ui-grid-square' 'files-folder')}}
+                      <span>{{folder.FolderName}}</span>
+                    </a>
+                  </li>
+                {{/each}}
+              </ul>
+            </ul>
+          {{/dropdown.content}}
+        {{/basic-dropdown}}
+      </div>
+      <div class="popup-footer">
+        {{ui-button (t "popup.cancel") color="border" onClick=closeModal}}
+        {{ui-button (t "popup.move") color="blue" onClick=moveQuestionnaire}}
+      </div>
+    </div>
+  </div>
+{{/if}}

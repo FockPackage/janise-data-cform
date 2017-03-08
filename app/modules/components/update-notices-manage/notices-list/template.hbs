@@ -1,0 +1,38 @@
+<div local-class="notices-list">
+  <div local-class="list-control">
+    {{update-notices-manage/tag-menu
+      currentTag=currentTag
+      tagList=tagList
+      isShowControl=false
+      changeTag=(action "changeTag")
+    }}
+    {{ui/seach-input placeholder=(t "updates.seach") search=searchAnnouncement}}
+  </div>
+  <ul>
+    {{#each announcementList as |announcement|}}
+      {{#update-notices/notices-item
+        announcement=announcement
+        manage="manage"
+        onClick=(action selectAnnouncement announcement.id)
+      }}
+        <div local-class="control">
+          {{ui-icon-button icon="arrows-small-triangle-down" local-class=(if announcement.isHideDescription 'minmize' '') onClick=(action "toggleHideDescription" announcement.id)}}
+
+          {{update-notices-manage/control-menu
+            local-class="control-menu"
+            announcementId=announcement.id
+            isPublished=announcement.published_at
+            toggleModal=toggleModal
+          }}
+          {{ui-switch (t (if announcement.published_at "updates.online" 'updates.offline')) "m"
+            local-class="pubilsh-control"
+            toggle=announcement.published_at
+            onToggle=(action toggleModal 'publishConfirm' announcement.id)
+          }}
+        </div>
+      {{/update-notices/notices-item}}
+    {{/each}}
+
+    {{ui/load-more isShow=meta.has_more label=(t "load-more") onClick=loadMore}}
+  </ul>
+</div>

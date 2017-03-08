@@ -1,0 +1,157 @@
+{{!-- Account Settings - Billing --}}
+
+<div class="content-wrap">
+  <div class="content-row">
+    <div class="row-title">
+      <h2>{{t "account-settings.plan-subscription"}}</h2>
+    </div>
+    <ul class="overview">
+      <li>
+        <span>{{t "account-settings.plan-name"}}</span>
+        <span>Professional (Month)</span>
+      </li>
+      <li>
+        <span>{{t "account-settings.subscription-status"}}</span>
+        <span>{{t "account-settings.active"}}</span>
+      </li>
+      <li>
+        <span>{{t "account-settings.billing-period-start"}}</span>
+        <span>September 9th 2016, 12:48:09 am</span>
+      </li>
+      <li>
+        <span>{{t "account-settings.billing-period-end"}}</span>
+        <span>October 9th 2016, 12:48:09 am</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="content-row" local-class="billing">
+    <div class="row-title">
+      <h2>{{t "account-settings.billing-info"}}</h2>
+    </div>
+    <div class="tabs tabs-style-sub">
+      <nav>
+        <ul>
+          {{#link-to "account.billing.payment-history" tagName="li" activeClass="current"}}
+            {{#link-to "account.billing.payment-history"}}
+              <span>{{t "account-settings.payment-history"}}</span>
+            {{/link-to}}
+          {{/link-to}}
+          {{#link-to "account.billing.account-history" tagName="li" activeClass="current"}}
+            {{#link-to "account.billing.account-history"}}
+              <span>{{t "account-settings.account-history"}}</span>
+            {{/link-to}}
+          {{/link-to}}
+        </ul>
+      </nav>
+    </div>
+
+    {{outlet}}
+  </div>
+
+  <div class="content-row">
+    <div class="row-title">
+      <h2>{{t "account-settings.invoicing-info"}}</h2>
+      {{ui-button
+        (t "row-title.save")
+        disabled=disabled
+        color="blue"
+        icon="more"
+        onClick=(action updateInvoicingInfo formValue)
+      }}
+    </div>
+    <div class="ui-fieldset">
+      <div class="field-control l custom has-label">
+        {{#ui-fieldset size="xl" help="" tagName="" as |f|}}
+          {{f.input
+            name="company-name"
+            label=(t "account-settings.company-name")
+            value=formValue.companyName
+          }}
+        {{/ui-fieldset}}
+        <label>{{t "account-settings.invoice-content"}}</label>
+        {{#ui-fieldset size="xl" direction="row" help="" tagName="" as |f|}}
+          {{f.radio
+            radioId="software-service"
+            value=1
+            name="invoice-content"
+            label=(t "account-settings.software-service")
+            currentValue=formValue.invoiceContent
+            onChange=(action "changeInvoiceContent" 1)
+          }}
+          {{f.radio
+            radioId="technical-services"
+            value=2
+            name="invoice-content"
+            label=(t "account-settings.technical-services")
+            currentValue=formValue.invoiceContent
+            onChange=(action "changeInvoiceContent" 2)
+          }}
+          {{f.radio
+            radioId="consultancy"
+            name="invoice-content"
+            label=(t "account-settings.consultancy")
+            value=3
+            currentValue=formValue.invoiceContent
+            onChange=(action "changeInvoiceContent" 3)
+          }}
+        {{/ui-fieldset}}
+        {{#ui-fieldset size="xl" direction="row" help="" tagName="" as |f|}}
+          {{f.input
+            name="taxpayer-number"
+            label=(t "account-settings.taxpayer-number")
+            value=formValue.taxpayerNumber
+          }}
+          {{f.input
+            name="register-phone"
+            label=(t "account-settings.register-phone")
+            value=formValue.registerPhone
+          }}
+        {{/ui-fieldset}}
+        {{#ui-fieldset size="xl" help="" tagName="" as |f|}}
+          {{f.input
+            name="register-phone"
+            label=(t "account-settings.registered-address")
+            value=formValue.registerAddress
+          }}
+        {{/ui-fieldset}}
+        {{#ui-fieldset size="xl" direction="row" help="" tagName="" as |f|}}
+          {{f.input
+            type="text"
+            name="bank-name"
+            label=(t "account-settings.bank-name")
+            value=formValue.bankName
+          }}
+          {{f.input
+            type="text"
+            name="bank-account"
+            label=(t "account-settings.bank-account")
+            value=formValue.bankAccount
+          }}
+        {{/ui-fieldset}}
+        {{#ui-fieldset size="xl" direction="row" help="" tagName="" as |f|}}
+          {{f.input
+            name="addressee"
+            label=(t "account-settings.addressee")
+            value=formValue.addressee
+          }}
+          {{f.input
+            name="contact-phone"
+            label=(t "account-settings.contact-phone")
+            value=formValue.contactPhone
+          }}
+        {{/ui-fieldset}}
+        {{#ui-fieldset size="xl" help="" tagName="" as |f|}}
+          {{f.input
+            name="address"
+            label=(t "account-settings.address")
+            value=formValue.contactAddress
+          }}
+        {{/ui-fieldset}}
+      </div>
+      <div class="field-help">
+        <span>{{t "account-settings.invoicing-help"}}</span>
+      </div>
+    </div>
+  </div>
+</div>

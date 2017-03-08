@@ -1,0 +1,44 @@
+<div local-class="chart-header" class={{isCollapsed}}>
+  <h2 class="ellipsis"><span>Q{{datum.id}}：</span>{{datum.name}}</h2>
+
+  {{ui-icon-button icon="ui-simple-add" color="dark" tips=(t "reporting-tools.create-chart")}}
+
+  {{report/report-editor/section/options local-class="addon-dropdown"}}
+
+  <div local-class="collapse">
+    {{ui-icon-button icon="arrows-small-triangle-down" tips=(t "reporting-tools.minimize") onClick=(toggle "expanded" this)}}
+  </div>
+</div>
+
+{{#if isExpanded}}
+  <div local-class="chart-container">
+    <div local-class="chart {{settingClassName}}">
+      {{!--{{ui/loading-circle local-class="chart-loading" color="silver"}}--}}
+
+      {{report/report-editor/section/toolbar api=api}}
+
+      {{report/report-editor/section/chart (readonly datum)}}
+
+      {{#if api.isOnSetting}}
+        {{report/report-editor/section/setting}}
+      {{/if}}
+    </div>
+
+    <div local-class="chart data-table-container {{settingClassName}}">
+      {{report/report-editor/section/toolbar api=api}}
+
+      {{#if api.isOnSetting}}
+        {{report/report-editor/section/setting}}
+      {{/if}}
+
+      {{!-- TODO: table chart
+      {{#light-table table as |t|}}
+        {{t.head}}
+        {{#t.body as |b|}}
+          {{b.expanded-row}}
+        {{/t.body}}
+      {{/light-table}}
+      --}}
+    </div>
+  </div>
+{{/if}}

@@ -1,0 +1,44 @@
+<div local-class="table-header">
+  <h2>{{t "form.quota-form"}}</h2>
+  {{ui-icon-button
+    icon="trash-solid"
+    tips=(t "form.delete-quota")
+    onClick=(action toggleModal 'deleteQuotaSet')
+  }}
+  {{ui-icon-button icon="files-duplicate" tips=(t "form.duplicate-quota")}}
+  {{ui-icon-button icon="ui-simple-add" tips=(t "form.new-quota")}}
+  {{ui-icon-button
+    icon="gestures-stretch"
+    tips=(t "form.hide-settings")
+    onClick=(action toggleFullScreen)
+  }}
+</div>
+<table local-class="table-body">
+  {{#each table as |tr|}}
+  <tr>
+    {{#each tr.TdList as |td|}}
+      {{#if (eq td.InputID currentEditId)}}
+        <td colspan={{td.Colspan}} rowspan={{td.Rowspan}}>
+          {{input
+            id='currentEdit'
+            value=currentEditValue
+            key-up=updateCount
+            focus-out=(action focusInput 1)
+          }}
+        </td>
+      {{else}}
+        <td
+          class={{get styles td.className}}
+          colspan={{td.Colspan}}
+          rowspan={{td.Rowspan}}
+          onclick={{action focusInput td.InputID td.Value}}
+        >
+          {{td.Value}}
+        </td>
+      {{/if}}
+    {{/each}}
+  </tr>
+  {{/each}}
+</table>
+
+{{yield}}

@@ -1,0 +1,30 @@
+@import "var.css";
+
+:global(select) {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 9px 48px 11px 12px;
+  border-radius: 3px;
+  outline: 0;
+  outline-style: none;
+  background-color: transparent;
+  line-height: 20px;
+  vertical-align: middle;
+  transition: border-color 200ms, background-color 200ms, color 200ms, opacity 200ms;
+  user-select: none;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkBAMAAAATLoWrAAAAHlBMVEUAAAA0SV40SV40SV40SV40SV40SV40SV40SV40SV5DGsyoAAAACXRSTlMA34AwEM+/n48rJ8rVAAAAL0lEQVQoz2MYBYTBTCBAE+qcOXM6mpDjzJkiaELMM2caoBumOQnDfNYEhlFAGAAAQ3gIw8cQ8OgAAAAASUVORK5CYII=');
+}
+
+.select {
+  width: 100%;
+  border: 1px solid var(--color-silver);
+
+  &:hover {
+    border: 1px solid var(--color-slate);
+  }
+}

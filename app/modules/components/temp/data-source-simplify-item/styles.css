@@ -1,0 +1,43 @@
+@import "var.css";
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+.control {
+
+}
+
+.questions {
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  padding: 8px 4px 8px 28px;
+
+  & > p {
+    font-size: 13px;
+    line-height: normal;
+    color: var(--color-slate);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  & > i {
+    position: absolute 0 auto 0 8px;
+    margin: auto 0;
+    opacity: 1;
+  }
+}
+
+.serial {
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  margin-left: 4px;
+}
+

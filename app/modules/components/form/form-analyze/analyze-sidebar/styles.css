@@ -1,0 +1,242 @@
+@import "var.css";
+
+.analyze-sidebar {
+  float: right;
+
+  &:before {
+    left: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 30%;
+  }
+
+  @media (max-width: 991px) {
+    border: none;
+  }
+}
+
+:global(.sidebar-row.analyze) {
+  margin-top: 12px;
+  flex: 1 0 auto;
+  width: 100%;
+
+  @media (max-width: 991px) {
+    width: 49%;
+    flex: 0 0 auto;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+
+  & form {
+    clear: fix;
+  }
+
+  & > a {
+    position: absolute 6px 8px auto auto;
+  }
+}
+
+/*侧栏板块-主板块*/
+.rules {
+  padding: 12px 0 12px 12px;
+
+  & :global(.app-checkbox) {
+    height: 36px;
+    margin-bottom: 0;
+  }
+
+  & > div {
+    position: relative;
+    line-height: 36px;
+  }
+
+  & label {
+    position: absolute 8px 0 auto 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    & > span {
+      color: var(--color-silver);
+      font-size: 12px;
+    }
+  }
+}
+
+:global(.rules-item) {
+  position: relative;
+}
+
+/*侧栏板块 - 二级板块 (显示规则) - 内容行设置*/
+.sub-rules {
+  & :global(.app-checkbox) {
+    padding: 6px 12px;
+    margin-bottom: 0;
+
+    &:nth-of-type(n+3) {
+      border-bottom: 1px solid var(--color-fade-silver);
+      &:nth-of-type(odd) {
+        background-color: var(--color-light);
+      }
+    }
+    &:nth-of-type(3) {
+      border-top: 1px dashed var(--color-silver);
+    }
+    &:last-of-type {
+      border: none;
+    }
+  }
+}
+
+/*侧栏板块 - 底部按钮区*/
+:global(.customize-control) {
+  padding: 12px;
+
+  & button {
+    &:nth-of-type(2) {
+      float: right;
+    }
+  }
+}
+
+.sub-filter {
+  & ul {
+    margin-bottom: 12px;
+
+    & > li {
+      padding: 6px 12px;
+      border-bottom: 1px solid var(--color-fade-silver);
+      cursor: pointer;
+      transition: background-color 200ms ease-in;
+
+      &:hover {
+        background-color: var(--color-light);
+
+        & i {
+          opacity: 1;
+        }
+      }
+
+      & a {
+        color: var(--color-slate);
+        display: block;
+
+        & i {
+          float: right;
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}
+
+.questions-filter {
+  & > span {
+    display: block;
+    margin-top: 12px;
+    color: var(--color-dark-gray);
+    font-size: 12px;
+    padding: 0 12px;
+  }
+}
+
+.filter-content {
+  padding: 12px;
+
+  & :global(.app-input) {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.filter-dropdown {
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  & button {
+    width: 100%;
+  }
+}
+
+.sidebar-row .remark {
+  > span {
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+  > input {
+    width: 100%;
+    float: none;
+  }
+}
+
+/*侧栏 (输出结果) 板块*/
+.output {
+  position: relative;
+  padding: 12px 0 12px 12px;
+
+  & .output_box {
+    position: relative;
+    padding-right: 36px;
+
+    &:before {
+      position: absolute 0 auto auto 0;
+      z-index: 1;
+      content: " ";
+      width: 24px;
+      height: 100%;
+      border-radius: 1px;
+      background-color: var(--color-blue);
+      margin-right: 16px;
+      float: left;
+    }
+
+    & > i {
+      position: absolute;
+      z-index: 5;
+      width: 20px;
+      height: 20px;
+      background-color: var(--color-blue);
+      float: left;
+      margin: 0 12px 0 2px;
+      cursor: pointer;
+    }
+
+    & > span {
+      padding-left: 36px;
+      display: inline-block;
+      width: 90%;
+      white-space: normal;
+      //word-wrap: break-word;
+      word-break: break-all;
+    }
+
+    & .output-dropdown {
+      position: absolute 0 0 auto atuo;
+      outline: none;
+    }
+
+    & .output-detailed {
+      position: relative;
+      font-size: 12px;
+      color: var(--color-dark-gray);
+      list-style: none;
+
+      & li {
+        padding-left: 32px;
+      }
+    }
+  }
+}
+
+.output-option {
+  & :global(.option) {
+    margin-left: -66px;
+  }
+}

@@ -1,0 +1,146 @@
+@import "var.css";
+
+.view-filter {
+  background-color: var(--color-white);
+
+  & :global(.popup-container) {
+    padding-top: 12px;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.setup {
+  height: 36px;
+  margin-left: 24px;
+}
+
+.view-filter-data-source-dropdown {
+  margin-left: auto;
+}
+
+.header-control {
+  display: flex;
+  padding: 12px 0;
+}
+
+.filter-container {
+  display: flex;
+  align-items: stretch;
+  margin: 12px 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-fade-silver);
+
+  & .question,
+  & .option {
+    width: 258px;
+    margin-right: 4px;
+
+
+    &:last-of-type {
+      margin: 0;
+    }
+
+    & ul {
+      position: relative;
+      height: calc(100% - 28px);
+      background-color: var(--color-white);
+      max-height: 360px;
+      overflow-y: auto;
+      border: 1px solid var(--color-silver);
+    }
+
+    & li {
+      border-bottom: 1px solid var(--color-fade-silver);
+
+      &:last-child {
+        border: none;
+      }
+
+      &:hover {
+        background-color: var(--color-light);
+      }
+
+      & :global(.current) {
+        background-color: var(--color-fade-silver);
+      }
+    }
+  }
+}
+
+.settings,
+.question,
+.option {
+  & > p {
+    margin-bottom: 8px;
+  }
+}
+
+.option {
+  & li {
+    font-size: 13px;
+    cursor: pointer;
+    padding: 8px 4px;
+
+    &:hover {
+      background-color: var(--color-light);
+    }
+  }
+}
+
+.settings {
+  width: 136px;
+
+  & > div {
+    height: calc(100% - 28px);
+    position: relative;
+    padding: 36px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-silver);
+  }
+
+  & .dropdown {
+    width: 120px;
+    margin-bottom: 12px;
+
+    & button {
+      width: 100%;
+    }
+  }
+
+  & .input-number {
+    margin-bottom: 12px;
+  }
+
+  & .to {
+    margin-bottom: 12px;
+  }
+}
+
+.setting-title {
+  position: absolute 8px auto auto 8px;
+}
+
+.control {
+  width: 56px;
+  padding-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & a {
+    &:nth-of-type(1) {
+      margin-bottom: 48px;
+    }
+  }
+}

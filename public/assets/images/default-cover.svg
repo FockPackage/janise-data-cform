@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="268px" height="180px" viewBox="0 0 268 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard@1x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="24" y="24" width="220" height="174" rx="6"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="220" height="174" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="52" y="44" width="164" height="32"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="164" height="32" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <rect id="path-5" x="136" y="0" width="28" height="28"></rect>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="28" height="28" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard">
+            <use id="Rectangle" stroke="#EFF0F1" mask="url(#mask-2)" stroke-width="8" xlink:href="#path-1"></use>
+            <use id="Rectangle-2" stroke="#EFF0F1" mask="url(#mask-4)" stroke-width="8" xlink:href="#path-3"></use>
+            <g id="Group" transform="translate(52.000000, 92.000000)" fill="#EFF0F1">
+                <rect id="Rectangle-2-Copy" x="0" y="0" width="124" height="4"></rect>
+                <rect id="Rectangle-2-Copy-3" x="0" y="8" width="124" height="4"></rect>
+                <rect id="Rectangle-2-Copy-4" x="0" y="16" width="124" height="4"></rect>
+                <rect id="Rectangle-2-Copy-5" x="0" y="24" width="62" height="4"></rect>
+                <path d="M136,0 L164,0 L164,28 L136,28 L136,0 Z M146.629847,21.242591 L140.265921,15.0485051 C139.91136,14.7077125 139.91136,14.1530182 140.265921,13.8086002 L141.551434,12.5686954 C141.905996,12.2279028 142.482386,12.2279028 142.836947,12.5686954 L147.273512,16.9083623 L157.163053,7.25559442 C157.517614,6.91480186 158.094004,6.91480186 158.448566,7.25559442 L159.734079,8.49549925 C160.08864,8.83629181 160.08864,9.3927988 159.734079,9.73359136 L147.91536,21.2462165 C147.560798,21.5851963 146.986227,21.5851963 146.629847,21.242591 Z" id="Combined-Shape"></path>
+            </g>
+            <g id="Group-Copy" transform="translate(52.000000, 136.000000)">
+                <rect id="Rectangle-2-Copy" fill="#EFF0F1" x="0" y="0" width="124" height="4"></rect>
+                <rect id="Rectangle-2-Copy-3" fill="#EFF0F1" x="0" y="8" width="124" height="4"></rect>
+                <rect id="Rectangle-2-Copy-4" fill="#EFF0F1" x="0" y="16" width="124" height="4"></rect>
+                <rect id="Rectangle-2-Copy-5" fill="#EFF0F1" x="0" y="24" width="62" height="4"></rect>
+                <use id="Rectangle-2-Copy-2" stroke="#EFF0F1" mask="url(#mask-6)" stroke-width="8" xlink:href="#path-5"></use>
+            </g>
+        </g>
+    </g>
+</svg>

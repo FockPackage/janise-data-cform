@@ -1,0 +1,18 @@
+{{account/account-billing
+  invoiceInfo=model.invoiceInfo
+  setIsSaved=(route-action 'setIsSaved')
+  updateInvoicingInfo=(route-action 'updateInvoicingInfo')
+}}
+
+{{#ui/popup-panel
+  isShow=model.isShowConfirm
+  icon="ui-round-e-info"
+  title='确认框'
+  color='red'
+  text='确定'
+  closeModal=(route-action "toggleModal")
+  clickBackground=(route-action "clickBackground")
+  onClick=(route-action "goToTarget")
+}}
+  将要丢弃所有修改，确定继续吗？
+{{/ui/popup-panel}}

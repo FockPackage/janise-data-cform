@@ -1,0 +1,9 @@
+<h1>{{t "create.create-new-form"}}</h1>
+{{ui-button
+  (t "page-header.create")
+  color="blue"
+  icon="ui-small-add"
+  disabled=model.disabled
+  onClick=(route-action "newForm")
+}}
+{{link-to (t "page-header.cancel") "index" tagName="button" class="border"}}

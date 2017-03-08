@@ -1,0 +1,24 @@
+<div local-class="card-form">
+  {{ui-input
+    class="content-column app-input"
+    size="large"
+    name="name-on-card"
+    placeholder=(t "popup.name-on-card")
+  }}
+
+  {{ui-input
+    class="content-column app-input"
+    size="large"
+    name="card-number"
+    placeholder=(t "popup.card-number")
+  }}
+
+  {{ui-input
+    class="content-column app-input"
+    size="large"
+    double="double"
+    name="cvv"
+    placeholder-l=(t "popup.expiration-date")
+    placeholder-r=(t "popup.cvv")
+  }}
+</div>

@@ -1,0 +1,66 @@
+{{#report/report-editor model as |editor api|}}
+  {{editor.navigator}}
+
+  <div class="content-wrap">
+    <aside class="sidebar" local-class="sidebar">
+      {{#editor.manager as |manager|}}
+        {{manager.source-list api.customGroup isCustomGroup=true}}
+
+        {{#each api.originGroups as |originGroup|}}
+          {{manager.source-list originGroup isCustomGroup=false}}
+        {{/each}}
+      {{/editor.manager}}
+    </aside>
+  </div>
+{{/report/report-editor}}
+
+{{!--
+<div class="w-container">
+  次级导航
+
+  <div class="content-wrap">
+    侧边栏
+    <aside class="sidebar" local-class="sidebar {{if api.isMaximized 'maximize'}}">
+
+      {{#unless api.isOnSetting}}
+
+        如果不处于设置模式 => 数据源管理器
+        {{#editor.manager as |manager|}}
+
+          优先渲染 => 自定数据列表
+          {{#each (filter-by "type" 2 api.availableSources) as |source|}}
+            {{manager.source-list source "custom"}}
+          {{/each}}
+
+          其次渲染 => 原始数据列表
+          {{#each (filter-by "type" 1 api.availableSources) as |source|}}
+            {{manager.source-list source "origin"}}
+          {{/each}}
+        {{/editor.manager}}
+
+      {{else}}
+
+        如果处于设置模式 => 侧边参数设置面板
+        {{editor.setting}}
+
+      {{/unless}}
+    </aside>
+
+    主体
+    <div class="content-row column" local-class="chart-wrap {{if api.isMaximized 'maximize'}}">
+      公共头部
+      {{editor.header api=api}}
+
+      数据源列表
+      {{#each api.availableSources as |source outerIndex|}}
+
+        具体数据列表
+        {{#each source.data as |datum innerIndex|}}
+          {{editor.section datum api=api expanded=(and (eq outerIndex 0) (eq innerIndex 0))}}
+        {{/each}}
+
+      {{/each}}
+    </div>
+  </div>
+</div>
+--}}

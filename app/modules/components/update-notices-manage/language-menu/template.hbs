@@ -1,0 +1,21 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger}}
+    {{ui-button currentLanguage.text color="border" expand=true}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content}}
+		<ul class="option checkmark">
+      <ul class="option-contents">
+        {{#each languageList as |language|}}
+          <li>
+            <a onclick={{action (pipe selectLanguage dropdown.actions.close) language.id language.lang}}>
+              {{#if (eq currentLanguage.lang language.lang)}}
+                {{ui-icon icon="ui-check" style="checkmark"}}
+              {{/if}}
+              <span>{{language.text}}</span>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

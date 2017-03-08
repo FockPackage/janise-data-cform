@@ -1,0 +1,23 @@
+@import "var.css";
+
+.form-loading-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 129px;
+  bottom: 61px;
+  margin: 0 33px;
+
+  @media screen and (min-width: 1200px) {
+    margin: 0 15px;
+  }
+
+  @media (max-width: 991px) {
+    margin: 0;
+  }
+}
+
+.form-loading {
+  position: absolute 50% auto auto 50%;
+  transform: translate3d(-50%, -50%, 0);
+}

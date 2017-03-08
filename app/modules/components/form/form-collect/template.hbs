@@ -1,0 +1,334 @@
+{{!-- Form Settings - Collect --}}
+
+<div class="content-wrap" local-class="form-collect">
+  <div class="content-row">
+    <div class="row-title">
+      <h2>{{t "form.collect-responses"}}</h2>
+    </div>
+  </div>
+  <div class="tabs tabs-style-sub">
+    <nav>
+      <ul>
+        <li class="current">
+          <a>
+            {{#if isPublished}}<i class="dot blue"></i>{{/if}}
+            <span>{{t "form.collector-tab"}}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="content-row" local-class="general-settings">
+    <div class="row-title">
+      <h2>{{t "form.general-settings"}}</h2>
+    </div>
+    <div local-class="publish" class={{get this "publishedClass"}}>
+      {{ui-icon icon="rocket"}}
+      {{ui-switch
+        local-class="publish-switch"
+        size="xl"
+        label=(t (concat "form." 'publish'))
+        toggle=isPublished
+        onToggle=(action togglePublish formValue.collect isPublished )
+      }}
+      <div local-class="lastPublished">
+        {{#if loading}}
+          {{form/form-collect/loading-dot local-class="loading"}}
+        {{else}}
+          {{#if isPublished}}
+            <span>1 minutes ago</span>
+            <a href={{formUrl}} class="icon-button" data-tips={{t "form.open-link"}} target='_blank'>
+              {{ui-icon icon="ui-link"}}
+            </a>
+            {{#link-to 'form.share' class="icon-button" data-tips=(t "form.share-settings")}}
+              {{ui-icon icon="ui-share"}}
+            {{/link-to}}
+          {{/if}}
+        {{/if}}
+      </div>
+    </div>
+    {{#ui-fieldset size="l" help=(t "form.subdomain-help") local-class="subdomain" as |f|}}
+      {{f.input
+        name="subdomain"
+        label=(t "form.subdomain")
+      }}
+      <p>cform.io</p>
+    {{/ui-fieldset}}
+  </div>
+
+  <div class="content-row" local-class="collect-settings">
+    <div class="row-title">
+      <h2>{{t "form.collect-settings"}}</h2>
+      {{ui-button
+        (t "row-title.save")
+        color="blue"
+        icon="more"
+        disabled=disabled.collect
+        onClick=(action updateCollectConfig formValue.collect)}}
+    </div>
+    <section>
+        {{#ui-fieldset direction="column" size="s" help=(t "form.response-limits-help") as |f|}}
+          {{#if currentQuota.QuotaTableID}}
+            {{f.spinner
+              label=(t "form.response-limits")
+              value=currentQuota.QuotaNum
+              disabled=true
+            }}
+          {{else}}
+            {{f.spinner
+              label=(t "form.response-limits")
+              placeholder="Default: 100"
+              min=10
+              max=10000
+              step=10
+              value=formValue.collect.maximumResponse
+              disabled=formValue.collect.isUnlimitedResponse
+            }}
+          {{/if}}
+          {{#unless formValue.collect.isUnlimitedResponse}}
+            {{#if publishInfo.QuotaList.length}}
+              {{form/form-collect/quota-menu
+                local-class="quota-menu"
+                currentQuota=currentQuota
+                quotaList=publishInfo.QuotaList
+                selectQuota=(action 'selectQuota')
+              }}
+            {{/if}}
+          {{/unless}}
+        {{/ui-fieldset}}
+
+      {{#ui-fieldset size="s" help=(t "form.unlimited-response-help") as |f|}}
+        {{f.checkbox
+          name="unlimited-response"
+          label=(t "form.unlimited-response")
+          checked=formValue.collect.isUnlimitedResponse
+        }}
+      {{/ui-fieldset}}
+    </section>
+    {{#unless isUpdateProhibition}}
+      <section>
+        {{#ui-fieldset size="s" help="" as |f|}}
+          {{f.radio
+            radioId="publish-plans1"
+            name="publish-plans"
+            label=(t "form.publish")
+            value=true
+            currentValue=formValue.collect.isAutoPublish
+            onChange=(action 'setIsAutoPublish' true)
+          }}
+          {{f.radio
+            radioId="publish-plans2"
+            name="publish-plans"
+            label=(t "form.plans")
+            value=false
+            currentValue=formValue.collect.isAutoPublish
+            onChange=(action 'setIsAutoPublish' false)
+          }}
+        {{/ui-fieldset}}
+        {{#unless formValue.collect.isAutoPublish}}
+          {{form/form-collect/date-picker
+            size="s"
+            class='ui-fieldset'
+            name="publish-date"
+            bindID="publish-date"
+            help=(t "form.publish-number-help")
+            value=formValue.collect.startDate
+            disabled=formValue.collect.isAutoPublish
+            onChange=(action 'changePublishDate')
+          }}
+          {{#ui-fieldset direction="row" size="s" help="" local-class="time" as |f|}}
+            {{f.spinner
+              disabled=formValue.collect.isAutoPublish
+              min=0
+              max=23
+              step=1
+              value=formValue.collect.startTimeHour
+            }}
+            <span>:</span>
+            {{f.spinner
+              disabled=formValue.collect.isAutoPublish
+              min=0
+              max=55
+              step=5
+              value=formValue.collect.startTimeMinute
+            }}
+          {{/ui-fieldset}}
+        {{/unless}}
+      </section>
+    {{/unless}}
+    <section>
+      {{#ui-fieldset size="s" help=(t "form.unlimited-time-help") as |f|}}
+        {{f.radio
+          radioId="cutoff-plans1"
+          name="cutoff-plans"
+          label=(t "form.unlimited-time")
+          value=true
+          currentValue=formValue.collect.isUnlimitedTime
+          onChange=(action 'setIsUnlimitedTime' true)
+        }}
+        {{f.radio
+          radioId="cutoff-plans2"
+          name="cutoff-plans"
+          label=(t "form.cutoff-date-time")
+          value=false
+          currentValue=formValue.collect.isUnlimitedTime
+          onChange=(action 'setIsUnlimitedTime' false)
+        }}
+      {{/ui-fieldset}}
+      {{#unless formValue.collect.isUnlimitedTime}}
+        {{form/form-collect/date-picker
+          size="s"
+          class='ui-fieldset'
+          name="cutoff-date"
+          bindID="cutoff-date"
+          help=(t "form.cutoff-date-time-help")
+          value=formValue.collect.endDate
+          disabled=formValue.collect.isUnlimitedTime
+          onChange=(action 'changeCutoffDate')
+        }}
+        {{#ui-fieldset direction="row" size="s" help="" local-class="time" as |f|}}
+          {{f.spinner
+            disabled=formValue.collect.isUnlimitedTime
+            min=0
+            max=23
+            step=1
+            value=formValue.collect.endTimeHour
+          }}
+          <span>:</span>
+          {{f.spinner
+            disabled=formValue.collect.isUnlimitedTime
+            min=0
+            max=55
+            step=5
+            value=formValue.collect.endTimeMinute
+          }}
+        {{/ui-fieldset}}
+      {{/unless}}
+    </section>
+    <section>
+      <label>{{t "form.multiple-responses"}}</label>
+      {{#ui-fieldset size="l" help=(t "form.multiple-responses-help") as |f|}}
+        {{f.radio
+          radioId="anonymous-or-ip1"
+          name="anonymous-or-ip"
+          label=(t "form.multiple-responses-on")
+          value=true
+          currentValue=formValue.collect.isAnonymous
+          onChange=(action 'setIsAnonymous' true)
+        }}
+        {{f.radio
+          radioId="anonymous-or-ip2"
+          name="anonymous-or-ip"
+          label=(t "form.multiple-responses-off")
+          value=false
+          currentValue=formValue.collect.isAnonymous
+          onChange=(action 'setIsAnonymous' false)
+        }}
+      {{/ui-fieldset}}
+    </section>
+    <section>
+      {{#ui-fieldset size="s" help=(t "form.link-parameters-help") as |f|}}
+        {{f.checkbox
+          name="link-parameters"
+          label=(t "form.link-parameters")
+          checked=formValue.collect.hasLinkParameters
+        }}
+      {{/ui-fieldset}}
+    </section>
+  </div>
+
+  <div class="content-row">
+    <div class="row-title">
+      <h2>{{t "form.time-zone"}}</h2>
+      {{ui-button (t "row-title.save") color="blue" icon="more"}}
+    </div>
+    <div class="ui-fieldset">
+      <div class="field-control l custom" local-class="">
+        {{form/form-collect/time-zone}}
+      </div>
+      <div class="field-help">
+        <span>{{t "form.choose-list-help"}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row" local-class="social-settings">
+    <div class="row-title">
+      <h2>{{t "form.social-settings"}}</h2>
+    </div>
+    <div class="tabs tabs-style-sub">
+      <nav>
+        <ul>
+          <li class="current"><a href=""><span>{{t "form.wechat"}}</span></a></li></ul>
+      </nav>
+    </div>
+    <div local-class="collection">
+      {{#ui-fieldset size="xl" help=(t "form.link-parameters-help") as |f|}}
+        {{f.checkbox
+          name="collect-wechat-user"
+          label=(t "form.collect-wechat-user")
+          checked=formValue.wechat.collect
+        }}
+      {{/ui-fieldset}}
+      <section>
+        {{#ui-fieldset direction="column" size="l" help="This is something can helps you out." as |f|}}
+          {{f.input
+            name="username"
+            placeholder=(t "form.username")
+            label=(t "form.binding-wechat")
+            value=formValue.wechat.name
+            disabled=(not formValue.wechat.collect)
+            readonly=isPublished
+          }}
+          {{f.input
+            name="wechat-number"
+            placeholder=(t "form.wechat-number")
+            value=formValue.wechat.number
+            disabled=(not formValue.wechat.collect)
+            readonly=isPublished
+          }}
+          {{f.input
+            name="app-id"
+            placeholder=(t "form.app-id")
+            value=formValue.wechat.appId
+            disabled=(not formValue.wechat.collect)
+            readonly=isPublished
+          }}
+          {{f.input
+            name="app-secret"
+            placeholder=(t "form.app-secret")
+            value=formValue.wechat.appSecret
+            disabled=(not formValue.wechat.collect)
+            readonly=isPublished
+          }}
+        {{/ui-fieldset}}
+        {{ui-button
+          (t "form.verify-save")
+          color="blue"
+          disabled=(or isPublished disabled.wechat)
+          onClick=(action updateWechatConfig formValue.wechat)}}
+        {{#ui-fieldset size="l" help="This is something can helps you out." as |f|}}
+          {{f.input
+            name="username"
+            label=(t "form.configuration-oauth")
+            value=formValue.wechat.url
+            readonly=true
+            readonly=isPublished
+          }}
+        {{/ui-fieldset}}
+        {{ui-button (t "form.verify") color="gray" onClick=(action 'toggleModal')}}
+      </section>
+    </div>
+  </div>
+</div>
+
+{{#ui/popup-panel
+  isShow=isShow
+  icon="ui-square-e-info"
+  title="微信验证"
+  closeModal=(action "toggleModal")
+  clickBackground=(action "clickBackground")
+}}
+  <img src={{qrCode.wechat}} alt="wechat-qr-code" />
+{{/ui/popup-panel}}

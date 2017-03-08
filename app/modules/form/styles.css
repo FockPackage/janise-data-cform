@@ -1,0 +1,29 @@
+@import "var.css";
+
+.form-settings {
+  & h1 {
+    max-width: 70%;
+  }
+}
+
+:global(.shortcut) {
+  float: right;
+  height: 36px;
+
+  @media (max-width: 991px) {
+    float: none;
+  }
+}
+
+
+:global(.back-to-dashboard[tips]) {
+  &:after {
+    background: var(--color-purple);
+    left: -12px;
+  }
+
+  &:before {
+    border-bottom-color: var(--color-purple);
+    margin-left: -14px;
+  }
+}

@@ -1,0 +1,34 @@
+{{!-- Form Settings - Share --}}
+
+<div class="content-wrap" local-class="form-share">
+	<div class="content-row">
+		<div class="row-title">
+			<h2>{{t "form.share-settings"}}</h2>
+		</div>
+	</div>
+	<div class="tabs tabs-style-sub">
+		<nav>
+			<ul>
+        {{#link-to "form.share.url" tagName="li" activeClass="current"}}
+          {{#link-to "form.share.url"}}
+						<span>{{t "form.url"}}</span>
+          {{/link-to}}
+        {{/link-to}}
+
+        {{#link-to "form.share.popup" tagName="li" activeClass="current"}}
+          {{#link-to "form.share.popup"}}
+						<span>{{t "form.popup"}}</span>
+          {{/link-to}}
+        {{/link-to}}
+
+        {{#link-to "form.share.embed" tagName="li" activeClass="current"}}
+          {{#link-to "form.share.embed"}}
+						<span>{{t "form.embed"}}</span>
+          {{/link-to}}
+        {{/link-to}}
+			</ul>
+		</nav>
+	</div>
+
+  {{outlet}}
+</div>

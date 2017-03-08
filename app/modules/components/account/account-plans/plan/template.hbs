@@ -1,0 +1,21 @@
+<div local-class="header">
+	<h2>{{plan.name}}</h2>
+	<div local-class="cost">
+    {{t "account-settings.cost"}}{{plan.price}}
+    <span>{{t "account-settings.unit"}}</span>
+  </div>
+	<div local-class="description">{{plan.description}}</div>
+</div>
+<ul local-class="features">
+  {{#each plan.features as |feature|}}
+		<li>
+			<span>{{feature.label}}</span>
+      {{ui-icon-button icon="ui-round-e-help" tooltip=feature.tip}}
+		</li>
+  {{/each}}
+</ul>
+<div local-class="plan-button">
+  {{#ui-button color=plan.button onClick=toggleModal}}
+    {{plan.upgrade}}
+  {{/ui-button}}
+</div>

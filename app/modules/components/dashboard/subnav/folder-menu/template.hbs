@@ -1,0 +1,37 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger local-class="folder-trigger"}}
+    {{#ui-button expand=true}}
+      <h1 class="ellipsis">{{currentFolder.FolderName}}</h1>
+    {{/ui-button}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content local-class="folder-content"}}
+    <ul class="option checkmark">
+      <div class="optgroup">{{t "separator-bar.switch-folder"}}</div>
+      <ul class="option-contents">
+        {{#each folderList as |folder|}}
+          <li>
+            <a onclick={{action (pipe changeFolder dropdown.actions.close) folder.FolderID}}>
+              {{#if (eq folder.FolderID currentFolder.FolderID)}}
+                {{ui-icon icon="ui-check" style="checkmark"}}
+              {{/if}}
+              {{ui-icon icon=(if (eq folder.FolderID '0') 'ui-grid-square' 'files-folder')}}
+              <span>{{folder.FolderName}}</span>
+            </a>
+          </li>
+        {{else}}
+          <div class="option-blank">
+            {{dashboard/svg-icon/folder-empty}}
+          </div>
+        {{/each}}
+      </ul>
+      <ul class="option-control">
+        <li>
+          <a onclick={{pipe toggleModal dropdown.actions.close}}>
+            {{ui-icon icon="files-folder-add"}}
+            <span>{{t "folder-dropdown.new-folder"}}</span>
+          </a>
+        </li>
+      </ul>
+    </ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

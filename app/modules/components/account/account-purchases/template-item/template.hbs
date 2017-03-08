@@ -1,0 +1,19 @@
+<div local-class="grid-item">
+  <div local-class="template-item" class={{select}}>
+    {{#if select}}
+      <span local-class="selected">{{t "template-item.selected"}}</span>
+    {{/if}}
+    {{#if blank}}
+      <h1>{{t "template-item.blank"}}</h1>
+    {{/if}}
+    <div local-class="open-template">
+      <div local-class="item-mask">
+        <a href="javascript:void(0);"
+          local-class="preview-template">
+          {{t "template-item.preview"}}
+        </a>
+      </div>
+      <div local-class="template-cover" style={{html-safe (concat 'background-image: url(' cover ')')}}></div>
+    </div>
+  </div>
+</div>

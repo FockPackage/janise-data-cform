@@ -1,0 +1,23 @@
+@import "var.css";
+
+:global(.load-more) {
+  display: block;
+  padding: 8px 0;
+  text-align: center;
+  border-radius: 2px;
+  background-color: var(--color-light);
+  color: var(--color-dark-gray);
+  transition: background-color 200ms ease;
+  &:hover {
+    background-color: var(--color-fade-silver);
+    color: var(--color-slate);
+    & svg {
+      fill: var(--color-slate);
+    }
+  }
+  & svg {
+    margin-right: 6px;
+    vertical-align: middle;
+    fill: var(--color-fade-slate);
+  }
+}

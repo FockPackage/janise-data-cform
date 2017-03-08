@@ -1,0 +1,42 @@
+{{!-- Updates Manage --}}
+
+<div local-class="update-notices">
+  {{update-notices-manage/notices-list
+    announcementList=model.announcementList
+    meta=model.meta
+    tagList=model.tagList
+    togglePublish=(route-action 'togglePublish')
+    toggleModal=(route-action 'toggleModal')
+    selectAnnouncement=(route-action 'selectAnnouncement')
+    loadMore=(route-action "loadMore")
+    searchAnnouncement=(route-action "searchAnnouncement")
+    filterByTag=(route-action "filterByTag")
+  }}
+  {{outlet}}
+</div>
+
+{{#ui/popup-panel
+  isShow=model.isShow.publishConfirm
+  icon="ic-solid dark ic-rocket-1"
+  title=(t "popup.publish-confirm")
+  color='blue'
+  text=(t "popup.continue")
+  closeModal=(route-action 'toggleModal' 'publishConfirm')
+  clickBackground=(route-action "clickBackground" 'publishConfirm')
+  onClick=(route-action "togglePublish")
+}}
+  <p>{{t (if model.isPublished "popup.unpublish-confirm-help" "popup.publish-confirm-help")}}</p>
+{{/ui/popup-panel}}
+
+{{#ui/popup-panel
+  isShow=model.isShow.deleteConfirm
+  icon="ic dark ic-trash-2"
+  title=(t "popup.delete-notices")
+  color='red'
+  text=(t 'popup.remove')
+  closeModal=(route-action 'toggleModal' 'deleteConfirm')
+  clickBackground=(route-action "clickBackground" 'deleteConfirm')
+  onClick=(route-action "deleteAnnouncement")
+}}
+  <p>{{t 'popup.confirmation2'}}</p>
+{{/ui/popup-panel}}

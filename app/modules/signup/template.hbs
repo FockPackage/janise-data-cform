@@ -1,0 +1,44 @@
+<div class="center-wrapper">
+	<div class="main-container">
+    {{!-- {{ui-icon-button icon="ui-small-remove"}} --}}
+    {{ui/side-panel
+      tagName=""
+      color="blue"
+      welcome=(t "login.welcome-to")
+      description=(t "login.description")
+      des-li-1=(t "login.des-li-1")
+      des-li-2=(t "login.des-li-2")
+    }}
+		<div class="modal">
+			<div class="modal-container">
+				<h2>{{t "login.create-free-account"}}</h2>
+        {{#ui-fieldset direction="column" size="xl" help="" as |f|}}
+          {{f.input
+            type="email"
+            name="email"
+            placeholder=(t "login.email")
+            value=formValue.email
+          }}
+          {{f.input
+            type="password"
+            name="password"
+            placeholder=(t "login.signup-password")
+            value=formValue.password
+          }}
+        {{/ui-fieldset}}
+        {{ui-button (t "login.signup") color="purple" class="login-button" onClick=(action "signup")}}
+				<div class="hr-label">
+					<span>{{t "login.or"}}</span>
+				</div>
+
+        {{ui/social-authorization}}
+      </div>
+			<div class="modal-footer">
+				<span>{{t "login.already-account"}}</span>
+        {{#link-to 'login'}}
+					<span>{{t "login.login"}}</span>
+        {{/link-to}}
+			</div>
+		</div>
+	</div>
+</div>

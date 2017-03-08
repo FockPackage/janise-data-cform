@@ -1,0 +1,16 @@
+:root {
+  --color-white: #fff;
+  --color-purple: #5940aa;
+  --color-blue: #1894f2;
+  --color-sea-green: #2ecc71;
+  --color-gold: #f1c40f;
+  --color-tomato: #e74c3c;
+  --color-light: color(var(--color-silver) a(25%));
+  --color-fade-silver: color(var(--color-silver) a(50%));
+  --color-silver: #bdc3c7;
+  --color-dark-gray: #919ba2;
+  --color-fade-slate: color(var(--color-slate) a(60%));
+  --color-slate: #4e5b68;
+  --color-dark-slate: #34495e;
+}
+

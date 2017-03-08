@@ -1,0 +1,32 @@
+:root {
+  --reset-box {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  --truncate-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  --responsive-row {
+    display: block;
+    clear: fix;
+    position: relative;
+    margin: 0 auto;
+  }
+}
+
+@custom-media --mobile only screen and (width <= 425px);
+
+@custom-media --tablet only screen and (425px < width <= 768px);
+
+@custom-media --laptop only screen and (768px < width <= 1024px);
+@custom-media --above-laptop only screen and (width > 768px);
+@custom-media --below-laptop only screen and (width <= 768px);
+
+@custom-media --normal only screen and (1024px < width <= 1440px);
+@custom-media --above-normal only screen and (width > 1024px);
+@custom-media --below-normal only screen and (width <= 1024px);

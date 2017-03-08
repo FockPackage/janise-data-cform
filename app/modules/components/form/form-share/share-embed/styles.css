@@ -1,0 +1,29 @@
+@import "var.css";
+
+.share-settings {
+  position: relative;
+}
+
+.embed-row {
+  width: 100%;
+  margin-bottom: 24px;
+  clear: fix;
+
+  & > span {
+    color: var(--color-silver);
+    font-size: 13px;
+    line-height: normal;
+    clear: left;
+  }
+
+  & textarea {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  & button {
+    float: left;
+    clear: left;
+    margin-top: 12px;
+  }
+}

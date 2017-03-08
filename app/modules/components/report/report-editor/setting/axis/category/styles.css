@@ -1,0 +1,22 @@
+@import "var.css";
+
+.axis-options {
+  padding-bottom: 0;
+
+  & > div {
+    float: left;
+    margin-right: 24px;
+  }
+}
+
+.label-angle,
+.category-labels {
+  & > div {
+    float: left;
+    width: 157px;
+
+    & button {
+      width: 100%;
+    }
+  }
+}

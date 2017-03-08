@@ -1,0 +1,50 @@
+@import "var.css";
+@import "assets.css";
+
+:global(.tools) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 36px;
+  position: absolute 0 0 auto auto;
+  opacity: 0;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-silver);
+  transition: all 200ms ease;
+  transform: translate3d(0, -36px, 0);
+  transition-delay: 0.2s;
+  visibility: hidden;
+
+  &::before {
+    position: absolute 100% 0 auto 0;
+    content: "";
+    height: 16px;
+    opacity: .2;
+    transition: opacity 200ms ease;
+    background-image: var(--shadow-bottom);
+  }
+}
+
+.settings {
+  display: flex;
+  padding-left: 12px;
+}
+
+.addon {
+  position: relative;
+  display: flex;
+
+  &::before {
+    position: absolute 8px auto 8px 0;
+    content: "";
+    width: 1px;
+    background-color: var(--color-silver);
+  }
+}
+
+.editor {
+  margin-left: auto;
+  display: flex;
+  padding: 0 12px;
+}

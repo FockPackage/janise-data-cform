@@ -1,0 +1,80 @@
+@import "var.css";
+
+.data-source-cover {
+  float: right;
+  height: 36px;
+
+  & li {
+    float: left;
+  }
+
+  @media (max-width: 1200px) {
+    padding-top: 12px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    height: 48px;
+
+    & li {
+      display: inline-block;
+      float: none;
+
+      & a {
+        margin: 0 12px;
+      }
+    }
+  }
+}
+
+.sidebar {
+  float: right;
+
+  &:before {
+    left: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 30%;
+  }
+
+  @media (max-width: 991px) {
+    border: none;
+  }
+
+  &.maximize {
+    display: none;
+  }
+}
+
+:global(.sidebar-row.reports) {
+  margin-top: 12px;
+  flex: 1 0 auto;
+  width: 100%;
+
+  @media (max-width: 991px) {
+    width: 49%;
+    flex: 0 0 auto;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+
+  & > a {
+    position: absolute 6px 8px auto auto;
+  }
+}
+.chart-wrap {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute 0 -1px 0 auto;
+    width: 1px;
+    background-color: var(--color-silver);
+  }
+}
+
+.chart-wrap.maximize {
+  width: 100% !important;
+}

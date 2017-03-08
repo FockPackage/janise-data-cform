@@ -1,0 +1,749 @@
+# 404
+404:
+  404: "404"
+  not-found: "page not found"
+  description1: "We looked everywhere for this page."
+  description2: "Are you sure the website URL is correct?"
+  description3: "Get in touch with the site owner."
+  go-to-homepage: "Go to Homepage"
+
+# Login
+login:
+  email: "Email address"
+  password: "Password"
+  signup-password: " Password (min 6 characters)"
+  login: "Login"
+  signup: "Sign Up"
+  login-into: "Login Into Your Account"
+  create-account: "Create Account"
+  create-free-account: "Create Your Free Account"
+  remember-me: "Remember me"
+  forgot-password: "Forgot your password?"
+  no-account: "Don't have an account?"
+  already-account: "Already have an account?"
+  # Welcome
+  welcome-back: "Welcome Back to"
+  welcome-to: "Hey! Welcome to"
+  slogan: "BEST ONLINE SURVEY SOFTWARE & QUESTIONNAIRE TOOL"
+  description: "Benefits of Joining:"
+  des-li-1: "Receive a 10% off discount in your inbox"
+  des-li-2: "Download 100 Free Responses every week"
+  # Authorization
+  or: "or Login with"
+  login-using: "Login in using"
+  wechat: "WeChat"
+  qq: "QQ"
+  google: "Google"
+  facebook: "Facebook"
+  # Reset your password
+  recover-account: "Recover Account"
+  reset-password: "Reset your password"
+  send-password: "Enter your email address below and we'll send a special reset password link to your inbox."
+  send-recovery-email: "Send Recovery Email"
+  # Recovery Email Sent
+  recovery-email-sent: "Recovery Email Sent"
+  email-containing: "An email containing instructions to reset your password has been sent to"
+  did-not-receive-email: "If you did not receive the email, please"
+  contact-us: "contact us"
+  recover-your-account: "to recover your account."
+
+# Header Nav
+header-nav:
+  dashboard: "Dashboard"
+  reports: "Reports"
+  help: "Help"
+  plans: "Plans & Pricing"
+
+# Footer Nav
+footer-nav:
+  help-support: "Help & Support"
+  tutorials: "Tutorials"
+  blog: "Blog"
+  privacy-policy: "Privacy Policy"
+  terms-service: "Terms of Service"
+  year: "© 2016,"
+  copyright: ", Inc. All Rights Reserved."
+
+
+# Page header
+page-header:
+  # Title
+  dashboard: "Dashboard"
+  account: "Account Settings"
+  reporting-tools: "Reporting Tools"
+  updates: "Updates and Announcements"
+  updates-manage: "Updates Manage"
+  # Button
+  seach: "Search for a form..."
+  create: "Create Form"
+  cancel: "Cancel"
+  editor: "Editor Form"
+  reports: "Reports"
+  create-report: "Create Report"
+  upgrade: "Upgrade to Ultimate"
+  new: "New Notices"
+  # Tips
+  back-to-dashboard: "Back to Dashboard"
+  back-to-reports: "Back to Reports"
+  add-data-source: "Import Data Source"
+
+# Current Plan
+current-plan:
+  plan: "Plan:"
+  starter: "Starter"
+  advanced: "Advanced"
+  ultimate: "Ultimate"
+
+# Separator Bar
+separator-bar:
+  switch-folder: "Switch Folder:"
+
+row-title:
+  save: "Save Changes"
+  update-password: "Update Password"
+  close-collector: "Close Collector"
+  published-collector: "Published Collector"
+  del-quota: "Delete Quota"
+
+load-more: "Load More"
+load-more-templates: "Load More Templates"
+
+# Dashboard
+dashboard:
+  no-matching: "No forms matching"
+  search: "Search"
+  instead: "instead?"
+  no-matching-help: "Try another search query!"
+  folder-empty: "There are no forms in this folder yet."
+  folder-empty-help: "Select 'Move to Folder' in your form options to get started."
+
+# Form Item
+form-item:
+  # Operations Tips
+  delete: "Delete"
+  duplicate: "Duplicate"
+  folder: "Folder"
+  publish: "Publish"
+  preview: "Preview"
+  open-in-editor: "Open in Editor"
+  # Results
+  settings: "Settings"
+  analysis: "Analysis Results"
+  statistics: "Statistics:"
+  # Form Footer
+  creation-date: "Creation Date: "
+
+# Create Form
+create:
+  create-new-form: "Create a New Form"
+  form-name: "Form Name:"
+  name-help: "Form name must be between 3 and 50 characters long containing only letters and numbe"
+  choose-template: "Choose a Template"
+
+# Template Item
+template-item:
+  selected: "Selected"
+  select-template: "Select Template"
+  preview: "Preview"
+  blank: "Blank"
+
+
+# Account Settings
+account-settings:
+  # Tabs
+  profile: "Profile"
+  plans: "Plans"
+  billing: "Billing"
+  purchases: "Purchases"
+  email-settings: "Email Settings"
+  password: "Password"
+# Profile -------
+  # Upload
+  upload: "Upload"
+  upload-help: "You can upload images up to 256x256. Your avatar shows up in your public profile and your team notifications."
+  # Account Info
+  account-info: "Account Info"
+  first-name: "First Name:"
+  last-name: "Last Name:"
+  username: "Username:"
+  username-alert: "Username must be between 3 and 20 characters long containing only letters and numbers."
+  email-address: "Email Address:"
+  email-address-alert: "Invalid email."
+  name-help: "Displayed on your public profile, notifications and other places."
+  username-help: "Username must be between 3 and 20 characters long containing only letters and numbers with no spaces. Used in public pages like your public profile."
+  # Linked Accounts
+  accounts:
+    facebook: "Facebook"
+    wechat: "WeChat"
+    weibo: "Weibo"
+    qq: "QQ"
+  linked-accounts: "Linked Accounts"
+  link-account: "Link Account"
+  not-linked: "Not linked"
+  linked-accounts-help: "You can sign into choice form by linking your Facebook or Google accounts."
+  # Language
+  language: "Change Language"
+  # Account Details
+  account-details: "Account Details"
+  account-created: "Account Created"
+  total-number: "Total number of form"
+  public-form: "Public Form"
+  storage-used: "Storage Used (Form)"
+# Plans ------
+  choose-plan: "Choose a Plan"
+  choose-type: "Choose Type:"
+  yearly-billing: "Yearly Billing"
+  monthly-billing: "Monthly Billing"
+  cost: "$"
+  unit: "/mo"
+  downgrade: "Downgrade"
+  your-plan: "Your plan"
+  upgrade: "Upgrade"
+  select-plan: "Select Plan"
+  frequently-asked-questions: "Frequently Asked Questions"
+  manage-current-plan: "Manage Current Plan"
+  manage-current-subscription: "Manage Current Subscription"
+# Billing -------
+  # Plan Subscription
+  plan-subscription: "Plan Subscription"
+  plan-name: "Plan Name"
+  subscription-status: "Subscription Status"
+  billing-period-start: "Billing Period Start"
+  billing-period-end: "Billing Period End"
+  active: "Active"
+  # Billing Info
+  billing-info: "Billing Info"
+  account-history: "Account History"
+  payment-history: "Payment History"
+  number: "Number"
+  date: "Date"
+  event: "Event"
+  total: "Total"
+  state: "State"
+  invoice: "Invoice"
+  # Invoicing Info
+  invoicing-info: "Invoicing Info"
+  company-name: "Company Name:"
+  invoice-content: "Invoice Content:"
+  software-service: "Software Service"
+  technical-services: "Technical Services"
+  consultancy: "Consultancy"
+  taxpayer-number: "Taxpayer Number:"
+  registered-address: "Registered Address:"
+  register-phone: "Register Phone:"
+  bank-name: "Bank Name:"
+  bank-account: "Bank Account:"
+  addressee: "Addressee:"
+  address: "Address:"
+  contact-phone: "Phone:"
+  invoicing-help: "Additional company information to be shown on invoices; e.g. address, PO number, etc."
+# Purchases -------
+  purchased-templates: "Purchased Templates"
+  template: "Template"
+  template-name: "Template Name:"
+  template-categories: "Categories:"
+  templates-cost: "Cost:"
+  templates-invoice: "Invoice:"
+  download-pdf: "Download as PDF"
+# Email Settings -------
+  #Notifications
+  notifications: "Notifications"
+  feature: "Feature Announcements"
+  news: "New User Emails"
+  account-messages: "Important Account Messages"
+  news-help: "during your first week"
+  account-help: "Sent about once a year"
+# Password -------
+  # Change Password
+  change-password: "Change Password"
+  current-password: "Current Password:"
+  new-password: "New Password:"
+  password-help: "New passwords must be at least 6 characters long. Tip: Make it really hard to guess (not password123)."
+# integrations -------
+  integrations: "Integrations"
+  integrations-complete: "Complete"
+  integrations-screen-out: "Screen Out"
+  integrations-quota-full: "Quota Full"
+# Form Settings
+form:
+  # Tabs
+  quota: "Quota"
+  collect-responses: "Collect Responses"
+  share: "Share"
+  analyze: "Analyze Results"
+# Quota -------
+  quota-settings: "Quota Settings"
+  create-quota-row: "Create Quota Row"
+  create-quota-column: "Create Quota Column"
+  add-quota-set: "Add Quota Set"
+  no-quota-set: "No Quota Set"
+  no-quota-set-help: "Click + to add quota set"
+  learn-more: "Learn more »"
+  quota-group: "Quota Group"
+  add-condition: "Add Condition"
+  generate-quota-form: "Generate Quota Form"
+  new-quota: "New Quota"
+  delete-quota: "Delete Quota"
+  duplicate-quota: "Duplicate Quota"
+  hide-settings: "Hide Settings"
+  show-settings: "Show Settings"
+  quota-form: "Quota Form"
+# Collect -------
+  # General Settings
+  general-settings: "General Settings"
+  subdomain: "Subdomain:"
+  subdomain-help: "Must be alphanumeric (A-Z, 0-9) with dashes between words. Last published 4 months ago."
+  open-link: "Open Link"
+  # Site Time Zone
+  time-zone: "Time Zone"
+  choose-list: "Choose the time zone from this list:"
+  choose-list-help: "Time zone defaults to UTC, so setting it to your local time zone will improve any date/time-related features of your dynamic content, including relative date filtering. It will also update any date/time-related elements of your existing dynamic content."
+  # Collect Settings
+  collect-settings: "Collect Settings"
+  collector-tab: "Collector 1"
+  response-limits: "Response Limits"
+  response-limits-help: "Set the maximum number of responses that this collector will accept."
+  unlimited-response: "Unlimited Response"
+  unlimited-response-help: "Off, accept responses until you manually close this collector"
+  publish: "Publish"
+  published: "Published"
+  stop-collect: "Stop Celloct"
+  plans: "Planning to Publish"
+  cutoff-date-time: "Cutoff Date and Time"
+  cutoff-date-time-help: "Set a cutoff date and time when this collector will close and stop accepting responses."
+  unlimited-time: "Unlimited Time"
+  unlimited-time-help: "Off, accept responses until you manually close this collector"
+  multiple-responses: "Multiple Responses"
+  multiple-responses-on: "On, allow the survey to be taken more than once from the same device"
+  multiple-responses-off: "Off, only allow the survey to be taken once from the same device"
+  multiple-responses-help: "You can allow a survey to be taken multiple times from the same device. This option can be useful for kiosks or any other time you make a survey available on a device in a public place."
+  ip-restrictions: "IP Restrictions"
+  ip-restrictions-on-block: "On, block computers at specified IP addresses from taking your survey"
+  ip-restrictions-on-allow: "On, allow computers at specified IP addresses to take your survey"
+  ip-restrictions-off: "Off, no IP addresses are restricted from taking your survey"
+  ip-restrictions-help: "Control who can take your survey by either allowing or blocking specific IP addresses."
+  link-parameters: "link Parameters"
+  link-parameters-help: "Set up the link parameters, the parameter value will result in the data.To specify different parameter values can be collect membership information such as a specific user information,For example: http://q.cform.io/?6 nveye & key = Tom"
+  social-settings: "Social Settings"
+  collect-wechat-user: "Collect WeChat user basic information"
+  binding-wechat: "Binding WeChat service number:"
+  # Social Settings
+  wechat: "WeChat"
+  username: "Username:"
+  wechat-number: "WeChat Number:"
+  app-id: "APP ID:"
+  app-secret: "APP Secret:"
+  verify-save: "Verify & Save"
+  configuration-oauth: "Configuration OAuth"
+  verify: "Verify"
+# Share -------
+  # Share Settings
+  share-settings: "Share Settings"
+  # Tabs
+  url: "URL"
+  popup: "Popup"
+  embed: "Embed code"
+  # URL
+  url-title: "Share your choice form"
+  web-link: "Your choiceform lives in this URL:"
+  rq-code: "RQ Code:"
+  share-social: "Share on social media or send by email:"
+  upload-logo: "Upload Logo"
+  download-qrcode: "Download QR Code"
+  # Popup
+  popup-title: "Launch in a popup"
+  popup-sarved: "How would you like your pop-up served?"
+  classic: "Classic"
+  drawer: "Drawer"
+  button: "Button"
+  link: "Link"
+  button-text: "Button or Link text:"
+  code: "Copy and paste this piece of code and place in your website"
+  help: "Simply paste this code into your HTML document where you want the launcher to appear, that’s it! "
+  code-for: "What’s this code for?"
+  info: "Use this code to generate a popup window on your blog/website where your typeform will load. You can choose to launch the popup overlay from either a button or a link."
+  example: "here is an example:"
+  # Embed
+  embed-title: "Embed in a web page"
+  view-example: "View Example"
+  embed-code: "Embed code"
+  embed-code-help: "Place this code in your page's HTML where you want your typeform to appear."
+  full-page-code: "Full page code"
+  full-code-help: "Use this code to create an HTML page on your site with a fullscreen typeform."
+# Analyze -------
+  # Tabs
+  metrics: "Metrics"
+  summaries: "Summaries"
+  results: "Results"
+  responses: "Responses"
+
+# Reports
+reports:
+  view-report: "View Report"
+
+# Reporting Tools
+reporting-tools:
+# Report -------
+  # Tabs
+  report: "Report"
+  # Header View
+  default-view: "Default View"
+  full-charts: "(Full Charts)"
+  favorites: "Favorites"
+  full-screen: "Full Screen"
+  revert: "Revert"
+  duplicate: "Duplicate"
+  share: "Share"
+  download: "Download"
+  view-settings: "View Settings"
+  # Sidebar
+  search: "Search"
+  data: "Data"
+  minimize: "Minimize"
+  maximize: "Maximize"
+  sort: "Sort:"
+  drag: "Drag:"
+  visibility: "Visibility:"
+  serial: "Serial:"
+  custom-data: "Custom Data"
+  create-custom-data: "Create Custom Data"
+  collapse: "ollapse"
+  # Chart Tools
+  create-chart: "Create Chart"
+  display-options: "Display Options"
+  chart-editor: "Chart Editor:"
+
+# Chart Editor
+chart-editor:
+  chart-editor: "Chart Editor"
+  # Tabs
+  chart: "Chart"
+  axis: "Axis"
+  series: "Series"
+  style: "Style"
+  # Chart
+  chart-options: "Chart Options:"
+  chart-type: "Chart Type:"
+  title: "Title:"
+  legend: "Legend:"
+  chart-font: "Chart Font:"
+  gaps: "Gaps:"
+  between-columns: "Between Columns:"
+  between-sets: "Between Sets:"
+  # Axis
+  axis-options: "Axis Options:"
+  value-y: "Value Y"
+  category-x: "Category X"
+  axis-name: "Axis Name"
+  axis-line: "Axis Line"
+  series-number: "Series Number"
+  axis-scale: "Axis Scale:"
+  major: "Major:"
+  value-labels: "Value Labels:"
+  decimals: "Decimals:"
+  thousands-separator: "Thousands Separator"
+  prefix: "Prefix:"
+  suffix: "Suffix:"
+  show-minimum-value: "Show Minimum Value"
+  label-angle: "Label Angle:"
+  category-labels: "Category Labels:"
+  location: "Location:"
+  trendlines: "Trendlines:"
+  error-bars: "Error Bars:"
+  # Style
+  fill: "Fill:"
+  stroke: "Stroke:"
+
+# Updates
+updates:
+  manage: "Manage"
+  online: "Online"
+  offline: "Offline"
+  seach: "Seach"
+  subject: "Notices Subject"
+  body: "Notices Body"
+  title: "Title:"
+  description: "Description:"
+  updates-help: "See the latest feature releases and bug fixes."
+  updates-manage-help: "Click the preview icon to preview the notice."
+
+# Account Settings Dropdown
+account-settings-dropdown:
+  account: "Account"
+  settings: "Settings"
+  plans: "Plans"
+  teams: "Teams"
+  updates: "Updates"
+  help: "Help Center"
+  sign-out: "Sign Out"
+
+# Notifications Dropdown
+notifications-dropdown:
+  view-all: "View All Notifications"
+
+# Switch Account Dropdown
+switch-acount-dropdown:
+  switch-acount: "Switch Account:"
+  team-settings: "Team Settings"
+  create-tema: "Create Tema"
+
+# Filters Dropdown
+sortord-menu:
+  created-date: "Date Created"
+  updated-date: "Date Modify"
+  questionnaire-status: "Form Status"
+
+# Folder Dropdown
+folder-dropdown:
+  new-folder: "New Folder"
+  folder: "Folder"
+
+# Create Dropdown
+create-dropdown:
+  all-categories: "All Categories"
+  all: "All"
+  free: "Free"
+  premium: "Premium"
+  sort: "Sort by:"
+  featured: "Featured"
+  created-date: "Created Date"
+  popularity: "Popularity"
+
+# Language Menu
+language-menu:
+  zh-cn: "中文 (简体)"
+  zh-tw: "中文 (繁體)"
+  en-us: "English"
+  es-es: "Español"
+  ja-jp: "日本語"
+  ko-kr: "한국어"
+  language-help: "Your preferred language for choice from products. Your language variant may affect the spelling or vocabulary used by some of them."
+
+# View Dropdown
+view-dropdown:
+  switch-view: "Switch View:"
+  create-view: "Create View"
+  default-view: "Default View"
+  full-charts: "(Full Charts)"
+  custom-view-1: "Custom View 1"
+  current-view-settings: "Current View Settings"
+
+# View Filter Dropdown
+view-filter-dropdown:
+  switch-filter: "Switch Filter:"
+  none-filter: "None Filter"
+  default-filter: "Default Filter"
+  create-filter: "Create Filter"
+  filter-settings: "Filter Settings"
+
+# Filter Dropdown
+filter-dropdown:
+  filter-for: "Filter for:"
+  kind: "Kind"
+  single-choice: "Single Choice"
+
+# Data Source Dropdown
+data-source-dropdown:
+  rename: "Rename"
+  visibility-all: "Visibility All"
+  delete-data: "Delete Data"
+
+# Data Source Cover Dropdown
+data-source-cover-dropdown:
+  data-summary: "Data Summary:"
+  title: "Title:"
+  created: "Created:"
+  modified: "Modified:"
+  status: "Status:"
+  questions: "Questions:"
+  responses: "Responses:"
+  form-language: "Form Language:"
+
+# Chart Type Dropdown
+chart-type-dropdown:
+  column: "Column"
+  bar: "Bar"
+  line: "Line"
+  area: "Area"
+  pie: "Pie"
+  scatter: "Scatter"
+  bubble: "Bubble"
+  mixed: "Mixed"
+
+# Axis Scale Dropdown
+axis-scale-dropdown:
+  linear: "Linear"
+  logarithmic: "Logarithmic"
+
+# Value Labels Dropdown
+value-labels-dropdown:
+  none: "None"
+  number: "Number"
+  currency: "Currency"
+  percentage: "Percentage"
+  fraction: "Fraction"
+
+# Label Angle Dropdown
+label-angle-dropdown:
+  label-angle: "Label Angle:"
+  horizontal: "Horizontal"
+  left-vertical: "Left Vertical"
+  left-diagonal: "Left Diagonal"
+  right-vertical: "Right Vertical"
+  right-diagonal: "Right Diagonal"
+
+# Category Labels Dropdown
+category-labels-dropdown:
+  none: "None"
+  auto-fit: "Auot Fit"
+  show-all: "Show All"
+
+# Location Dropdown
+location-dropdown:
+  top: "Top"
+  middle: "Middle"
+  bottom: "Bottom"
+
+# Fill Dropdown
+fill-dropdown:
+  no-fill: "No Fill"
+  color-fill: "Color Fill"
+  gradient-fill: "Gradient Fill"
+
+# View Filter Data Source Dropdown
+view-filter-data-source-dropdown:
+  switch-data-source: "Switch Data Source:"
+
+# Chart Addon Dropdown
+chart-addon-dropdown:
+  option: "Option"
+  settings: "Settings"
+
+# Setup Dropdown
+setup-dropdown:
+  setup: "Setup:"
+  share: "Share:"
+  rename: "Rename"
+  delete: "Delete"
+  remove: "Remove"
+  copy: "Copy"
+  open-in-browser: "Open in Browser"
+  send-by-email: "Send by Email"
+  share-by-wechat: "Share by WeChat"
+
+# Tag Dropdown
+tag-dropdown:
+  tag: "Tag"
+  bugfix: "Bugfix"
+  feature: "Feature"
+  light-feature: "Light Feature"
+  update: "Update"
+  custom: "Custom Tag"
+
+# Update Notices Settings Dropdown
+control-dropdown:
+  delete: "Delete"
+  duplicate: "Duplicate"
+  preview: "Preview"
+  editor: "Editor"
+
+# Popup
+popup:
+  # Popup Button
+  cancel: "Cancel"
+  delete-forever: "Delete Forever"
+  delete-filter: "Delete Filter"
+  open-in-browser: "Open in Browser"
+  copy-url: "Copy URL"
+  preview: "Preview"
+  create: "Create"
+  move: "Move"
+  save: "Save"
+  remove: "Remove"
+  rename: "Rename"
+  continue: "Continue"
+  confirm: "Confirm"
+  submit: "Submit"
+  unpublish: "Unpublish"
+  # Delete Confirmation
+  delete-confirmation: "Delete Confirmation"
+  delete-confirm: "Confirm by typing"
+  password: "password"
+  below: "below."
+  confirmation1: "The form"
+  confirmation2: "and its questions, reporting-tools-report, and images will be deleted permanently. existing submissions will be deleted and all future submissions will not be captured, even if this form was exported."
+  # New Folder
+  new-folder: "New Folder"
+  rename-folder: "Rename Folder"
+  folder-name: "Folder name:"
+  # Move to Folder
+  move-to-folder: "Move to Folder"
+  select-folder: "Select folder:"
+  # Remove Folder
+  remove-folder: "Remove Folder"
+  remove-folder-help: "Remove an folder is permanent. Form that were in a Remove folder remain part of your dashboard."
+  current-folder: "Current Folder:"
+  # Form Preview:
+  share: "Share"
+  form-preview: "Preview"
+  url: "Your form preview in this URL:"
+  help: "To preview your form, click the Preview button in the Preview module. From there, you can then click through the test yourself, or copy and paste the URL to send to your testers."
+  # User Authentication
+  user-authentication: "User Authentication"
+  session-timeout: "The default session timeout"
+  # Display Options
+  display-options: "Display Options"
+  # View Filter
+  view-filter: "View Filter"
+  save-filter: "Save Filter"
+  values: "Values:"
+  to: "to"
+  include: "Include"
+  exclude: "Exclude"
+  question: "Question:"
+  options: "Options:"
+  options-addon: "Options Addon:"
+  scope: "Scope:"
+  # Update Notices
+  been-gone: "Since You've Been Gone"
+  missed: "New features, bug fixes, and content you might've missed."
+  view-all-updates: "View All Updates"
+  # Upgrade Plan
+  currency: "$"
+  start: "Start "
+  month: "Month "
+  year: "Year "
+  monthly-billing: "Monthly Billing"
+  yearly-billing: "Yearly Billing"
+  starter: "Starter Plan"
+  advanced: "Advanced Plan"
+  ultimate: "Ultimate Plan"
+  coupon-code: "Coupon Code"
+  coupon-code-help: "Enter coupon code to redeem"
+  billing-currency: "Billing currency:"
+  cny: "CNY"
+  usd: "USD"
+  payment-method: "Payment Method:"
+  paypal: "PayPal"
+  alipay: "Alipay"
+  wechat: "WeChat"
+  credit-card: "Credit Card"
+  bank-transfer: "Bank Transfer"
+  credit: "Credit / Debit Card Information"
+  name-on-card: "Name on card"
+  card-number: "Card Number"
+  expiration-date: "Expiration Date"
+  cvv: "CVV"
+  upgrade-to: "Upgrade to "
+  # Updates Manage Publish Confirm
+  delete-notices: "Delete Notices"
+  publish-confirm: "Publish Confirm"
+  publish-confirm-help: "Confirm publishing notices, click a confirm to submit."
+  unpublish-confirm-help: "Unpublish this notices means not making your notices viewable by anyone."
+
+
+# Workspace Warnings
+workspace-warnings:
+  saved: "Saved"
+  published-successfully: "Published Successfully!"
+  too-small: "To create a new form, enlarge your browser window, or switch to a computer with a larger screen resolution."

@@ -1,0 +1,20 @@
+@import "var.css";
+
+.send-recovery-email {
+  & p {
+    margin: 12px 0;
+  }
+
+  & strong {
+    color: var(--color-blue);
+    margin-left: 6px;
+  }
+
+  & a {
+    color: var(--color-sea-green);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

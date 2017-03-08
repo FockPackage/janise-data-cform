@@ -1,0 +1,28 @@
+{{#basic-dropdown renderInPlace=true as |dropdown|}}
+  {{#dropdown.trigger local-class="data-source-trigger"}}
+    {{ui-icon-button icon="ui-settings-gear"}}
+  {{/dropdown.trigger}}
+
+  {{#dropdown.content local-class="data-source-content"}}
+		<ul class="option">
+			<li>
+        <a onclick={{action (pipe listActions.toggleVisibility dropdown.actions.close)}}>
+          {{ui-icon icon="eye" style="visible"}}
+          <span>{{t "data-source-dropdown.visibility-all"}}</span>
+        </a>
+			</li>
+			<li>
+        <a onclick={{action (pipe listActions.toggleTitleEditable dropdown.actions.close)}}>
+          {{ui-icon icon="files-documents"}}
+          <span>{{t "data-source-dropdown.rename"}}</span>
+        </a>
+			</li>
+			<li>
+        <a>
+          {{ui-icon icon="trash-solid"}}
+          <span>{{t "data-source-dropdown.delete-data"}}</span>
+        </a>
+			</li>
+		</ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

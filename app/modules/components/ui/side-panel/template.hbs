@@ -1,0 +1,17 @@
+<div local-class={{concat "side-panel " color}}>
+	<div local-class="welcome">
+		<h1>{{welcome}}</h1>
+    {{ui-logo "index" local-class="logo"}}
+    {{#if slogan}}
+			<p>{{slogan}}</p>
+    {{/if}}
+		{{#if description}}
+      <h2>{{description}}</h2>
+      <ul>
+        <li>{{des-li-1}}</li>
+        <li>{{des-li-2}}</li>
+      </ul>
+		{{/if}}
+
+	</div>
+</div>

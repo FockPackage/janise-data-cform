@@ -1,0 +1,21 @@
+<li class={{concat "notices " (if announcement.isSelected 'active ') manage}}>
+  <div local-class="notices-item">
+    <div class="notices-item-body" onclick={{onClick}}>
+      <div class="notices-item-header">
+        <strong>{{announcement.title}}</strong>
+        <span local-class={{concat "type " type}}>{{announcement.tags}}</span>
+      </div>
+      {{#unless announcement.isHideDescription}}
+        <p class="notices-item-description">{{announcement.describe}}</p>
+      {{/unless}}
+      {{#if announcement.published_at}}
+        <span local-class="timestamp">
+          {{moment-from-now announcement.published_at}} - {{moment-format announcement.published_at}}
+        </span>
+      {{else}}
+        <span local-class="timestamp">还没有发布</span>
+      {{/if}}
+    </div>
+    {{yield}}
+  </div>
+</li>

@@ -1,0 +1,24 @@
+@import "var.css";
+
+@value color-silver from "choice-ui/colors";
+
+:global(.chart-container) {
+  padding: 12px;
+
+  & > span {
+    display: block;
+    font-size: 12px;
+    color: var(--color-dark-gray);
+    margin-bottom: 24px;
+  }
+}
+
+:global(.chart-view.blank) {
+  & .chart {
+    height: 128px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAABiCAMAAACs9+cdAAAAM1BMVEUAAADX19fX19fX19fX19fW1tbX19fX19fd3d3Z2dnX19fY2NjX19fY2NjX19fe3t7W1tZ7mIieAAAAEHRSTlMASuXk8+HIuh0av2K0aGYXfaSOWAAAARpJREFUaN7t2kuOgzAQRdEy/oBDPrX/1XZ1Sx50JUKghEcSvzuwLAScCRgGli67lKTAUrn8sfWk8E7VYIzrZZGrHtJVio3nKsDq2cgiycYq0CYjk6gl4NQi/CjCr4fDoCsagvj8tXbOJjjqqqL47q+Nm+C8Ds7yIHVtgkNe5YbXwc/37z6E3xcOw/L7uxscdbG4G5yX4bwbHPKiG77v4SL8sbD/RsNg/42GwerqA27HCBMm/F6wX4NhsF+DYbC6+oDbnDBhwoQJE8bD/m8DBvu/DRisrj7gNidM+PNgv0rBYL9KwWB19QG3OWHChAkTJkyY8H5wsmFCwm2zYLFxnJDwNNq0yKyHNIuYj28UkdsB8niT32b0NufZ0B/KHv4wWGi/bAAAAABJRU5ErkJggg==');
+    background-position: center;
+    background-size: 60px;
+    background-repeat: no-repeat;
+  }
+}

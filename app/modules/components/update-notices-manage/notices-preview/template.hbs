@@ -1,0 +1,17 @@
+<div class="notices-column-control">
+  {{update-notices-manage/language-menu
+    currentLang=currentLang
+    languageList=languageList
+    selectLanguage=(action "selectLanguage")
+  }}
+</div>
+<div class="notices-column">
+  <div class="intro">
+    <div class="notices-item-header">
+      <strong>{{announcement.title}}</strong>
+      <span local-class={{concat "type " type}}>{{announcement.tags}}</span>
+    </div>
+    <p class="notices-item-description">{{announcement.describe}}</p>
+  </div>
+  <div id='preview'></div>
+</div>

@@ -1,0 +1,58 @@
+@import "var.css";
+
+.value-labels {
+  padding-bottom: 0;
+
+  & > div {
+    float: left;
+    width: 157px;
+
+    & button {
+      width: 100%;
+    }
+  }
+
+  & p {
+    width: 157px;
+    float: left;
+
+    &:nth-of-type(1) {
+      margin-right: 12px;
+    }
+  }
+}
+
+.value-labels-dropdown {
+  margin-right: 12px
+}
+
+.decimals {
+
+}
+
+.thousands-separator {
+  margin-top: 12px;
+}
+
+.prefix {
+  padding-bottom: 0;
+
+  & :global(.column-wrapper) {
+    width: 100%;
+
+    & > div {
+      width: 157px;
+    }
+  }
+}
+
+.location {
+  & > div {
+    float: left;
+    width: 157px;
+
+    & button {
+      width: 100%;
+    }
+  }
+}

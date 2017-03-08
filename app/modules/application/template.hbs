@@ -1,0 +1,36 @@
+{{loading-slider isLoading=true duration=25000}}
+{{ui-notification}}
+
+{{#unless single}}
+  <div class="main-wrapper site">
+    {{#ui-navigation detect=detectHeight class="purple" as |nav|}}
+      {{#nav.primary as |inner|}}
+        {{#inner.menu position="r" local-class="setting"}}
+          {{header-nav/notification-center-menu}}
+          {{header-nav/account-setting-menu}}
+        {{/inner.menu}}
+
+        {{inner.menu navMenu position="l"}}
+      {{/nav.primary}}
+
+      {{#unless noSubnav}}
+        {{#nav.secondary}}
+          {{outlet "subnav"}}
+        {{/nav.secondary}}
+      {{/unless}}
+  {{/ui-navigation}}
+
+    <div class="w-container">
+      {{outlet}}
+    </div>
+  </div>
+  {{footer-nav tagName="footer"}}
+{{/unless}}
+
+{{outlet "single"}}
+
+{{application/user-authentication}}
+
+{{svg-icon/dashboard-icon}}
+{{svg-icon/reports-icon}}
+{{svg-icon/share-icon}}

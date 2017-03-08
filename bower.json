@@ -1,0 +1,9 @@
+{
+  "name": "choice-data",
+  "dependencies": {
+    "chartist": "^0.10.1",
+    "ember": "2.9.1",
+    "ember-cli-shims": "0.1.3",
+    "flatpickr": "flatpickr-calendar#2.0.0"
+  }
+}

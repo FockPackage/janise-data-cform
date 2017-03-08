@@ -1,0 +1,22 @@
+@import "var.css";
+
+.style-font-dropdown {
+  width: 100%;
+
+  & > div {
+    float: left;
+    width: 157px;
+
+    &:nth-of-type(odd) {
+      margin-right: 12px;
+    }
+
+    & button {
+      width: 100%;
+    }
+  }
+}
+
+.font-size {
+
+}

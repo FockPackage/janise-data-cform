@@ -1,0 +1,29 @@
+@import 'var.css';
+
+.notices-blank {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: 24px;
+  text-align: center;
+  border-left: 1px solid var(--color-silver);
+
+  justify-content: center;
+  & > div {
+    align-self: center;
+    & svg {
+      width: 256px;
+      height: 256px;
+
+      fill: var(--color-fade-silver);
+      @media (max-width: 479px) {
+        width: 128px;
+        height: 128px;
+      }
+    }
+  }
+  & span {
+    color: var(--color-dark-gray);
+  }
+}

@@ -1,0 +1,34 @@
+{{dashboard/subnav/folder-menu
+  local-class="folder"
+  icon="ic-folder-d"
+  folderList=model.folderList
+  changeFolder=(route-action "changeFolder")
+  currentFolder=model.currentFolder
+  toggleModal=(action "toggleModal" "newFolder")
+}}
+<div class="header-control">
+  {{dashboard/subnav/scope-control-menu
+    local-class="scope-ctrl"
+    companyList=model.companyList.Company
+    currentCompanyId=model.companyList.CompanyID
+  }}
+  {{dashboard/subnav/sortord-menu
+    local-class="filters"
+    sortordList=model.sortordList
+    currentSortordId=model.currentSortordId
+    changeSortord=(route-action "changeSortord")
+  }}
+</div>
+
+{{#link-to "create" tagName="button" class="button blue create-form"}}
+  {{ui-icon icon="ui-small-add"}}
+  <span>{{t "page-header.create"}}</span>
+{{/link-to}}
+
+{{ui/seach-input
+  local-class="form-seach"
+  placeholder=(t "page-header.seach")
+  value=model.formValue.searchText
+  search=(route-action "searchForm")
+  clearSearched=(route-action "clearSearched")
+}}

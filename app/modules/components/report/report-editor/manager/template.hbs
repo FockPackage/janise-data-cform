@@ -1,0 +1,58 @@
+<div class="stting-row-title">
+  <h2><span>{{t "reporting-tools.data"}}</span></h2>
+  <div local-class="search-input">
+    {{input type="text" value=searchTerm placeholder=(t "reporting-tools.search")}}
+    {{ui-icon-button icon="ui-zoom"}}
+  </div>
+</div>
+
+<div local-class="filter-block">
+  {{#basic-dropdown renderInPlace=true as |dropdown|}}
+    {{#dropdown.trigger local-class="filter-trigger"}}
+      <span>{{t "filter-dropdown.filter-for"}}</span>
+      {{ui-button (t "filter-dropdown.kind") half=true expand=true size="s" color="blank"}}
+    {{/dropdown.trigger}}
+
+    {{#dropdown.content local-class="filter-content"}}
+      <ul class="option checkmark">
+        <ul class="option-contents">
+          {{#each presentationTypes as |filter|}}
+            <li>
+              <a onclick={{action "setTypeFilter" filter.type dropdown}}>
+                {{ui-icon icon=filter.icon size="8px"}}
+                <span>{{filter.code}}</span>
+                {{#if (eq currentTypeFilter filter.type)}}
+                  {{ui-icon icon="ui-check" style="checkmark"}}
+                {{/if}}
+              </a>
+            </li>
+          {{/each}}
+        </ul>
+      </ul>
+    {{/dropdown.content}}
+  {{/basic-dropdown}}
+
+  <div local-class="switch">
+    {{ui-switch
+      label=(t "reporting-tools.drag")
+      toggle=draggable
+      onToggle=(toggle-action "draggable" this)}}
+
+    {{ui-switch
+      label=(t "reporting-tools.visibility")
+      toggle=visibleOnly
+      onToggle=(toggle-action "visibleOnly" this)}}
+
+    {{ui-switch
+      label=(t "reporting-tools.serial")
+      toggle=showSerials
+      onToggle=(toggle-action "showSerials" this)}}
+  </div>
+</div>
+
+{{yield (hash
+  source-list=(component "report/report-editor/manager/source-list"
+    searchTerm=searchTerm
+    draggable=draggable
+    showSerials=showSerials)
+  )}}

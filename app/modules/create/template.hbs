@@ -1,0 +1,46 @@
+{{!-- Create --}}
+
+<div class="w-container">
+  <div class="content-wrapper">
+    <div local-class="creating">
+      {{#ui-fieldset size="l" help=(t "create.name-help") as |f|}}
+        {{f.input
+          name="form-name"
+          label=(t "create.form-name")
+          value=model.formValue.newFormName
+        }}
+      {{/ui-fieldset}}
+    </div>
+
+    <div local-class="template">
+      <h1>{{t "create.choose-template"}}</h1>
+      <div>
+        <a local-class="active"><span>{{t "create-dropdown.all"}}</span></a>
+        <a><span>{{t "create-dropdown.premium"}}</span></a>
+        <a><span>{{t "create-dropdown.free"}}</span></a>
+        {{create/category-menu tagName=""}}
+        {{create/sortord-menu tagName=""}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main-grid">
+  <div class="main-grid-wrapper">
+    {{#each model.templateList.QuesList as |template|}}
+      {{create/template-item
+        selected=(eq model.selectedTemplateId template.QuesID)
+        blank=(if (eq template.Title 'UI_QModelNotUse') true)
+        cover=template.ImgUrl
+        template-name=(if (eq template.Title 'UI_QModelNotUse') '不使用范本' template.Title)
+        categories="Education"
+        price="Free"
+        selectTemplate=(route-action "selectTemplate" template.QuesID)}}
+    {{/each}}
+  </div>
+</div>
+
+{{ui/load-more
+  isShow=(not model.templateList.IsEnd)
+  label=(t "load-more-templates")
+}}

@@ -1,0 +1,99 @@
+@import "var.css";
+
+.type {
+
+}
+
+.options {
+  padding-bottom: 0;
+}
+
+.chart-type-dropdown {
+  float: left;
+}
+
+.style-font-dropdown {
+  width: 100%;
+
+  & > div {
+    float: left;
+    width: 157px;
+
+    &:nth-of-type(odd) {
+      margin-right: 12px;
+    }
+
+    & button {
+      width: 100%;
+    }
+  }
+}
+
+.gaps {
+  & > div {
+
+  }
+}
+
+.between {
+  float: left;
+  width: 157px;
+
+  &:nth-of-type(1) {
+    margin-right: 12px;
+  }
+
+  & > div {
+    width: 100%;
+  }
+}
+
+.legend-item {
+  position: relative;
+  float: left;
+  padding-left: 28px;
+  border-left: 1px solid var(--color-fade-silver);
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.legend-icon {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  left: 8px;
+  top: 13px;
+}
+
+.legend {
+  float: left;
+  width: 100%;
+
+  & > div {
+    float: left;
+    width: 157px;
+
+    &:nth-of-type(odd) {
+      margin-right: 12px;
+    }
+
+    & input {
+      width: 100%;
+    }
+  }
+}
+
+.chart-type-trigger {
+  & i {
+    &:nth-child(1) {
+      margin: 2px 6px 0 2px
+    }
+    &:nth-child(2) {
+      top: 5px;
+    }
+  }
+}
+
+.chart-type-content{
+
+}

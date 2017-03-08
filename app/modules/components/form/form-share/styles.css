@@ -1,0 +1,59 @@
+@import "var.css";
+
+.form-share {
+  & :global(.content-row) {
+    &:first-child {
+      border: none;
+    }
+  }
+}
+
+:global(.publish-info) {
+  float: right;
+  width: 42%;
+  margin: 0 0 0 3%;
+  padding: 0 24px 0 3%;
+
+  & > p {
+    color: var(--color-silver);
+    font-size: 12px;
+    line-height: normal;
+    margin: 12px 0 64px 0;
+
+    @media (max-width: 991px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    text-align: center;
+    float: none;
+    width: 100%;
+    margin: 0;
+    padding: 0 0 24px 0;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--color-silver);
+  }
+}
+
+:global(.share-column) {
+  width: 55%;
+  float: left;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute -32px -6% -32px auto;
+    width: 1px;
+    background-color: var(--color-silver);
+  }
+
+  @media (max-width: 991px) {
+    float: none;
+    width: 100%;
+
+    &:before {
+      display: none;
+    }
+  }
+}

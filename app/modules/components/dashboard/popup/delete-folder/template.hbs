@@ -1,0 +1,17 @@
+{{#if isShow}}
+  {{#ui/popup-panel
+    isShow=true
+    closeModal=closeModal
+    icon="files-folder-remove"
+    title=(t "popup.remove-folder")
+    color='red'
+    text=(t 'popup.remove')
+    onClick=(action deleteFolder)
+    clickBackground=clickBackground
+  }}
+    <div local-class="remove-folder">
+      <p>{{t "popup.remove-folder-help"}}</p>
+      <p>{{t "popup.current-folder"}}<span>({{folderName}})</span></p>
+    </div>
+  {{/ui/popup-panel}}
+{{/if}}

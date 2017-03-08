@@ -1,0 +1,29 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger}}
+    {{ui-button selectedView.name color="border" icon="eye" style="visible" expand=true}}
+  {{/dropdown.trigger}}
+
+  {{#dropdown.content}}
+    <ul class="option">
+      <div class="optgroup">{{t "view-dropdown.switch-view"}}</div>
+      <ul class="option-contents">
+        {{#each (reject-by "selected" true views) as |view|}}
+          <li>
+            <a onclick={{action (pipe changeView dropdown.actions.close) view.id}}>
+              {{ui-icon icon="eye" style="visible" }}
+              <span>{{view.name}}</span>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+      <ul class="option-control">
+        <li>
+          <a>
+            {{ui-icon icon="ui-simple-add"}}
+            <span>{{t "view-dropdown.create-view"}}</span>
+          </a>
+        </li>
+      </ul>
+    </ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

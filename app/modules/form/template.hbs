@@ -1,0 +1,10 @@
+{{!-- Form Settings --}}
+
+{{form/primary-tabs
+  status=model.questionnaire.QStatus
+  tabList=model.tabList
+  currentFormId=model.currentQuestionnaireId
+  selectTab=(route-action "selectTab")
+}}
+
+{{outlet}}
